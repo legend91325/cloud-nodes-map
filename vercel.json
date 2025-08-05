@@ -80,6 +80,5 @@
     }
   ],
   "functions": {},
-  "regions": ["hkg1", "nrt1", "syd1"],
-  "compress": true
+  "regions": ["hkg1", "nrt1", "syd1"]
 }

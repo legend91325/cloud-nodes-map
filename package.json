@@ -5,9 +5,9 @@
   "main": "index.html",
   "scripts": {
     "dev": "npx serve .",
-    "build": "node compress-json.js",
+    "build": "node scripts/compress.js",
     "start": "npx serve .",
-    "compress": "node compress-json.js"
+    "compress": "node scripts/compress.js"
   },
   "keywords": [
     "cloud",
