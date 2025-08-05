@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>云服务提供商全球节点布局</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" as="style">
+    <link rel="preload" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" as="script">
+    <link rel="preload" href="https://tile.openstreetmap.org/0/0/0.png" as="image">
+    
+    <!-- 使用 CDN 加速 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
+    
+    <!-- DNS 预解析 -->
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="//a.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="//b.tile.openstreetmap.org">
+    <link rel="dns-prefetch" href="//c.tile.openstreetmap.org">
+    
+    <!-- 预连接到外部域名 -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://tile.openstreetmap.org">
+    
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -364,107 +383,277 @@
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- 异步加载 Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous" defer></script>
     <script>
-        // 云服务提供商节点数据
-        const cloudData = {
-            aliyun: {
-                regions: [
-                    { id: 'cn-qingdao', name: '华北1（青岛）', lat: 36.0671, lng: 120.3826 },
-                    { id: 'cn-beijing', name: '华北2（北京）', lat: 39.9042, lng: 116.4074 },
-                    { id: 'cn-zhangjiakou', name: '华北3（张家口）', lat: 40.7686, lng: 114.8867 },
-                    { id: 'cn-huhehaote', name: '华北5（呼和浩特）', lat: 40.8429, lng: 111.7494 },
-                    { id: 'cn-wulanchabu', name: '华北6（乌兰察布）', lat: 41.0173, lng: 113.1145 },
-                    { id: 'cn-hangzhou', name: '华东1（杭州）', lat: 30.2741, lng: 120.1551 },
-                    { id: 'cn-shanghai', name: '华东2（上海）', lat: 31.2304, lng: 121.4737 },
-                    { id: 'cn-nanjing', name: '华东5（南京）', lat: 32.0603, lng: 118.7969 },
-                    { id: 'cn-shenzhen', name: '华南1（深圳）', lat: 22.5431, lng: 114.0579 },
-                    { id: 'cn-heyuan', name: '华南2（河源）', lat: 23.7435, lng: 114.6978 },
-                    { id: 'cn-guangzhou', name: '华南3（广州）', lat: 23.1291, lng: 113.2644 },
-                    { id: 'cn-fuzhou', name: '华东6（福州）', lat: 26.0745, lng: 119.2965 },
-                    { id: 'cn-wuhan-lr', name: '华中1（武汉）', lat: 30.5928, lng: 114.3055 },
-                    { id: 'cn-chengdu', name: '西南1（成都）', lat: 30.5728, lng: 104.0668 },
-                    { id: 'cn-hongkong', name: '中国香港', lat: 22.3193, lng: 114.1694 },
-                    { id: 'ap-northeast-1', name: '日本（东京）', lat: 35.6762, lng: 139.6503 },
-                    { id: 'ap-northeast-2', name: '韩国（首尔）', lat: 37.5665, lng: 126.9780 },
-                    { id: 'ap-southeast-1', name: '新加坡', lat: 1.3521, lng: 103.8198 },
-                    { id: 'ap-southeast-3', name: '马来西亚（吉隆坡）', lat: 3.1390, lng: 101.6869 },
-                    { id: 'ap-southeast-6', name: '菲律宾（马尼拉）', lat: 14.5995, lng: 120.9842 },
-                    { id: 'ap-southeast-5', name: '印度尼西亚（雅加达）', lat: -6.2088, lng: 106.8456 },
-                    { id: 'ap-southeast-7', name: '泰国（曼谷）', lat: 13.7563, lng: 100.5018 },
-                    { id: 'us-east-1', name: '美国（弗吉尼亚）', lat: 37.4316, lng: -78.6569 },
-                    { id: 'us-west-1', name: '美国（硅谷）', lat: 37.3382, lng: -121.8863 },
-                    { id: 'na-south-1', name: '墨西哥', lat: 19.4326, lng: -99.1332 },
-                    { id: 'eu-west-1', name: '英国（伦敦）', lat: 51.5074, lng: -0.1278 },
-                    { id: 'me-east-1', name: '阿联酋（迪拜）', lat: 25.2048, lng: 55.2708 },
-                    { id: 'eu-central-1', name: '德国（法兰克福）', lat: 50.1109, lng: 8.6821 }
-                ]
-            },
-            huawei: {
-                regions: [
-                    { id: 'cn-north-1', name: '华北-北京一', lat: 39.9042, lng: 116.4074 },
-                    { id: 'cn-north-2', name: '华北-北京二', lat: 39.9042, lng: 116.4074 },
-                    { id: 'cn-north-4', name: '华北-北京四', lat: 39.9042, lng: 116.4074 },
-                    { id: 'cn-east-2', name: '华东-上海二', lat: 31.2304, lng: 121.4737 },
-                    { id: 'cn-east-3', name: '华东-上海一', lat: 31.2304, lng: 121.4737 },
-                    { id: 'cn-south-1', name: '华南-广州', lat: 23.1291, lng: 113.2644 },
-                    { id: 'cn-southwest-2', name: '西南-贵阳一', lat: 26.6470, lng: 106.6302 },
-                    { id: 'ap-southeast-1', name: '中国-香港', lat: 22.3193, lng: 114.1694 },
-                    { id: 'ap-southeast-2', name: '亚太-曼谷', lat: 13.7563, lng: 100.5018 },
-                    { id: 'ap-southeast-3', name: '亚太-新加坡', lat: 1.3521, lng: 103.8198 },
-                    { id: 'ap-southeast-4', name: '亚太-雅加达', lat: -6.2088, lng: 106.8456 },
-                    { id: 'ap-southeast-5', name: '亚太-孟买', lat: 19.0760, lng: 72.8777 },
-                    { id: 'ap-southeast-6', name: '亚太-吉隆坡', lat: 3.1390, lng: 101.6869 },
-                    { id: 'ap-southeast-7', name: '亚太-马尼拉', lat: 14.5995, lng: 120.9842 },
-                    { id: 'ap-southeast-8', name: '亚太-东京', lat: 35.6762, lng: 139.6503 },
-                    { id: 'ap-southeast-9', name: '亚太-大阪', lat: 34.6937, lng: 135.5023 },
-                    { id: 'ap-southeast-10', name: '亚太-首尔', lat: 37.5665, lng: 126.9780 },
-                    { id: 'eu-west-0', name: '欧洲-巴黎', lat: 48.8566, lng: 2.3522 },
-                    { id: 'eu-west-101', name: '欧洲-巴黎二', lat: 48.8566, lng: 2.3522 },
-                    { id: 'eu-west-200', name: '欧洲-巴黎三', lat: 48.8566, lng: 2.3522 },
-                    { id: 'eu-north-0', name: '欧洲-斯德哥尔摩', lat: 59.3293, lng: 18.0686 },
-                    { id: 'eu-north-200', name: '欧洲-斯德哥尔摩二', lat: 59.3293, lng: 18.0686 },
-                    { id: 'na-mexico-1', name: '拉美-墨西哥城一', lat: 19.4326, lng: -99.1332 },
-                    { id: 'na-mexico-2', name: '拉美-墨西哥城二', lat: 19.4326, lng: -99.1332 },
-                    { id: 'sa-brazil-1', name: '拉美-圣保罗一', lat: -23.5505, lng: -46.6333 },
-                    { id: 'af-south-1', name: '非洲-约翰内斯堡', lat: -26.2041, lng: 28.0473 }
-                ]
-            },
-            tencent: {
-                regions: [
-                    { id: 'ap-shanghai', name: '华东地区(上海)', lat: 31.2304, lng: 121.4737 },
-                    { id: 'ap-nanjing', name: '华东地区(南京)', lat: 32.0603, lng: 118.7969 },
-                    { id: 'ap-guangzhou', name: '华南地区(广州)', lat: 23.1291, lng: 113.2644 },
-                    { id: 'ap-beijing', name: '华北地区(北京)', lat: 39.9042, lng: 116.4074 },
-                    { id: 'ap-chengdu', name: '西南地区(成都)', lat: 30.5728, lng: 104.0668 },
-                    { id: 'ap-chongqing', name: '西南地区(重庆)', lat: 29.4316, lng: 106.9123 },
-                    { id: 'ap-hongkong', name: '港澳台地区(中国香港)', lat: 22.3193, lng: 114.1694 },
-                    { id: 'ap-seoul', name: '亚太东北(首尔)', lat: 37.5665, lng: 126.9780 },
-                    { id: 'ap-tokyo', name: '亚太东北(东京)', lat: 35.6762, lng: 139.6503 },
-                    { id: 'ap-singapore', name: '亚太东南(新加坡)', lat: 1.3521, lng: 103.8198 },
-                    { id: 'ap-bangkok', name: '亚太东南(曼谷)', lat: 13.7563, lng: 100.5018 },
-                    { id: 'ap-jakarta', name: '亚太东南(雅加达)', lat: -6.2088, lng: 106.8456 },
-                    { id: 'na-siliconvalley', name: '美国西部(硅谷)', lat: 37.3382, lng: -121.8863 },
-                    { id: 'eu-frankfurt', name: '欧洲地区(法兰克福)', lat: 50.1109, lng: 8.6821 },
-                    { id: 'na-ashburn', name: '美国东部(弗吉尼亚)', lat: 37.4316, lng: -78.6569 },
-                    { id: 'sa-saopaulo', name: '南美地区(圣保罗)', lat: -23.5505, lng: -46.6333 }
-                ]
+        // 性能监控
+        const startTime = performance.now();
+        
+        // 等待 Leaflet 加载完成
+        function waitForLeaflet() {
+            if (typeof L !== 'undefined') {
+                console.log(`Leaflet 加载时间: ${(performance.now() - startTime).toFixed(2)}ms`);
+                loadCloudData();
+            } else {
+                setTimeout(waitForLeaflet, 100);
             }
+        }
+        // 云服务提供商节点数据
+        let cloudData = {
+            aliyun: { regions: [] },
+            huawei: { regions: [] },
+            tencent: { regions: [] }
         };
 
-        // 初始化页面
-        document.addEventListener('DOMContentLoaded', function() {
+        // 区域坐标映射（用于将区域ID映射到经纬度）
+        const regionCoordinates = {
+            // 阿里云区域坐标
+            'cn-qingdao': { lat: 36.0671, lng: 120.3826 },
+            'cn-beijing': { lat: 39.9042, lng: 116.4074 },
+            'cn-zhangjiakou': { lat: 40.7686, lng: 114.8867 },
+            'cn-huhehaote': { lat: 40.8429, lng: 111.7494 },
+            'cn-wulanchabu': { lat: 41.0173, lng: 113.1145 },
+            'cn-hangzhou': { lat: 30.2741, lng: 120.1551 },
+            'cn-shanghai': { lat: 31.2304, lng: 121.4737 },
+            'cn-nanjing': { lat: 32.0603, lng: 118.7969 },
+            'cn-shenzhen': { lat: 22.5431, lng: 114.0579 },
+            'cn-heyuan': { lat: 23.7435, lng: 114.6978 },
+            'cn-guangzhou': { lat: 23.1291, lng: 113.2644 },
+            'cn-fuzhou': { lat: 26.0745, lng: 119.2965 },
+            'cn-wuhan-lr': { lat: 30.5928, lng: 114.3055 },
+            'cn-chengdu': { lat: 30.5728, lng: 104.0668 },
+            'cn-hongkong': { lat: 22.3193, lng: 114.1694 },
+            'ap-northeast-1': { lat: 35.6762, lng: 139.6503 },
+            'ap-northeast-2': { lat: 37.5665, lng: 126.9780 },
+            'ap-southeast-1': { lat: 1.3521, lng: 103.8198 },
+            'ap-southeast-3': { lat: 3.1390, lng: 101.6869 },
+            'ap-southeast-6': { lat: 14.5995, lng: 120.9842 },
+            'ap-southeast-5': { lat: -6.2088, lng: 106.8456 },
+            'ap-southeast-7': { lat: 13.7563, lng: 100.5018 },
+            'us-east-1': { lat: 37.4316, lng: -78.6569 },
+            'us-west-1': { lat: 37.3382, lng: -121.8863 },
+            'na-south-1': { lat: 19.4326, lng: -99.1332 },
+            'eu-west-1': { lat: 51.5074, lng: -0.1278 },
+            'me-east-1': { lat: 25.2048, lng: 55.2708 },
+            'eu-central-1': { lat: 50.1109, lng: 8.6821 },
+            
+            // 华为云区域坐标
+            'cn-north-1': { lat: 39.9042, lng: 116.4074 },
+            'cn-north-2': { lat: 39.9042, lng: 116.4074 },
+            'cn-north-4': { lat: 39.9042, lng: 116.4074 },
+            'cn-east-2': { lat: 31.2304, lng: 121.4737 },
+            'cn-east-3': { lat: 31.2304, lng: 121.4737 },
+            'cn-south-1': { lat: 23.1291, lng: 113.2644 },
+            'cn-southwest-2': { lat: 26.6470, lng: 106.6302 },
+            'ap-southeast-2': { lat: 13.7563, lng: 100.5018 },
+            'ap-southeast-4': { lat: -6.2088, lng: 106.8456 },
+            'ap-southeast-5': { lat: 19.0760, lng: 72.8777 },
+            'ap-southeast-6': { lat: 3.1390, lng: 101.6869 },
+            'ap-southeast-7': { lat: 14.5995, lng: 120.9842 },
+            'ap-southeast-8': { lat: 35.6762, lng: 139.6503 },
+            'ap-southeast-9': { lat: 34.6937, lng: 135.5023 },
+            'ap-southeast-10': { lat: 37.5665, lng: 126.9780 },
+            'eu-west-0': { lat: 48.8566, lng: 2.3522 },
+            'eu-west-101': { lat: 48.8566, lng: 2.3522 },
+            'eu-west-200': { lat: 48.8566, lng: 2.3522 },
+            'eu-north-0': { lat: 59.3293, lng: 18.0686 },
+            'eu-north-200': { lat: 59.3293, lng: 18.0686 },
+            'na-mexico-1': { lat: 19.4326, lng: -99.1332 },
+            'na-mexico-2': { lat: 19.4326, lng: -99.1332 },
+            'sa-brazil-1': { lat: -23.5505, lng: -46.6333 },
+            'af-south-1': { lat: -26.2041, lng: 28.0473 },
+            
+            // 腾讯云区域坐标
+            'ap-shanghai': { lat: 31.2304, lng: 121.4737 },
+            'ap-nanjing': { lat: 32.0603, lng: 118.7969 },
+            'ap-guangzhou': { lat: 23.1291, lng: 113.2644 },
+            'ap-beijing': { lat: 39.9042, lng: 116.4074 },
+            'ap-chengdu': { lat: 30.5728, lng: 104.0668 },
+            'ap-chongqing': { lat: 29.4316, lng: 106.9123 },
+            'ap-hongkong': { lat: 22.3193, lng: 114.1694 },
+            'ap-seoul': { lat: 37.5665, lng: 126.9780 },
+            'ap-tokyo': { lat: 35.6762, lng: 139.6503 },
+            'ap-singapore': { lat: 1.3521, lng: 103.8198 },
+            'ap-bangkok': { lat: 13.7563, lng: 100.5018 },
+            'ap-jakarta': { lat: -6.2088, lng: 106.8456 },
+            'na-siliconvalley': { lat: 37.3382, lng: -121.8863 },
+            'eu-frankfurt': { lat: 50.1109, lng: 8.6821 },
+            'na-ashburn': { lat: 37.4316, lng: -78.6569 },
+            'sa-saopaulo': { lat: -23.5505, lng: -46.6333 }
+        };
+
+        // 加载JSON数据
+        async function loadCloudData() {
+            try {
+                // 添加加载指示器
+                showLoadingIndicator();
+                
+                const [aliyunData, huaweiData, tencentData] = await Promise.all([
+                    fetch('./aliyun_nodes_complete_min.json', {
+                        headers: { 'Cache-Control': 'max-age=3600' }
+                    }).then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    }),
+                    fetch('./huaweicloud_nodes_complete_min.json', {
+                        headers: { 'Cache-Control': 'max-age=3600' }
+                    }).then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    }),
+                    fetch('./tencentcloud_nodes_complete_min.json', {
+                        headers: { 'Cache-Control': 'max-age=3600' }
+                    }).then(res => {
+                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                        return res.json();
+                    })
+                ]);
+
+                // 处理阿里云数据
+                cloudData.aliyun.regions = aliyunData.regions.map(region => ({
+                    id: region.region_id,
+                    name: region.region_name,
+                    status: region.status,
+                    ...regionCoordinates[region.region_id]
+                })).filter(region => region.lat && region.lng); // 只保留有坐标的区域
+
+                // 处理华为云数据
+                cloudData.huawei.regions = huaweiData.regions.map(region => ({
+                    id: region.region_id,
+                    name: region.region_name,
+                    status: region.region_state,
+                    ...regionCoordinates[region.region_id]
+                })).filter(region => region.lat && region.lng);
+
+                // 处理腾讯云数据
+                cloudData.tencent.regions = tencentData.regions.map(region => ({
+                    id: region.region_id,
+                    name: region.region_name,
+                    status: region.region_state,
+                    ...regionCoordinates[region.region_id]
+                })).filter(region => region.lat && region.lng);
+
+                console.log('数据加载完成:', cloudData);
+                
+                // 隐藏加载指示器
+                hideLoadingIndicator();
+                
+                // 重新初始化页面
+                initializeMap();
+                initializeStats();
+                initializeFilters();
+                
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                // 如果加载失败，使用默认数据
+                useDefaultData();
+            }
+        }
+
+        // 显示加载指示器
+        function showLoadingIndicator() {
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = 'loading-indicator';
+            loadingDiv.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+                    color: white;
+                    font-size: 18px;
+                ">
+                    <div style="text-align: center;">
+                        <div style="
+                            width: 50px;
+                            height: 50px;
+                            border: 3px solid #f3f3f3;
+                            border-top: 3px solid #3498db;
+                            border-radius: 50%;
+                            animation: spin 1s linear infinite;
+                            margin: 0 auto 20px;
+                        "></div>
+                        <div>正在加载云服务节点数据...</div>
+                    </div>
+                </div>
+                <style>
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                </style>
+            `;
+            document.body.appendChild(loadingDiv);
+        }
+
+        // 隐藏加载指示器
+        function hideLoadingIndicator() {
+            const loadingDiv = document.getElementById('loading-indicator');
+            if (loadingDiv) {
+                loadingDiv.remove();
+            }
+        }
+
+        // 使用默认数据（当JSON加载失败时）
+        function useDefaultData() {
+            cloudData = {
+                aliyun: {
+                    regions: [
+                        { id: 'cn-qingdao', name: '华北1（青岛）', lat: 36.0671, lng: 120.3826 },
+                        { id: 'cn-beijing', name: '华北2（北京）', lat: 39.9042, lng: 116.4074 },
+                        { id: 'cn-hangzhou', name: '华东1（杭州）', lat: 30.2741, lng: 120.1551 },
+                        { id: 'cn-shanghai', name: '华东2（上海）', lat: 31.2304, lng: 121.4737 },
+                        { id: 'cn-shenzhen', name: '华南1（深圳）', lat: 22.5431, lng: 114.0579 },
+                        { id: 'cn-hongkong', name: '中国香港', lat: 22.3193, lng: 114.1694 }
+                    ]
+                },
+                huawei: {
+                    regions: [
+                        { id: 'cn-north-1', name: '华北-北京一', lat: 39.9042, lng: 116.4074 },
+                        { id: 'cn-east-2', name: '华东-上海二', lat: 31.2304, lng: 121.4737 },
+                        { id: 'cn-south-1', name: '华南-广州', lat: 23.1291, lng: 113.2644 },
+                        { id: 'ap-southeast-1', name: '中国-香港', lat: 22.3193, lng: 114.1694 }
+                    ]
+                },
+                tencent: {
+                    regions: [
+                        { id: 'ap-shanghai', name: '华东地区(上海)', lat: 31.2304, lng: 121.4737 },
+                        { id: 'ap-guangzhou', name: '华南地区(广州)', lat: 23.1291, lng: 113.2644 },
+                        { id: 'ap-beijing', name: '华北地区(北京)', lat: 39.9042, lng: 116.4074 },
+                        { id: 'ap-hongkong', name: '港澳台地区(中国香港)', lat: 22.3193, lng: 114.1694 }
+                    ]
+                }
+            };
+            
             initializeMap();
             initializeStats();
             initializeFilters();
+        }
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            waitForLeaflet();
         });
 
         // 初始化地图
         function initializeMap() {
             const map = L.map('map').setView([35, 105], 4);
+            
+            // 使用更快的瓦片服务器
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors',
-                maxZoom: 18
+                maxZoom: 18,
+                subdomains: ['a', 'b', 'c'],
+                // 添加瓦片加载优化
+                updateWhenIdle: true,
+                updateWhenZooming: false,
+                keepBuffer: 2
             }).addTo(map);
 
             const markers = {
@@ -492,6 +681,7 @@
                             <div class="popup-provider popup-${provider}">${providerNames[provider]}</div>
                             <h3>${region.name}</h3>
                             <p><strong>区域ID:</strong> ${region.id}</p>
+                            <p><strong>状态:</strong> ${region.status || '可用'}</p>
                             <p><strong>坐标:</strong> ${region.lat.toFixed(4)}, ${region.lng.toFixed(4)}</p>
                         </div>
                     `;
