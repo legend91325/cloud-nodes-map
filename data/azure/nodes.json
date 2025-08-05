@@ -1,0 +1,755 @@
+{
+  "provider": "azure",
+  "version": "1.0.0",
+  "last_updated": "2024-01-15T00:00:00",
+  "nodes": [
+    {
+      "node_id": "eastus",
+      "name": "East US",
+      "location": {
+        "country": "美国",
+        "region": "东部",
+        "city": "弗吉尼亚",
+        "latitude": 37.4316,
+        "longitude": -78.6569
+      },
+      "data_center": "Microsoft East US Region",
+      "availability_zone": "eastus-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 2.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure East US Region",
+      "launch_date": "2010-02-01T00:00:00"
+    },
+    {
+      "node_id": "eastus2",
+      "name": "East US 2",
+      "location": {
+        "country": "美国",
+        "region": "东部",
+        "city": "弗吉尼亚",
+        "latitude": 37.4316,
+        "longitude": -78.6569
+      },
+      "data_center": "Microsoft East US 2 Region",
+      "availability_zone": "eastus2-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 2.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure East US 2 Region",
+      "launch_date": "2014-01-01T00:00:00"
+    },
+    {
+      "node_id": "southcentralus",
+      "name": "South Central US",
+      "location": {
+        "country": "美国",
+        "region": "南部",
+        "city": "德克萨斯",
+        "latitude": 31.9686,
+        "longitude": -99.9018
+      },
+      "data_center": "Microsoft South Central US Region",
+      "availability_zone": "southcentralus-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 8.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure South Central US Region",
+      "launch_date": "2014-01-01T00:00:00"
+    },
+    {
+      "node_id": "westus2",
+      "name": "West US 2",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "华盛顿",
+        "latitude": 47.6062,
+        "longitude": -122.3321
+      },
+      "data_center": "Microsoft West US 2 Region",
+      "availability_zone": "westus2-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 12.3,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure West US 2 Region",
+      "launch_date": "2016-09-01T00:00:00"
+    },
+    {
+      "node_id": "westus3",
+      "name": "West US 3",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "亚利桑那",
+        "latitude": 33.4484,
+        "longitude": -112.0740
+      },
+      "data_center": "Microsoft West US 3 Region",
+      "availability_zone": "westus3-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 15.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure West US 3 Region",
+      "launch_date": "2021-08-01T00:00:00"
+    },
+    {
+      "node_id": "canadacentral",
+      "name": "Canada Central",
+      "location": {
+        "country": "加拿大",
+        "region": "中部",
+        "city": "多伦多",
+        "latitude": 43.6532,
+        "longitude": -79.3832
+      },
+      "data_center": "Microsoft Canada Central Region",
+      "availability_zone": "canadacentral-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 18.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Canada Central Region",
+      "launch_date": "2016-01-01T00:00:00"
+    },
+    {
+      "node_id": "canadaeast",
+      "name": "Canada East",
+      "location": {
+        "country": "加拿大",
+        "region": "东部",
+        "city": "魁北克",
+        "latitude": 46.8139,
+        "longitude": -71.2080
+      },
+      "data_center": "Microsoft Canada East Region",
+      "availability_zone": "canadaeast-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 22.1,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Canada East Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "northeurope",
+      "name": "North Europe",
+      "location": {
+        "country": "爱尔兰",
+        "region": "欧洲",
+        "city": "都柏林",
+        "latitude": 53.3498,
+        "longitude": -6.2603
+      },
+      "data_center": "Microsoft North Europe Region",
+      "availability_zone": "northeurope-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 248.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure North Europe Region",
+      "launch_date": "2010-02-01T00:00:00"
+    },
+    {
+      "node_id": "westeurope",
+      "name": "West Europe",
+      "location": {
+        "country": "荷兰",
+        "region": "欧洲",
+        "city": "阿姆斯特丹",
+        "latitude": 52.3676,
+        "longitude": 4.9041
+      },
+      "data_center": "Microsoft West Europe Region",
+      "availability_zone": "westeurope-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 252.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure West Europe Region",
+      "launch_date": "2010-02-01T00:00:00"
+    },
+    {
+      "node_id": "francecentral",
+      "name": "France Central",
+      "location": {
+        "country": "法国",
+        "region": "欧洲",
+        "city": "巴黎",
+        "latitude": 48.8566,
+        "longitude": 2.3522
+      },
+      "data_center": "Microsoft France Central Region",
+      "availability_zone": "francecentral-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 238.9,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure France Central Region",
+      "launch_date": "2017-12-01T00:00:00"
+    },
+    {
+      "node_id": "francesouth",
+      "name": "France South",
+      "location": {
+        "country": "法国",
+        "region": "欧洲",
+        "city": "马赛",
+        "latitude": 43.2965,
+        "longitude": 5.3698
+      },
+      "data_center": "Microsoft France South Region",
+      "availability_zone": "francesouth-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 245.2,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure France South Region",
+      "launch_date": "2018-01-01T00:00:00"
+    },
+    {
+      "node_id": "uksouth",
+      "name": "UK South",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "伦敦",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "data_center": "Microsoft UK South Region",
+      "availability_zone": "uksouth-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 251.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure UK South Region",
+      "launch_date": "2016-09-01T00:00:00"
+    },
+    {
+      "node_id": "ukwest",
+      "name": "UK West",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "加的夫",
+        "latitude": 51.4816,
+        "longitude": -3.1791
+      },
+      "data_center": "Microsoft UK West Region",
+      "availability_zone": "ukwest-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 258.2,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure UK West Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "germanywestcentral",
+      "name": "Germany West Central",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "法兰克福",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      "data_center": "Microsoft Germany West Central Region",
+      "availability_zone": "germanywestcentral-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 228.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Germany West Central Region",
+      "launch_date": "2019-10-01T00:00:00"
+    },
+    {
+      "node_id": "switzerlandnorth",
+      "name": "Switzerland North",
+      "location": {
+        "country": "瑞士",
+        "region": "欧洲",
+        "city": "苏黎世",
+        "latitude": 47.3769,
+        "longitude": 8.5417
+      },
+      "data_center": "Microsoft Switzerland North Region",
+      "availability_zone": "switzerlandnorth-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 235.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Switzerland North Region",
+      "launch_date": "2019-10-01T00:00:00"
+    },
+    {
+      "node_id": "switzerlandwest",
+      "name": "Switzerland West",
+      "location": {
+        "country": "瑞士",
+        "region": "欧洲",
+        "city": "日内瓦",
+        "latitude": 46.2044,
+        "longitude": 6.1432
+      },
+      "data_center": "Microsoft Switzerland West Region",
+      "availability_zone": "switzerlandwest-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 242.1,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Switzerland West Region",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "norwayeast",
+      "name": "Norway East",
+      "location": {
+        "country": "挪威",
+        "region": "欧洲",
+        "city": "奥斯陆",
+        "latitude": 59.9139,
+        "longitude": 10.7522
+      },
+      "data_center": "Microsoft Norway East Region",
+      "availability_zone": "norwayeast-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 268.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Norway East Region",
+      "launch_date": "2019-10-01T00:00:00"
+    },
+    {
+      "node_id": "swedencentral",
+      "name": "Sweden Central",
+      "location": {
+        "country": "瑞典",
+        "region": "欧洲",
+        "city": "斯德哥尔摩",
+        "latitude": 59.3293,
+        "longitude": 18.0686
+      },
+      "data_center": "Microsoft Sweden Central Region",
+      "availability_zone": "swedencentral-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 265.2,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Sweden Central Region",
+      "launch_date": "2021-10-01T00:00:00"
+    },
+    {
+      "node_id": "eastasia",
+      "name": "East Asia",
+      "location": {
+        "country": "中国",
+        "region": "香港",
+        "city": "香港",
+        "latitude": 22.3193,
+        "longitude": 114.1694
+      },
+      "data_center": "Microsoft East Asia Region",
+      "availability_zone": "eastasia-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 18.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure East Asia Region",
+      "launch_date": "2010-02-01T00:00:00"
+    },
+    {
+      "node_id": "southeastasia",
+      "name": "Southeast Asia",
+      "location": {
+        "country": "新加坡",
+        "region": "东南亚",
+        "city": "新加坡",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      },
+      "data_center": "Microsoft Southeast Asia Region",
+      "availability_zone": "southeastasia-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 52.1,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Southeast Asia Region",
+      "launch_date": "2010-02-01T00:00:00"
+    },
+    {
+      "node_id": "japaneast",
+      "name": "Japan East",
+      "location": {
+        "country": "日本",
+        "region": "东亚",
+        "city": "东京",
+        "latitude": 35.6762,
+        "longitude": 139.6503
+      },
+      "data_center": "Microsoft Japan East Region",
+      "availability_zone": "japaneast-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 38.9,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Japan East Region",
+      "launch_date": "2014-06-01T00:00:00"
+    },
+    {
+      "node_id": "japanwest",
+      "name": "Japan West",
+      "location": {
+        "country": "日本",
+        "region": "东亚",
+        "city": "大阪",
+        "latitude": 34.6937,
+        "longitude": 135.5023
+      },
+      "data_center": "Microsoft Japan West Region",
+      "availability_zone": "japanwest-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 42.1,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Japan West Region",
+      "launch_date": "2015-01-01T00:00:00"
+    },
+    {
+      "node_id": "koreacentral",
+      "name": "Korea Central",
+      "location": {
+        "country": "韩国",
+        "region": "东亚",
+        "city": "首尔",
+        "latitude": 37.5665,
+        "longitude": 126.9780
+      },
+      "data_center": "Microsoft Korea Central Region",
+      "availability_zone": "koreacentral-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 45.2,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Korea Central Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "koreasouth",
+      "name": "Korea South",
+      "location": {
+        "country": "韩国",
+        "region": "东亚",
+        "city": "釜山",
+        "latitude": 35.1796,
+        "longitude": 129.0756
+      },
+      "data_center": "Microsoft Korea South Region",
+      "availability_zone": "koreasouth-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 48.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Korea South Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "australiaeast",
+      "name": "Australia East",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "data_center": "Microsoft Australia East Region",
+      "availability_zone": "australiaeast-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 125.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Australia East Region",
+      "launch_date": "2014-11-01T00:00:00"
+    },
+    {
+      "node_id": "australiasoutheast",
+      "name": "Australia Southeast",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "墨尔本",
+        "latitude": -37.8136,
+        "longitude": 144.9631
+      },
+      "data_center": "Microsoft Australia Southeast Region",
+      "availability_zone": "australiasoutheast-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 128.2,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Australia Southeast Region",
+      "launch_date": "2014-11-01T00:00:00"
+    },
+    {
+      "node_id": "centralindia",
+      "name": "Central India",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "浦那",
+        "latitude": 18.5204,
+        "longitude": 73.8567
+      },
+      "data_center": "Microsoft Central India Region",
+      "availability_zone": "centralindia-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 88.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Central India Region",
+      "launch_date": "2015-09-01T00:00:00"
+    },
+    {
+      "node_id": "southindia",
+      "name": "South India",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "金奈",
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      },
+      "data_center": "Microsoft South India Region",
+      "availability_zone": "southindia-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 92.3,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure South India Region",
+      "launch_date": "2015-09-01T00:00:00"
+    },
+    {
+      "node_id": "westindia",
+      "name": "West India",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "孟买",
+        "latitude": 19.0760,
+        "longitude": 72.8777
+      },
+      "data_center": "Microsoft West India Region",
+      "availability_zone": "westindia-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 95.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure West India Region",
+      "launch_date": "2015-09-01T00:00:00"
+    },
+    {
+      "node_id": "brazilsouth",
+      "name": "Brazil South",
+      "location": {
+        "country": "巴西",
+        "region": "南美洲",
+        "city": "圣保罗",
+        "latitude": -23.5505,
+        "longitude": -46.6333
+      },
+      "data_center": "Microsoft Brazil South Region",
+      "availability_zone": "brazilsouth-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 325.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure Brazil South Region",
+      "launch_date": "2014-09-01T00:00:00"
+    },
+    {
+      "node_id": "southafricanorth",
+      "name": "South Africa North",
+      "location": {
+        "country": "南非",
+        "region": "非洲",
+        "city": "约翰内斯堡",
+        "latitude": -26.2041,
+        "longitude": 28.0473
+      },
+      "data_center": "Microsoft South Africa North Region",
+      "availability_zone": "southafricanorth-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 320.5,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure South Africa North Region",
+      "launch_date": "2019-03-01T00:00:00"
+    },
+    {
+      "node_id": "southafricawest",
+      "name": "South Africa West",
+      "location": {
+        "country": "南非",
+        "region": "非洲",
+        "city": "开普敦",
+        "latitude": -33.9249,
+        "longitude": 18.4241
+      },
+      "data_center": "Microsoft South Africa West Region",
+      "availability_zone": "southafricawest-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 325.2,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure South Africa West Region",
+      "launch_date": "2019-03-01T00:00:00"
+    },
+    {
+      "node_id": "uaenorth",
+      "name": "UAE North",
+      "location": {
+        "country": "阿联酋",
+        "region": "中东",
+        "city": "迪拜",
+        "latitude": 25.2048,
+        "longitude": 55.2708
+      },
+      "data_center": "Microsoft UAE North Region",
+      "availability_zone": "uaenorth-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 285.2,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure UAE North Region",
+      "launch_date": "2019-06-01T00:00:00"
+    },
+    {
+      "node_id": "uaecentral",
+      "name": "UAE Central",
+      "location": {
+        "country": "阿联酋",
+        "region": "中东",
+        "city": "阿布扎比",
+        "latitude": 24.4539,
+        "longitude": 54.3773
+      },
+      "data_center": "Microsoft UAE Central Region",
+      "availability_zone": "uaecentral-1",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 295.8,
+        "uptime": 99.99
+      },
+      "description": "Microsoft Azure UAE Central Region",
+      "launch_date": "2019-06-01T00:00:00"
+    }
+  ]
+} 

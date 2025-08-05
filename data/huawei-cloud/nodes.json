@@ -1,0 +1,359 @@
+{
+  "provider": "huawei_cloud",
+  "version": "1.0.0",
+  "last_updated": "2024-01-15T00:00:00",
+  "nodes": [
+    {
+      "node_id": "cn-north-1",
+      "name": "华北-北京一",
+      "location": {
+        "country": "中国",
+        "region": "华北",
+        "city": "北京",
+        "latitude": 39.9042,
+        "longitude": 116.4074
+      },
+      "data_center": "华为云北京数据中心",
+      "availability_zone": "cn-north-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.8,
+        "uptime": 99.95
+      },
+      "description": "华为云华北区域主数据中心",
+      "launch_date": "2011-03-01T00:00:00"
+    },
+    {
+      "node_id": "cn-north-4",
+      "name": "华北-北京四",
+      "location": {
+        "country": "中国",
+        "region": "华北",
+        "city": "北京",
+        "latitude": 39.9042,
+        "longitude": 116.4074
+      },
+      "data_center": "华为云北京四数据中心",
+      "availability_zone": "cn-north-4a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 6.2,
+        "uptime": 99.95
+      },
+      "description": "华为云华北区域扩展数据中心",
+      "launch_date": "2015-06-01T00:00:00"
+    },
+    {
+      "node_id": "cn-east-2",
+      "name": "华东-上海二",
+      "location": {
+        "country": "中国",
+        "region": "华东",
+        "city": "上海",
+        "latitude": 31.2304,
+        "longitude": 121.4737
+      },
+      "data_center": "华为云上海数据中心",
+      "availability_zone": "cn-east-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.9,
+        "uptime": 99.95
+      },
+      "description": "华为云华东区域主数据中心",
+      "launch_date": "2012-08-01T00:00:00"
+    },
+    {
+      "node_id": "cn-east-3",
+      "name": "华东-上海一",
+      "location": {
+        "country": "中国",
+        "region": "华东",
+        "city": "上海",
+        "latitude": 31.2304,
+        "longitude": 121.4737
+      },
+      "data_center": "华为云上海一数据中心",
+      "availability_zone": "cn-east-3a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.1,
+        "uptime": 99.95
+      },
+      "description": "华为云华东区域扩展数据中心",
+      "launch_date": "2014-03-01T00:00:00"
+    },
+    {
+      "node_id": "cn-south-1",
+      "name": "华南-广州",
+      "location": {
+        "country": "中国",
+        "region": "华南",
+        "city": "广州",
+        "latitude": 23.1291,
+        "longitude": 113.2644
+      },
+      "data_center": "华为云广州数据中心",
+      "availability_zone": "cn-south-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.6,
+        "uptime": 99.95
+      },
+      "description": "华为云华南区域数据中心",
+      "launch_date": "2013-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-southwest-2",
+      "name": "西南-贵阳一",
+      "location": {
+        "country": "中国",
+        "region": "西南",
+        "city": "贵阳",
+        "latitude": 26.6470,
+        "longitude": 106.6302
+      },
+      "data_center": "华为云贵阳数据中心",
+      "availability_zone": "cn-southwest-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 8.5,
+        "uptime": 99.95
+      },
+      "description": "华为云西南区域数据中心",
+      "launch_date": "2017-08-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-1",
+      "name": "中国-香港",
+      "location": {
+        "country": "中国",
+        "region": "香港",
+        "city": "香港",
+        "latitude": 22.3193,
+        "longitude": 114.1694
+      },
+      "data_center": "华为云香港数据中心",
+      "availability_zone": "ap-southeast-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 15.2,
+        "uptime": 99.95
+      },
+      "description": "华为云香港区域数据中心",
+      "launch_date": "2014-09-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-2",
+      "name": "亚太-曼谷",
+      "location": {
+        "country": "泰国",
+        "region": "东南亚",
+        "city": "曼谷",
+        "latitude": 13.7563,
+        "longitude": 100.5018
+      },
+      "data_center": "华为云曼谷数据中心",
+      "availability_zone": "ap-southeast-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 65.8,
+        "uptime": 99.95
+      },
+      "description": "华为云东南亚区域数据中心",
+      "launch_date": "2018-03-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-3",
+      "name": "亚太-新加坡",
+      "location": {
+        "country": "新加坡",
+        "region": "东南亚",
+        "city": "新加坡",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      },
+      "data_center": "华为云新加坡数据中心",
+      "availability_zone": "ap-southeast-3a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 48.5,
+        "uptime": 99.95
+      },
+      "description": "华为云新加坡区域数据中心",
+      "launch_date": "2016-11-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-4",
+      "name": "亚太-雅加达",
+      "location": {
+        "country": "印度尼西亚",
+        "region": "东南亚",
+        "city": "雅加达",
+        "latitude": -6.2088,
+        "longitude": 106.8456
+      },
+      "data_center": "华为云雅加达数据中心",
+      "availability_zone": "ap-southeast-4a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 75.2,
+        "uptime": 99.95
+      },
+      "description": "华为云印尼区域数据中心",
+      "launch_date": "2019-06-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-5",
+      "name": "亚太-吉隆坡",
+      "location": {
+        "country": "马来西亚",
+        "region": "东南亚",
+        "city": "吉隆坡",
+        "latitude": 3.1390,
+        "longitude": 101.6869
+      },
+      "data_center": "华为云吉隆坡数据中心",
+      "availability_zone": "ap-southeast-5a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 68.9,
+        "uptime": 99.95
+      },
+      "description": "华为云马来西亚区域数据中心",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "ap-south-1",
+      "name": "亚太-孟买",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "孟买",
+        "latitude": 19.0760,
+        "longitude": 72.8777
+      },
+      "data_center": "华为云孟买数据中心",
+      "availability_zone": "ap-south-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 88.5,
+        "uptime": 99.95
+      },
+      "description": "华为云印度区域数据中心",
+      "launch_date": "2017-12-01T00:00:00"
+    },
+    {
+      "node_id": "af-south-1",
+      "name": "非洲-约翰内斯堡",
+      "location": {
+        "country": "南非",
+        "region": "非洲",
+        "city": "约翰内斯堡",
+        "latitude": -26.2041,
+        "longitude": 28.0473
+      },
+      "data_center": "华为云约翰内斯堡数据中心",
+      "availability_zone": "af-south-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 320.5,
+        "uptime": 99.95
+      },
+      "description": "华为云非洲区域数据中心",
+      "launch_date": "2019-08-01T00:00:00"
+    },
+    {
+      "node_id": "la-south-2",
+      "name": "拉美-圣地亚哥",
+      "location": {
+        "country": "智利",
+        "region": "南美洲",
+        "city": "圣地亚哥",
+        "latitude": -33.4489,
+        "longitude": -70.6693
+      },
+      "data_center": "华为云圣地亚哥数据中心",
+      "availability_zone": "la-south-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 280.8,
+        "uptime": 99.95
+      },
+      "description": "华为云南美区域数据中心",
+      "launch_date": "2019-12-01T00:00:00"
+    },
+    {
+      "node_id": "na-mexico-1",
+      "name": "拉美-墨西哥城一",
+      "location": {
+        "country": "墨西哥",
+        "region": "北美洲",
+        "city": "墨西哥城",
+        "latitude": 19.4326,
+        "longitude": -99.1332
+      },
+      "data_center": "华为云墨西哥城数据中心",
+      "availability_zone": "na-mexico-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 220.5,
+        "uptime": 99.95
+      },
+      "description": "华为云墨西哥区域数据中心",
+      "launch_date": "2020-06-01T00:00:00"
+    },
+    {
+      "node_id": "ru-northwest-9",
+      "name": "俄罗斯-莫斯科一",
+      "location": {
+        "country": "俄罗斯",
+        "region": "欧洲",
+        "city": "莫斯科",
+        "latitude": 55.7558,
+        "longitude": 37.6176
+      },
+      "data_center": "华为云莫斯科数据中心",
+      "availability_zone": "ru-northwest-9a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 180.2,
+        "uptime": 99.95
+      },
+      "description": "华为云俄罗斯区域数据中心",
+      "launch_date": "2019-03-01T00:00:00"
+    }
+  ]
+} 

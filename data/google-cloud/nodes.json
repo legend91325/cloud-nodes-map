@@ -1,0 +1,799 @@
+{
+  "provider": "google_cloud",
+  "version": "1.0.0",
+  "last_updated": "2024-01-15T00:00:00",
+  "nodes": [
+    {
+      "node_id": "us-central1",
+      "name": "us-central1 (Iowa)",
+      "location": {
+        "country": "美国",
+        "region": "中部",
+        "city": "爱荷华",
+        "latitude": 41.8780,
+        "longitude": -93.0977
+      },
+      "data_center": "Google Cloud us-central1 Region",
+      "availability_zone": "us-central1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 8.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud us-central1 Region",
+      "launch_date": "2011-04-01T00:00:00"
+    },
+    {
+      "node_id": "us-east1",
+      "name": "us-east1 (South Carolina)",
+      "location": {
+        "country": "美国",
+        "region": "东部",
+        "city": "南卡罗来纳",
+        "latitude": 33.8569,
+        "longitude": -80.9450
+      },
+      "data_center": "Google Cloud us-east1 Region",
+      "availability_zone": "us-east1-b",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud us-east1 Region",
+      "launch_date": "2015-01-01T00:00:00"
+    },
+    {
+      "node_id": "us-east4",
+      "name": "us-east4 (Northern Virginia)",
+      "location": {
+        "country": "美国",
+        "region": "东部",
+        "city": "弗吉尼亚",
+        "latitude": 37.4316,
+        "longitude": -78.6569
+      },
+      "data_center": "Google Cloud us-east4 Region",
+      "availability_zone": "us-east4-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 2.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud us-east4 Region",
+      "launch_date": "2016-10-01T00:00:00"
+    },
+    {
+      "node_id": "us-west1",
+      "name": "us-west1 (Oregon)",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "俄勒冈",
+        "latitude": 45.5152,
+        "longitude": -122.6784
+      },
+      "data_center": "Google Cloud us-west1 Region",
+      "availability_zone": "us-west1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 12.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud us-west1 Region",
+      "launch_date": "2011-04-01T00:00:00"
+    },
+    {
+      "node_id": "us-west2",
+      "name": "us-west2 (Los Angeles)",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "洛杉矶",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+      },
+      "data_center": "Google Cloud us-west2 Region",
+      "availability_zone": "us-west2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 15.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud us-west2 Region",
+      "launch_date": "2016-01-01T00:00:00"
+    },
+    {
+      "node_id": "us-west3",
+      "name": "us-west3 (Salt Lake City)",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "盐湖城",
+        "latitude": 40.7608,
+        "longitude": -111.8910
+      },
+      "data_center": "Google Cloud us-west3 Region",
+      "availability_zone": "us-west3-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 18.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud us-west3 Region",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "us-west4",
+      "name": "us-west4 (Las Vegas)",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "拉斯维加斯",
+        "latitude": 36.1699,
+        "longitude": -115.1398
+      },
+      "data_center": "Google Cloud us-west4 Region",
+      "availability_zone": "us-west4-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 20.1,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud us-west4 Region",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "northamerica-northeast1",
+      "name": "northamerica-northeast1 (Montreal)",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "蒙特利尔",
+        "latitude": 45.5017,
+        "longitude": -73.5673
+      },
+      "data_center": "Google Cloud northamerica-northeast1 Region",
+      "availability_zone": "northamerica-northeast1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 25.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud northamerica-northeast1 Region",
+      "launch_date": "2018-01-01T00:00:00"
+    },
+    {
+      "node_id": "northamerica-northeast2",
+      "name": "northamerica-northeast2 (Toronto)",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "多伦多",
+        "latitude": 43.6532,
+        "longitude": -79.3832
+      },
+      "data_center": "Google Cloud northamerica-northeast2 Region",
+      "availability_zone": "northamerica-northeast2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 22.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud northamerica-northeast2 Region",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "southamerica-east1",
+      "name": "southamerica-east1 (São Paulo)",
+      "location": {
+        "country": "巴西",
+        "region": "南美洲",
+        "city": "圣保罗",
+        "latitude": -23.5505,
+        "longitude": -46.6333
+      },
+      "data_center": "Google Cloud southamerica-east1 Region",
+      "availability_zone": "southamerica-east1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 325.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud southamerica-east1 Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west1",
+      "name": "europe-west1 (Belgium)",
+      "location": {
+        "country": "比利时",
+        "region": "欧洲",
+        "city": "布鲁塞尔",
+        "latitude": 50.8503,
+        "longitude": 4.3517
+      },
+      "data_center": "Google Cloud europe-west1 Region",
+      "availability_zone": "europe-west1-b",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 245.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west1 Region",
+      "launch_date": "2011-04-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west2",
+      "name": "europe-west2 (London)",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "伦敦",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "data_center": "Google Cloud europe-west2 Region",
+      "availability_zone": "europe-west2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 248.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west2 Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west3",
+      "name": "europe-west3 (Frankfurt)",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "法兰克福",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      "data_center": "Google Cloud europe-west3 Region",
+      "availability_zone": "europe-west3-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 225.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west3 Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west4",
+      "name": "europe-west4 (Netherlands)",
+      "location": {
+        "country": "荷兰",
+        "region": "欧洲",
+        "city": "阿姆斯特丹",
+        "latitude": 52.3676,
+        "longitude": 4.9041
+      },
+      "data_center": "Google Cloud europe-west4 Region",
+      "availability_zone": "europe-west4-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 252.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west4 Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west6",
+      "name": "europe-west6 (Zurich)",
+      "location": {
+        "country": "瑞士",
+        "region": "欧洲",
+        "city": "苏黎世",
+        "latitude": 47.3769,
+        "longitude": 8.5417
+      },
+      "data_center": "Google Cloud europe-west6 Region",
+      "availability_zone": "europe-west6-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 235.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west6 Region",
+      "launch_date": "2019-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west8",
+      "name": "europe-west8 (Milan)",
+      "location": {
+        "country": "意大利",
+        "region": "欧洲",
+        "city": "米兰",
+        "latitude": 45.4642,
+        "longitude": 9.1900
+      },
+      "data_center": "Google Cloud europe-west8 Region",
+      "availability_zone": "europe-west8-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 242.1,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west8 Region",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west9",
+      "name": "europe-west9 (Paris)",
+      "location": {
+        "country": "法国",
+        "region": "欧洲",
+        "city": "巴黎",
+        "latitude": 48.8566,
+        "longitude": 2.3522
+      },
+      "data_center": "Google Cloud europe-west9 Region",
+      "availability_zone": "europe-west9-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 238.9,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west9 Region",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west10",
+      "name": "europe-west10 (Berlin)",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "柏林",
+        "latitude": 52.5200,
+        "longitude": 13.4050
+      },
+      "data_center": "Google Cloud europe-west10 Region",
+      "availability_zone": "europe-west10-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 228.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west10 Region",
+      "launch_date": "2022-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-west12",
+      "name": "europe-west12 (Turin)",
+      "location": {
+        "country": "意大利",
+        "region": "欧洲",
+        "city": "都灵",
+        "latitude": 45.0703,
+        "longitude": 7.6869
+      },
+      "data_center": "Google Cloud europe-west12 Region",
+      "availability_zone": "europe-west12-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 245.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-west12 Region",
+      "launch_date": "2023-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-central2",
+      "name": "europe-central2 (Warsaw)",
+      "location": {
+        "country": "波兰",
+        "region": "欧洲",
+        "city": "华沙",
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "data_center": "Google Cloud europe-central2 Region",
+      "availability_zone": "europe-central2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 258.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-central2 Region",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-north1",
+      "name": "europe-north1 (Finland)",
+      "location": {
+        "country": "芬兰",
+        "region": "欧洲",
+        "city": "赫尔辛基",
+        "latitude": 60.1699,
+        "longitude": 24.9384
+      },
+      "data_center": "Google Cloud europe-north1 Region",
+      "availability_zone": "europe-north1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 265.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-north1 Region",
+      "launch_date": "2018-01-01T00:00:00"
+    },
+    {
+      "node_id": "europe-southwest1",
+      "name": "europe-southwest1 (Madrid)",
+      "location": {
+        "country": "西班牙",
+        "region": "欧洲",
+        "city": "马德里",
+        "latitude": 40.4168,
+        "longitude": -3.7038
+      },
+      "data_center": "Google Cloud europe-southwest1 Region",
+      "availability_zone": "europe-southwest1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 248.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud europe-southwest1 Region",
+      "launch_date": "2022-01-01T00:00:00"
+    },
+    {
+      "node_id": "asia-east1",
+      "name": "asia-east1 (Taiwan)",
+      "location": {
+        "country": "中国台湾",
+        "region": "东亚",
+        "city": "台北",
+        "latitude": 25.0330,
+        "longitude": 121.5654
+      },
+      "data_center": "Google Cloud asia-east1 Region",
+      "availability_zone": "asia-east1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 25.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-east1 Region",
+      "launch_date": "2013-12-01T00:00:00"
+    },
+    {
+      "node_id": "asia-northeast1",
+      "name": "asia-northeast1 (Tokyo)",
+      "location": {
+        "country": "日本",
+        "region": "东亚",
+        "city": "东京",
+        "latitude": 35.6762,
+        "longitude": 139.6503
+      },
+      "data_center": "Google Cloud asia-northeast1 Region",
+      "availability_zone": "asia-northeast1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 38.9,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-northeast1 Region",
+      "launch_date": "2016-01-01T00:00:00"
+    },
+    {
+      "node_id": "asia-northeast2",
+      "name": "asia-northeast2 (Osaka)",
+      "location": {
+        "country": "日本",
+        "region": "东亚",
+        "city": "大阪",
+        "latitude": 34.6937,
+        "longitude": 135.5023
+      },
+      "data_center": "Google Cloud asia-northeast2 Region",
+      "availability_zone": "asia-northeast2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 42.1,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-northeast2 Region",
+      "launch_date": "2019-01-01T00:00:00"
+    },
+    {
+      "node_id": "asia-northeast3",
+      "name": "asia-northeast3 (Seoul)",
+      "location": {
+        "country": "韩国",
+        "region": "东亚",
+        "city": "首尔",
+        "latitude": 37.5665,
+        "longitude": 126.9780
+      },
+      "data_center": "Google Cloud asia-northeast3 Region",
+      "availability_zone": "asia-northeast3-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 45.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-northeast3 Region",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "asia-south1",
+      "name": "asia-south1 (Mumbai)",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "孟买",
+        "latitude": 19.0760,
+        "longitude": 72.8777
+      },
+      "data_center": "Google Cloud asia-south1 Region",
+      "availability_zone": "asia-south1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 92.3,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-south1 Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "asia-south2",
+      "name": "asia-south2 (Delhi)",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "德里",
+        "latitude": 28.7041,
+        "longitude": 77.1025
+      },
+      "data_center": "Google Cloud asia-south2 Region",
+      "availability_zone": "asia-south2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 95.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-south2 Region",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "asia-southeast1",
+      "name": "asia-southeast1 (Singapore)",
+      "location": {
+        "country": "新加坡",
+        "region": "东南亚",
+        "city": "新加坡",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      },
+      "data_center": "Google Cloud asia-southeast1 Region",
+      "availability_zone": "asia-southeast1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 52.1,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-southeast1 Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "asia-southeast2",
+      "name": "asia-southeast2 (Jakarta)",
+      "location": {
+        "country": "印度尼西亚",
+        "region": "东南亚",
+        "city": "雅加达",
+        "latitude": -6.2088,
+        "longitude": 106.8456
+      },
+      "data_center": "Google Cloud asia-southeast2 Region",
+      "availability_zone": "asia-southeast2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 78.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud asia-southeast2 Region",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "australia-southeast1",
+      "name": "australia-southeast1 (Sydney)",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "data_center": "Google Cloud australia-southeast1 Region",
+      "availability_zone": "australia-southeast1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 125.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud australia-southeast1 Region",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "australia-southeast2",
+      "name": "australia-southeast2 (Melbourne)",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "墨尔本",
+        "latitude": -37.8136,
+        "longitude": 144.9631
+      },
+      "data_center": "Google Cloud australia-southeast2 Region",
+      "availability_zone": "australia-southeast2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 128.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud australia-southeast2 Region",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "me-west1",
+      "name": "me-west1 (Tel Aviv)",
+      "location": {
+        "country": "以色列",
+        "region": "中东",
+        "city": "特拉维夫",
+        "latitude": 32.0853,
+        "longitude": 34.7818
+      },
+      "data_center": "Google Cloud me-west1 Region",
+      "availability_zone": "me-west1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 285.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud me-west1 Region",
+      "launch_date": "2022-01-01T00:00:00"
+    },
+    {
+      "node_id": "me-central1",
+      "name": "me-central1 (Doha)",
+      "location": {
+        "country": "卡塔尔",
+        "region": "中东",
+        "city": "多哈",
+        "latitude": 25.2854,
+        "longitude": 51.5310
+      },
+      "data_center": "Google Cloud me-central1 Region",
+      "availability_zone": "me-central1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 295.8,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud me-central1 Region",
+      "launch_date": "2023-01-01T00:00:00"
+    },
+    {
+      "node_id": "me-central2",
+      "name": "me-central2 (Riyadh)",
+      "location": {
+        "country": "沙特阿拉伯",
+        "region": "中东",
+        "city": "利雅得",
+        "latitude": 24.7136,
+        "longitude": 46.6753
+      },
+      "data_center": "Google Cloud me-central2 Region",
+      "availability_zone": "me-central2-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 305.2,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud me-central2 Region",
+      "launch_date": "2024-01-01T00:00:00"
+    },
+    {
+      "node_id": "africa-south1",
+      "name": "africa-south1 (Johannesburg)",
+      "location": {
+        "country": "南非",
+        "region": "非洲",
+        "city": "约翰内斯堡",
+        "latitude": -26.2041,
+        "longitude": 28.0473
+      },
+      "data_center": "Google Cloud africa-south1 Region",
+      "availability_zone": "africa-south1-a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 320.5,
+        "uptime": 99.99
+      },
+      "description": "Google Cloud africa-south1 Region",
+      "launch_date": "2022-01-01T00:00:00"
+    }
+  ]
+} 

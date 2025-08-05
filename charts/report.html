@@ -1,0 +1,282 @@
+
+        <!DOCTYPE html>
+        <html lang="zh-CN">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>云厂商全球节点数据报告</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+                .container { max-width: 1200px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+                h1 { color: #333; text-align: center; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
+                h2 { color: #007bff; margin-top: 30px; }
+                .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
+                .stat-card { background-color: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #007bff; }
+                .chart-container { text-align: center; margin: 20px 0; }
+                .chart-container img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #007bff; color: white; }
+                tr:nth-child(even) { background-color: #f2f2f2; }
+                .footer { text-align: center; margin-top: 40px; color: #666; font-size: 14px; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>🌍 云厂商全球节点数据报告</h1>
+                
+                <h2>📊 总体统计</h2>
+                <div class="stats-grid">
+        
+                    <div class="stat-card">
+                        <h3>总节点数</h3>
+                        <p style="font-size: 24px; font-weight: bold; color: #007bff;">140</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>覆盖国家/地区</h3>
+                        <p style="font-size: 24px; font-weight: bold; color: #28a745;">35</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>云厂商数量</h3>
+                        <p style="font-size: 24px; font-weight: bold; color: #ffc107;">6</p>
+                    </div>
+                </div>
+        
+                <h2>🏢 各云厂商详细统计</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>云厂商</th>
+                            <th>节点数量</th>
+                            <th>覆盖国家</th>
+                            <th>服务类型</th>
+                            <th>最后更新</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        
+                        <tr>
+                            <td><strong>alibaba_cloud</strong></td>
+                            <td>12</td>
+                            <td>8</td>
+                            <td>compute, storage, network, database, cdn, ai, security</td>
+                            <td>2024-01-15</td>
+                        </tr>
+            
+                        <tr>
+                            <td><strong>huawei_cloud</strong></td>
+                            <td>16</td>
+                            <td>10</td>
+                            <td>compute, storage, network, database, cdn, ai, security</td>
+                            <td>2024-01-15</td>
+                        </tr>
+            
+                        <tr>
+                            <td><strong>tencent_cloud</strong></td>
+                            <td>18</td>
+                            <td>9</td>
+                            <td>compute, storage, network, database, cdn, ai, security</td>
+                            <td>2024-01-15</td>
+                        </tr>
+            
+                        <tr>
+                            <td><strong>aws</strong></td>
+                            <td>24</td>
+                            <td>18</td>
+                            <td>compute, storage, network, database, cdn, ai, security</td>
+                            <td>2024-01-15</td>
+                        </tr>
+            
+                        <tr>
+                            <td><strong>azure</strong></td>
+                            <td>34</td>
+                            <td>19</td>
+                            <td>compute, storage, network, database, cdn, ai, security</td>
+                            <td>2024-01-15</td>
+                        </tr>
+            
+                        <tr>
+                            <td><strong>google_cloud</strong></td>
+                            <td>36</td>
+                            <td>24</td>
+                            <td>compute, storage, network, database, cdn, ai, security</td>
+                            <td>2024-01-15</td>
+                        </tr>
+            
+                    </tbody>
+                </table>
+        
+                <h2>📈 可视化图表</h2>
+        
+                <div class="chart-container">
+                    <h3>云厂商对比</h3>
+                    <img src="provider_comparison.png" alt="云厂商对比">
+                </div>
+                
+                <div class="chart-container">
+                    <h3>全球覆盖分布</h3>
+                    <img src="global_coverage.png" alt="全球覆盖分布">
+                </div>
+                
+                <div class="chart-container">
+                    <h3>服务类型分布</h3>
+                    <img src="service_distribution.png" alt="服务类型分布">
+                </div>
+                
+                <div class="chart-container">
+                    <h3>地区分布</h3>
+                    <img src="regional_distribution.png" alt="地区分布">
+                </div>
+                
+                <div class="chart-container">
+                    <h3>网络性能对比</h3>
+                    <img src="network_performance.png" alt="网络性能对比">
+                </div>
+                
+                <div class="chart-container">
+                    <h3>上线时间线</h3>
+                    <img src="launch_timeline.png" alt="上线时间线">
+                </div>
+                
+                <h2>🌐 全球覆盖统计 (前20个国家/地区)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>排名</th>
+                            <th>国家/地区</th>
+                            <th>节点数量</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        
+                        <tr>
+                            <td>1</td>
+                            <td>中国</td>
+                            <td>22</td>
+                        </tr>
+            
+                        <tr>
+                            <td>2</td>
+                            <td>美国</td>
+                            <td>20</td>
+                        </tr>
+            
+                        <tr>
+                            <td>3</td>
+                            <td>印度</td>
+                            <td>10</td>
+                        </tr>
+            
+                        <tr>
+                            <td>4</td>
+                            <td>澳大利亚</td>
+                            <td>7</td>
+                        </tr>
+            
+                        <tr>
+                            <td>5</td>
+                            <td>日本</td>
+                            <td>7</td>
+                        </tr>
+            
+                        <tr>
+                            <td>6</td>
+                            <td>新加坡</td>
+                            <td>6</td>
+                        </tr>
+            
+                        <tr>
+                            <td>7</td>
+                            <td>德国</td>
+                            <td>6</td>
+                        </tr>
+            
+                        <tr>
+                            <td>8</td>
+                            <td>英国</td>
+                            <td>5</td>
+                        </tr>
+            
+                        <tr>
+                            <td>9</td>
+                            <td>南非</td>
+                            <td>5</td>
+                        </tr>
+            
+                        <tr>
+                            <td>10</td>
+                            <td>韩国</td>
+                            <td>5</td>
+                        </tr>
+            
+                        <tr>
+                            <td>11</td>
+                            <td>加拿大</td>
+                            <td>5</td>
+                        </tr>
+            
+                        <tr>
+                            <td>12</td>
+                            <td>阿联酋</td>
+                            <td>4</td>
+                        </tr>
+            
+                        <tr>
+                            <td>13</td>
+                            <td>巴西</td>
+                            <td>4</td>
+                        </tr>
+            
+                        <tr>
+                            <td>14</td>
+                            <td>法国</td>
+                            <td>4</td>
+                        </tr>
+            
+                        <tr>
+                            <td>15</td>
+                            <td>印度尼西亚</td>
+                            <td>3</td>
+                        </tr>
+            
+                        <tr>
+                            <td>16</td>
+                            <td>瑞士</td>
+                            <td>3</td>
+                        </tr>
+            
+                        <tr>
+                            <td>17</td>
+                            <td>泰国</td>
+                            <td>2</td>
+                        </tr>
+            
+                        <tr>
+                            <td>18</td>
+                            <td>爱尔兰</td>
+                            <td>2</td>
+                        </tr>
+            
+                        <tr>
+                            <td>19</td>
+                            <td>瑞典</td>
+                            <td>2</td>
+                        </tr>
+            
+                        <tr>
+                            <td>20</td>
+                            <td>荷兰</td>
+                            <td>2</td>
+                        </tr>
+            
+                    </tbody>
+                </table>
+                
+                <div class="footer">
+                    <p>报告生成时间: 2025-08-05 23:07:51</p>
+                    <p>数据来源: 各云厂商官方文档</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        

@@ -1,0 +1,535 @@
+{
+  "provider": "aws",
+  "version": "1.0.0",
+  "last_updated": "2024-01-15T00:00:00",
+  "nodes": [
+    {
+      "node_id": "us-east-1",
+      "name": "US East (N. Virginia)",
+      "location": {
+        "country": "美国",
+        "region": "东部",
+        "city": "弗吉尼亚",
+        "latitude": 37.4316,
+        "longitude": -78.6569
+      },
+      "data_center": "AWS US East (N. Virginia) Region",
+      "availability_zone": "us-east-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 2.1,
+        "uptime": 99.99
+      },
+      "description": "AWS US East (N. Virginia) Region - First AWS region",
+      "launch_date": "2006-03-14T00:00:00"
+    },
+    {
+      "node_id": "us-east-2",
+      "name": "US East (Ohio)",
+      "location": {
+        "country": "美国",
+        "region": "东部",
+        "city": "俄亥俄",
+        "latitude": 39.9612,
+        "longitude": -82.9988
+      },
+      "data_center": "AWS US East (Ohio) Region",
+      "availability_zone": "us-east-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.8,
+        "uptime": 99.99
+      },
+      "description": "AWS US East (Ohio) Region",
+      "launch_date": "2016-10-17T00:00:00"
+    },
+    {
+      "node_id": "us-west-1",
+      "name": "US West (N. California)",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "北加利福尼亚",
+        "latitude": 37.7749,
+        "longitude": -122.4194
+      },
+      "data_center": "AWS US West (N. California) Region",
+      "availability_zone": "us-west-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.2,
+        "uptime": 99.99
+      },
+      "description": "AWS US West (N. California) Region",
+      "launch_date": "2009-12-03T00:00:00"
+    },
+    {
+      "node_id": "us-west-2",
+      "name": "US West (Oregon)",
+      "location": {
+        "country": "美国",
+        "region": "西部",
+        "city": "俄勒冈",
+        "latitude": 45.5152,
+        "longitude": -122.6784
+      },
+      "data_center": "AWS US West (Oregon) Region",
+      "availability_zone": "us-west-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.1,
+        "uptime": 99.99
+      },
+      "description": "AWS US West (Oregon) Region",
+      "launch_date": "2011-11-29T00:00:00"
+    },
+    {
+      "node_id": "af-south-1",
+      "name": "Africa (Cape Town)",
+      "location": {
+        "country": "南非",
+        "region": "非洲",
+        "city": "开普敦",
+        "latitude": -33.9249,
+        "longitude": 18.4241
+      },
+      "data_center": "AWS Africa (Cape Town) Region",
+      "availability_zone": "af-south-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 280.5,
+        "uptime": 99.99
+      },
+      "description": "AWS Africa (Cape Town) Region",
+      "launch_date": "2020-04-22T00:00:00"
+    },
+    {
+      "node_id": "ap-east-1",
+      "name": "Asia Pacific (Hong Kong)",
+      "location": {
+        "country": "中国",
+        "region": "香港",
+        "city": "香港",
+        "latitude": 22.3193,
+        "longitude": 114.1694
+      },
+      "data_center": "AWS Asia Pacific (Hong Kong) Region",
+      "availability_zone": "ap-east-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 18.5,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Hong Kong) Region",
+      "launch_date": "2019-04-25T00:00:00"
+    },
+    {
+      "node_id": "ap-south-1",
+      "name": "Asia Pacific (Mumbai)",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "孟买",
+        "latitude": 19.0760,
+        "longitude": 72.8777
+      },
+      "data_center": "AWS Asia Pacific (Mumbai) Region",
+      "availability_zone": "ap-south-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 92.3,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Mumbai) Region",
+      "launch_date": "2016-06-27T00:00:00"
+    },
+    {
+      "node_id": "ap-south-2",
+      "name": "Asia Pacific (Hyderabad)",
+      "location": {
+        "country": "印度",
+        "region": "南亚",
+        "city": "海得拉巴",
+        "latitude": 17.3850,
+        "longitude": 78.4867
+      },
+      "data_center": "AWS Asia Pacific (Hyderabad) Region",
+      "availability_zone": "ap-south-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 95.8,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Hyderabad) Region",
+      "launch_date": "2022-11-22T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-1",
+      "name": "Asia Pacific (Singapore)",
+      "location": {
+        "country": "新加坡",
+        "region": "东南亚",
+        "city": "新加坡",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      },
+      "data_center": "AWS Asia Pacific (Singapore) Region",
+      "availability_zone": "ap-southeast-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 52.1,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Singapore) Region",
+      "launch_date": "2010-04-29T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-2",
+      "name": "Asia Pacific (Sydney)",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "data_center": "AWS Asia Pacific (Sydney) Region",
+      "availability_zone": "ap-southeast-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 125.8,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Sydney) Region",
+      "launch_date": "2012-11-12T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-3",
+      "name": "Asia Pacific (Jakarta)",
+      "location": {
+        "country": "印度尼西亚",
+        "region": "东南亚",
+        "city": "雅加达",
+        "latitude": -6.2088,
+        "longitude": 106.8456
+      },
+      "data_center": "AWS Asia Pacific (Jakarta) Region",
+      "availability_zone": "ap-southeast-3a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 78.5,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Jakarta) Region",
+      "launch_date": "2021-12-15T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-4",
+      "name": "Asia Pacific (Melbourne)",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "墨尔本",
+        "latitude": -37.8136,
+        "longitude": 144.9631
+      },
+      "data_center": "AWS Asia Pacific (Melbourne) Region",
+      "availability_zone": "ap-southeast-4a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 128.2,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Melbourne) Region",
+      "launch_date": "2022-12-12T00:00:00"
+    },
+    {
+      "node_id": "ap-northeast-1",
+      "name": "Asia Pacific (Tokyo)",
+      "location": {
+        "country": "日本",
+        "region": "东亚",
+        "city": "东京",
+        "latitude": 35.6762,
+        "longitude": 139.6503
+      },
+      "data_center": "AWS Asia Pacific (Tokyo) Region",
+      "availability_zone": "ap-northeast-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 38.9,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Tokyo) Region",
+      "launch_date": "2011-03-02T00:00:00"
+    },
+    {
+      "node_id": "ap-northeast-2",
+      "name": "Asia Pacific (Seoul)",
+      "location": {
+        "country": "韩国",
+        "region": "东亚",
+        "city": "首尔",
+        "latitude": 37.5665,
+        "longitude": 126.9780
+      },
+      "data_center": "AWS Asia Pacific (Seoul) Region",
+      "availability_zone": "ap-northeast-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 45.2,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Seoul) Region",
+      "launch_date": "2016-01-06T00:00:00"
+    },
+    {
+      "node_id": "ap-northeast-3",
+      "name": "Asia Pacific (Osaka)",
+      "location": {
+        "country": "日本",
+        "region": "东亚",
+        "city": "大阪",
+        "latitude": 34.6937,
+        "longitude": 135.5023
+      },
+      "data_center": "AWS Asia Pacific (Osaka) Region",
+      "availability_zone": "ap-northeast-3a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 42.1,
+        "uptime": 99.99
+      },
+      "description": "AWS Asia Pacific (Osaka) Region",
+      "launch_date": "2018-03-01T00:00:00"
+    },
+    {
+      "node_id": "eu-central-1",
+      "name": "Europe (Frankfurt)",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "法兰克福",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      "data_center": "AWS Europe (Frankfurt) Region",
+      "availability_zone": "eu-central-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 225.8,
+        "uptime": 99.99
+      },
+      "description": "AWS Europe (Frankfurt) Region",
+      "launch_date": "2014-10-23T00:00:00"
+    },
+    {
+      "node_id": "eu-west-1",
+      "name": "Europe (Ireland)",
+      "location": {
+        "country": "爱尔兰",
+        "region": "欧洲",
+        "city": "都柏林",
+        "latitude": 53.3498,
+        "longitude": -6.2603
+      },
+      "data_center": "AWS Europe (Ireland) Region",
+      "availability_zone": "eu-west-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 245.2,
+        "uptime": 99.99
+      },
+      "description": "AWS Europe (Ireland) Region",
+      "launch_date": "2007-12-19T00:00:00"
+    },
+    {
+      "node_id": "eu-west-2",
+      "name": "Europe (London)",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "伦敦",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "data_center": "AWS Europe (London) Region",
+      "availability_zone": "eu-west-2a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 248.5,
+        "uptime": 99.99
+      },
+      "description": "AWS Europe (London) Region",
+      "launch_date": "2016-12-13T00:00:00"
+    },
+    {
+      "node_id": "eu-west-3",
+      "name": "Europe (Paris)",
+      "location": {
+        "country": "法国",
+        "region": "欧洲",
+        "city": "巴黎",
+        "latitude": 48.8566,
+        "longitude": 2.3522
+      },
+      "data_center": "AWS Europe (Paris) Region",
+      "availability_zone": "eu-west-3a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 235.8,
+        "uptime": 99.99
+      },
+      "description": "AWS Europe (Paris) Region",
+      "launch_date": "2017-12-18T00:00:00"
+    },
+    {
+      "node_id": "eu-north-1",
+      "name": "Europe (Stockholm)",
+      "location": {
+        "country": "瑞典",
+        "region": "欧洲",
+        "city": "斯德哥尔摩",
+        "latitude": 59.3293,
+        "longitude": 18.0686
+      },
+      "data_center": "AWS Europe (Stockholm) Region",
+      "availability_zone": "eu-north-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 265.2,
+        "uptime": 99.99
+      },
+      "description": "AWS Europe (Stockholm) Region",
+      "launch_date": "2018-12-12T00:00:00"
+    },
+    {
+      "node_id": "sa-east-1",
+      "name": "South America (São Paulo)",
+      "location": {
+        "country": "巴西",
+        "region": "南美洲",
+        "city": "圣保罗",
+        "latitude": -23.5505,
+        "longitude": -46.6333
+      },
+      "data_center": "AWS South America (São Paulo) Region",
+      "availability_zone": "sa-east-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 325.8,
+        "uptime": 99.99
+      },
+      "description": "AWS South America (São Paulo) Region",
+      "launch_date": "2011-12-14T00:00:00"
+    },
+    {
+      "node_id": "ca-central-1",
+      "name": "Canada (Central)",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "多伦多",
+        "latitude": 43.6532,
+        "longitude": -79.3832
+      },
+      "data_center": "AWS Canada (Central) Region",
+      "availability_zone": "ca-central-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 15.8,
+        "uptime": 99.99
+      },
+      "description": "AWS Canada (Central) Region",
+      "launch_date": "2016-12-08T00:00:00"
+    },
+    {
+      "node_id": "me-south-1",
+      "name": "Middle East (Bahrain)",
+      "location": {
+        "country": "巴林",
+        "region": "中东",
+        "city": "麦纳麦",
+        "latitude": 26.2285,
+        "longitude": 50.5860
+      },
+      "data_center": "AWS Middle East (Bahrain) Region",
+      "availability_zone": "me-south-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 285.2,
+        "uptime": 99.99
+      },
+      "description": "AWS Middle East (Bahrain) Region",
+      "launch_date": "2019-07-29T00:00:00"
+    },
+    {
+      "node_id": "me-central-1",
+      "name": "Middle East (UAE)",
+      "location": {
+        "country": "阿联酋",
+        "region": "中东",
+        "city": "阿布扎比",
+        "latitude": 24.4539,
+        "longitude": 54.3773
+      },
+      "data_center": "AWS Middle East (UAE) Region",
+      "availability_zone": "me-central-1a",
+      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 295.8,
+        "uptime": 99.99
+      },
+      "description": "AWS Middle East (UAE) Region",
+      "launch_date": "2022-08-30T00:00:00"
+    }
+  ]
+} 
