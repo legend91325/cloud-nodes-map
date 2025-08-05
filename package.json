@@ -4,11 +4,13 @@
   "description": "云服务提供商全球节点布局地图",
   "main": "index.html",
   "scripts": {
-    "dev": "npx serve .",
+    "dev": "node scripts/dev-server.js",
+    "dev:serve": "npx serve .",
     "build": "node scripts/compress.js",
-    "start": "npx serve .",
+    "start": "node scripts/dev-server.js",
     "compress": "node scripts/compress.js",
-    "verify": "node scripts/verify.js"
+    "verify": "node scripts/verify.js",
+    "deploy": "node scripts/deploy.js"
   },
   "keywords": [
     "cloud",

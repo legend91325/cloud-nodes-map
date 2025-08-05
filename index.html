@@ -488,20 +488,32 @@
                 // 添加加载指示器
                 showLoadingIndicator();
                 
+                // 设置超时时间
+                const timeout = 10000; // 10秒超时
+                
+                const fetchWithTimeout = (url, options = {}) => {
+                    return Promise.race([
+                        fetch(url, options),
+                        new Promise((_, reject) => 
+                            setTimeout(() => reject(new Error('请求超时')), timeout)
+                        )
+                    ]);
+                };
+                
                 const [aliyunData, huaweiData, tencentData] = await Promise.all([
-                    fetch('./aliyun_nodes_complete_min.json', {
+                    fetchWithTimeout('./aliyun_nodes_complete_min.json', {
                         headers: { 'Cache-Control': 'max-age=3600' }
                     }).then(res => {
                         if (!res.ok) throw new Error(`HTTP ${res.status}`);
                         return res.json();
                     }),
-                    fetch('./huaweicloud_nodes_complete_min.json', {
+                    fetchWithTimeout('./huaweicloud_nodes_complete_min.json', {
                         headers: { 'Cache-Control': 'max-age=3600' }
                     }).then(res => {
                         if (!res.ok) throw new Error(`HTTP ${res.status}`);
                         return res.json();
                     }),
-                    fetch('./tencentcloud_nodes_complete_min.json', {
+                    fetchWithTimeout('./tencentcloud_nodes_complete_min.json', {
                         headers: { 'Cache-Control': 'max-age=3600' }
                     }).then(res => {
                         if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -545,6 +557,36 @@
                 
             } catch (error) {
                 console.error('加载数据失败:', error);
+                
+                // 显示错误信息
+                const errorDiv = document.createElement('div');
+                errorDiv.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #ff6b6b;
+                    color: white;
+                    padding: 15px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                    z-index: 10000;
+                    max-width: 300px;
+                    font-size: 14px;
+                `;
+                errorDiv.innerHTML = `
+                    <strong>⚠️ 数据加载失败</strong><br>
+                    错误: ${error.message}<br>
+                    正在使用默认数据...
+                `;
+                document.body.appendChild(errorDiv);
+                
+                // 3秒后移除错误信息
+                setTimeout(() => {
+                    if (errorDiv.parentNode) {
+                        errorDiv.parentNode.removeChild(errorDiv);
+                    }
+                }, 3000);
+                
                 // 如果加载失败，使用默认数据
                 useDefaultData();
             }
