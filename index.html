@@ -489,19 +489,19 @@
                 showLoadingIndicator();
                 
                 const [aliyunData, huaweiData, tencentData] = await Promise.all([
-                    fetch('./aliyun_nodes_complete.json', {
+                    fetch('./aliyun_nodes_complete_min.json', {
                         headers: { 'Cache-Control': 'max-age=3600' }
                     }).then(res => {
                         if (!res.ok) throw new Error(`HTTP ${res.status}`);
                         return res.json();
                     }),
-                    fetch('./huaweicloud_nodes_complete.json', {
+                    fetch('./huaweicloud_nodes_complete_min.json', {
                         headers: { 'Cache-Control': 'max-age=3600' }
                     }).then(res => {
                         if (!res.ok) throw new Error(`HTTP ${res.status}`);
                         return res.json();
                     }),
-                    fetch('./tencentcloud_nodes_complete.json', {
+                    fetch('./tencentcloud_nodes_complete_min.json', {
                         headers: { 'Cache-Control': 'max-age=3600' }
                     }).then(res => {
                         if (!res.ok) throw new Error(`HTTP ${res.status}`);
