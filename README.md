@@ -92,6 +92,9 @@ npm install
 # 压缩 JSON 文件（优化加载速度）
 npm run compress
 
+# 验证项目配置
+npm run verify
+
 # 启动本地服务器
 npm run dev
 
