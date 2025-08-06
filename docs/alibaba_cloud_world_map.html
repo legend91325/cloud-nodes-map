@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿里云全球基础设施分布图</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        .map-container {
+            height: 600px;
+            padding: 20px;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .timeline {
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .timeline h3 {
+            text-align: center;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+        .timeline-content {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px 0;
+        }
+        .timeline-item {
+            min-width: 200px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #ff6b6b;
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 1.1em;
+        }
+        .timeline-nodes {
+            margin-top: 8px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 阿里云全球基础设施分布图</h1>
+            <p>Alibaba Cloud Global Infrastructure Distribution</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">29</div>
+                <div class="stat-label">地理区域</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">89</div>
+                <div class="stat-label">可用区</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">16</div>
+                <div class="stat-label">国家/地区</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">14</div>
+                <div class="stat-label">发展年限</div>
+            </div>
+        </div>
+        
+        <div class="map-container" id="worldMap"></div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff6b6b;"></div>
+                <span>中国内地 (14个节点)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4ecdc4;"></div>
+                <span>亚太地区 (8个节点)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #45b7d1;"></div>
+                <span>欧美地区 (4个节点)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #96ceb4;"></div>
+                <span>其他地区 (3个节点)</span>
+            </div>
+        </div>
+        
+        <div class="timeline">
+            <h3>📈 发展时间线 (2011-2025)</h3>
+            <div class="timeline-content">
+                <div class="timeline-item">
+                    <div class="timeline-year">2011-2015</div>
+                    <div class="timeline-nodes">起步阶段<br>5个节点</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2016-2020</div>
+                    <div class="timeline-nodes">快速扩张<br>11个节点</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021-2025</div>
+                    <div class="timeline-nodes">精细化布局<br>13个节点</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 阿里云节点数据
+        const alibabaCloudNodes = [
+            // 中国内地节点
+            {name: '杭州', value: [120.1551, 30.2741, 8], category: '中国内地', year: 2011, region: '华东1'},
+            {name: '上海', value: [121.4737, 31.2304, 11], category: '中国内地', year: 2015, region: '华东2'},
+            {name: '北京', value: [116.4074, 39.9042, 12], category: '中国内地', year: 2013, region: '华北2'},
+            {name: '青岛', value: [120.3826, 36.0671, 2], category: '中国内地', year: 2012, region: '华北1'},
+            {name: '张家口', value: [114.8867, 40.7686, 3], category: '中国内地', year: 2014, region: '华北3'},
+            {name: '呼和浩特', value: [111.7492, 40.8429, 2], category: '中国内地', year: 2017, region: '华北5'},
+            {name: '乌兰察布', value: [113.1145, 41.0173, 3], category: '中国内地', year: 2020, region: '华北6'},
+            {name: '深圳', value: [114.1694, 22.3193, 6], category: '中国内地', year: 2014, region: '华南1'},
+            {name: '河源', value: [114.6978, 23.7435, 2], category: '中国内地', year: 2020, region: '华南2'},
+            {name: '广州', value: [113.2644, 23.1291, 2], category: '中国内地', year: 2020, region: '华南3'},
+            {name: '成都', value: [104.0668, 30.5728, 2], category: '中国内地', year: 2020, region: '西南1'},
+            {name: '南京', value: [118.7969, 32.0603, 1], category: '中国内地', year: 2021, region: '华东5'},
+            {name: '福州', value: [119.2965, 26.0745, 1], category: '中国内地', year: 2022, region: '华东6'},
+            {name: '武汉', value: [114.3055, 30.5928, 1], category: '中国内地', year: 2023, region: '华中1'},
+            
+            // 亚太地区节点
+            {name: '香港', value: [114.1694, 22.3193, 3], category: '亚太地区', year: 2014, region: '中国香港'},
+            {name: '新加坡', value: [103.8198, 1.3521, 3], category: '亚太地区', year: 2015, region: '新加坡'},
+            {name: '吉隆坡', value: [101.6869, 3.1390, 3], category: '亚太地区', year: 2017, region: '马来西亚'},
+            {name: '雅加达', value: [106.8456, -6.2088, 3], category: '亚太地区', year: 2018, region: '印度尼西亚'},
+            {name: '马尼拉', value: [120.9842, 14.5995, 1], category: '亚太地区', year: 2021, region: '菲律宾'},
+            {name: '曼谷', value: [100.5018, 13.7563, 2], category: '亚太地区', year: 2022, region: '泰国'},
+            {name: '东京', value: [139.6503, 35.6762, 3], category: '亚太地区', year: 2016, region: '日本'},
+            {name: '首尔', value: [126.9780, 37.5665, 2], category: '亚太地区', year: 2022, region: '韩国'},
+            {name: '悉尼', value: [151.2093, -33.8688, 2], category: '亚太地区', year: 2016, region: '澳大利亚'},
+            {name: '孟买', value: [72.8777, 19.0760, 2], category: '亚太地区', year: 2018, region: '印度'},
+            
+            // 欧美地区节点
+            {name: '硅谷', value: [-122.4194, 37.7749, 2], category: '欧美地区', year: 2014, region: '美国'},
+            {name: '弗吉尼亚', value: [-78.6569, 37.4316, 2], category: '欧美地区', year: 2015, region: '美国'},
+            {name: '法兰克福', value: [8.6821, 50.1109, 3], category: '欧美地区', year: 2016, region: '德国'},
+            {name: '伦敦', value: [-0.1278, 51.5074, 2], category: '欧美地区', year: 2018, region: '英国'},
+            
+            // 其他地区节点
+            {name: '迪拜', value: [55.2708, 25.2048, 1], category: '其他地区', year: 2016, region: '阿联酋'},
+            {name: '利雅得', value: [46.6753, 24.7136, 2], category: '其他地区', year: 2022, region: '沙特阿拉伯'},
+            {name: '克雷塔罗', value: [-100.3899, 20.5888, 1], category: '其他地区', year: 2025, region: '墨西哥'}
+        ];
+
+        // 初始化图表
+        const chart = echarts.init(document.getElementById('worldMap'));
+        
+        // 配置项
+        const option = {
+            backgroundColor: '#ffffff',
+            title: {
+                text: '阿里云全球节点分布',
+                subtext: '数据来源：阿里云官方网站',
+                left: 'center',
+                textStyle: {
+                    color: '#333',
+                    fontSize: 20
+                },
+                subtextStyle: {
+                    color: '#666',
+                    fontSize: 12
+                }
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: function(params) {
+                    if (params.data) {
+                        const data = params.data;
+                        return `
+                            <div style="padding: 10px;">
+                                <h4 style="margin: 0 0 10px 0; color: #333;">${data.name}</h4>
+                                <p style="margin: 5px 0;"><strong>区域:</strong> ${data.region}</p>
+                                <p style="margin: 5px 0;"><strong>可用区:</strong> ${data.value[2]}个</p>
+                                <p style="margin: 5px 0;"><strong>推出时间:</strong> ${data.year}年</p>
+                                <p style="margin: 5px 0;"><strong>类别:</strong> ${data.category}</p>
+                            </div>
+                        `;
+                    }
+                    return params.name;
+                }
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['中国内地', '亚太地区', '欧美地区', '其他地区'],
+                textStyle: {
+                    color: '#333'
+                }
+            },
+            geo: {
+                map: 'world',
+                roam: true,
+                emphasis: {
+                    label: {
+                        show: false
+                    },
+                    itemStyle: {
+                        areaColor: '#eee'
+                    }
+                },
+                itemStyle: {
+                    areaColor: '#f3f3f3',
+                    borderColor: '#ccc',
+                    borderWidth: 1
+                }
+            },
+            series: [
+                {
+                    name: '阿里云节点',
+                    type: 'scatter',
+                    coordinateSystem: 'geo',
+                    data: alibabaCloudNodes.map(node => ({
+                        ...node,
+                        itemStyle: {
+                            color: getCategoryColor(node.category)
+                        },
+                        symbolSize: Math.max(8, node.value[2] * 2)
+                    })),
+                    symbol: 'circle',
+                    symbolSize: function(val) {
+                        return Math.max(8, val[2] * 2);
+                    },
+                    label: {
+                        show: false
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            formatter: '{b}',
+                            position: 'top'
+                        }
+                    }
+                }
+            ]
+        };
+
+        function getCategoryColor(category) {
+            const colors = {
+                '中国内地': '#ff6b6b',
+                '亚太地区': '#4ecdc4',
+                '欧美地区': '#45b7d1',
+                '其他地区': '#96ceb4'
+            };
+            return colors[category] || '#999';
+        }
+
+        // 渲染图表
+        chart.setOption(option);
+        
+        // 响应式调整
+        window.addEventListener('resize', function() {
+            chart.resize();
+        });
+    </script>
+</body>
+</html> 

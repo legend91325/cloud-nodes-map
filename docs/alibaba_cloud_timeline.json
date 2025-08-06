@@ -1,0 +1,293 @@
+[
+  {
+    "year": 2011,
+    "new_nodes": 1,
+    "new_availability_zones": 8,
+    "cumulative_nodes": 1,
+    "cumulative_availability_zones": 8,
+    "nodes": [
+      {
+        "name": "华东1（杭州）",
+        "country": "中国",
+        "city": "杭州",
+        "availability_zones": 8
+      }
+    ]
+  },
+  {
+    "year": 2012,
+    "new_nodes": 1,
+    "new_availability_zones": 2,
+    "cumulative_nodes": 2,
+    "cumulative_availability_zones": 10,
+    "nodes": [
+      {
+        "name": "华北1（青岛）",
+        "country": "中国",
+        "city": "青岛",
+        "availability_zones": 2
+      }
+    ]
+  },
+  {
+    "year": 2013,
+    "new_nodes": 1,
+    "new_availability_zones": 12,
+    "cumulative_nodes": 3,
+    "cumulative_availability_zones": 22,
+    "nodes": [
+      {
+        "name": "华北2（北京）",
+        "country": "中国",
+        "city": "北京",
+        "availability_zones": 12
+      }
+    ]
+  },
+  {
+    "year": 2014,
+    "new_nodes": 4,
+    "new_availability_zones": 14,
+    "cumulative_nodes": 7,
+    "cumulative_availability_zones": 36,
+    "nodes": [
+      {
+        "name": "华北3（张家口）",
+        "country": "中国",
+        "city": "张家口",
+        "availability_zones": 3
+      },
+      {
+        "name": "华南1（深圳）",
+        "country": "中国",
+        "city": "深圳",
+        "availability_zones": 6
+      },
+      {
+        "name": "美国（硅谷）",
+        "country": "美国",
+        "city": "硅谷",
+        "availability_zones": 2
+      },
+      {
+        "name": "中国香港",
+        "country": "中国",
+        "city": "香港",
+        "availability_zones": 3
+      }
+    ]
+  },
+  {
+    "year": 2015,
+    "new_nodes": 3,
+    "new_availability_zones": 16,
+    "cumulative_nodes": 10,
+    "cumulative_availability_zones": 52,
+    "nodes": [
+      {
+        "name": "华东2（上海）",
+        "country": "中国",
+        "city": "上海",
+        "availability_zones": 11
+      },
+      {
+        "name": "新加坡",
+        "country": "新加坡",
+        "city": "新加坡",
+        "availability_zones": 3
+      },
+      {
+        "name": "美国（弗吉尼亚）",
+        "country": "美国",
+        "city": "弗吉尼亚",
+        "availability_zones": 2
+      }
+    ]
+  },
+  {
+    "year": 2016,
+    "new_nodes": 3,
+    "new_availability_zones": 7,
+    "cumulative_nodes": 13,
+    "cumulative_availability_zones": 59,
+    "nodes": [
+      {
+        "name": "日本（东京）",
+        "country": "日本",
+        "city": "东京",
+        "availability_zones": 3
+      },
+      {
+        "name": "德国（法兰克福）",
+        "country": "德国",
+        "city": "法兰克福",
+        "availability_zones": 3
+      },
+      {
+        "name": "阿联酋（迪拜）",
+        "country": "阿联酋",
+        "city": "迪拜",
+        "availability_zones": 1
+      }
+    ]
+  },
+  {
+    "year": 2017,
+    "new_nodes": 2,
+    "new_availability_zones": 5,
+    "cumulative_nodes": 15,
+    "cumulative_availability_zones": 64,
+    "nodes": [
+      {
+        "name": "华北5（呼和浩特）",
+        "country": "中国",
+        "city": "呼和浩特",
+        "availability_zones": 2
+      },
+      {
+        "name": "马来西亚（吉隆坡）",
+        "country": "马来西亚",
+        "city": "吉隆坡",
+        "availability_zones": 3
+      }
+    ]
+  },
+  {
+    "year": 2018,
+    "new_nodes": 2,
+    "new_availability_zones": 5,
+    "cumulative_nodes": 17,
+    "cumulative_availability_zones": 69,
+    "nodes": [
+      {
+        "name": "印度尼西亚（雅加达）",
+        "country": "印度尼西亚",
+        "city": "雅加达",
+        "availability_zones": 3
+      },
+      {
+        "name": "英国（伦敦）",
+        "country": "英国",
+        "city": "伦敦",
+        "availability_zones": 2
+      }
+    ]
+  },
+  {
+    "year": 2020,
+    "new_nodes": 4,
+    "new_availability_zones": 9,
+    "cumulative_nodes": 21,
+    "cumulative_availability_zones": 78,
+    "nodes": [
+      {
+        "name": "华北6（乌兰察布）",
+        "country": "中国",
+        "city": "乌兰察布",
+        "availability_zones": 3
+      },
+      {
+        "name": "华南2（河源）",
+        "country": "中国",
+        "city": "河源",
+        "availability_zones": 2
+      },
+      {
+        "name": "华南3（广州）",
+        "country": "中国",
+        "city": "广州",
+        "availability_zones": 2
+      },
+      {
+        "name": "西南1（成都）",
+        "country": "中国",
+        "city": "成都",
+        "availability_zones": 2
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "new_nodes": 2,
+    "new_availability_zones": 2,
+    "cumulative_nodes": 23,
+    "cumulative_availability_zones": 80,
+    "nodes": [
+      {
+        "name": "华东5（南京-本地地域）",
+        "country": "中国",
+        "city": "南京",
+        "availability_zones": 1
+      },
+      {
+        "name": "菲律宾（马尼拉）",
+        "country": "菲律宾",
+        "city": "马尼拉",
+        "availability_zones": 1
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "new_nodes": 4,
+    "new_availability_zones": 7,
+    "cumulative_nodes": 27,
+    "cumulative_availability_zones": 87,
+    "nodes": [
+      {
+        "name": "华东6（福州-本地地域）",
+        "country": "中国",
+        "city": "福州",
+        "availability_zones": 1
+      },
+      {
+        "name": "泰国（曼谷）",
+        "country": "泰国",
+        "city": "曼谷",
+        "availability_zones": 2
+      },
+      {
+        "name": "韩国（首尔）",
+        "country": "韩国",
+        "city": "首尔",
+        "availability_zones": 2
+      },
+      {
+        "name": "沙特（利雅得-合作伙伴运营）",
+        "country": "沙特阿拉伯",
+        "city": "利雅得",
+        "availability_zones": 2
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "new_nodes": 1,
+    "new_availability_zones": 1,
+    "cumulative_nodes": 28,
+    "cumulative_availability_zones": 88,
+    "nodes": [
+      {
+        "name": "华中1（武汉-本地地域）",
+        "country": "中国",
+        "city": "武汉",
+        "availability_zones": 1
+      }
+    ]
+  },
+  {
+    "year": 2025,
+    "new_nodes": 1,
+    "new_availability_zones": 1,
+    "cumulative_nodes": 29,
+    "cumulative_availability_zones": 89,
+    "nodes": [
+      {
+        "name": "墨西哥（克雷塔罗）",
+        "country": "墨西哥",
+        "city": "克雷塔罗",
+        "availability_zones": 1
+      }
+    ]
+  }
+]

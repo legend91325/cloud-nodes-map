@@ -1,0 +1,292 @@
+[
+  {
+    "name": "华东1（杭州）",
+    "city": "杭州",
+    "country": "中国",
+    "lat": 30.2741,
+    "lng": 120.1551,
+    "availability_zones": 8,
+    "launch_date": "2011-01-01T00:00:00",
+    "year": 2011
+  },
+  {
+    "name": "华东2（上海）",
+    "city": "上海",
+    "country": "中国",
+    "lat": 31.2304,
+    "lng": 121.4737,
+    "availability_zones": 11,
+    "launch_date": "2015-01-01T00:00:00",
+    "year": 2015
+  },
+  {
+    "name": "华北2（北京）",
+    "city": "北京",
+    "country": "中国",
+    "lat": 39.9042,
+    "lng": 116.4074,
+    "availability_zones": 12,
+    "launch_date": "2013-01-01T00:00:00",
+    "year": 2013
+  },
+  {
+    "name": "华北1（青岛）",
+    "city": "青岛",
+    "country": "中国",
+    "lat": 36.0671,
+    "lng": 120.3826,
+    "availability_zones": 2,
+    "launch_date": "2012-01-01T00:00:00",
+    "year": 2012
+  },
+  {
+    "name": "华北3（张家口）",
+    "city": "张家口",
+    "country": "中国",
+    "lat": 40.7686,
+    "lng": 114.8867,
+    "availability_zones": 3,
+    "launch_date": "2014-01-01T00:00:00",
+    "year": 2014
+  },
+  {
+    "name": "华北5（呼和浩特）",
+    "city": "呼和浩特",
+    "country": "中国",
+    "lat": 40.8429,
+    "lng": 111.7492,
+    "availability_zones": 2,
+    "launch_date": "2017-01-01T00:00:00",
+    "year": 2017
+  },
+  {
+    "name": "华北6（乌兰察布）",
+    "city": "乌兰察布",
+    "country": "中国",
+    "lat": 41.0173,
+    "lng": 113.1145,
+    "availability_zones": 3,
+    "launch_date": "2020-01-01T00:00:00",
+    "year": 2020
+  },
+  {
+    "name": "华南1（深圳）",
+    "city": "深圳",
+    "country": "中国",
+    "lat": 22.3193,
+    "lng": 114.1694,
+    "availability_zones": 6,
+    "launch_date": "2014-01-01T00:00:00",
+    "year": 2014
+  },
+  {
+    "name": "华南2（河源）",
+    "city": "河源",
+    "country": "中国",
+    "lat": 23.7435,
+    "lng": 114.6978,
+    "availability_zones": 2,
+    "launch_date": "2020-01-01T00:00:00",
+    "year": 2020
+  },
+  {
+    "name": "华南3（广州）",
+    "city": "广州",
+    "country": "中国",
+    "lat": 23.1291,
+    "lng": 113.2644,
+    "availability_zones": 2,
+    "launch_date": "2020-01-01T00:00:00",
+    "year": 2020
+  },
+  {
+    "name": "西南1（成都）",
+    "city": "成都",
+    "country": "中国",
+    "lat": 30.5728,
+    "lng": 104.0668,
+    "availability_zones": 2,
+    "launch_date": "2020-01-01T00:00:00",
+    "year": 2020
+  },
+  {
+    "name": "华东5（南京-本地地域）",
+    "city": "南京",
+    "country": "中国",
+    "lat": 32.0603,
+    "lng": 118.7969,
+    "availability_zones": 1,
+    "launch_date": "2021-01-01T00:00:00",
+    "year": 2021
+  },
+  {
+    "name": "华东6（福州-本地地域）",
+    "city": "福州",
+    "country": "中国",
+    "lat": 26.0745,
+    "lng": 119.2965,
+    "availability_zones": 1,
+    "launch_date": "2022-01-01T00:00:00",
+    "year": 2022
+  },
+  {
+    "name": "华中1（武汉-本地地域）",
+    "city": "武汉",
+    "country": "中国",
+    "lat": 30.5928,
+    "lng": 114.3055,
+    "availability_zones": 1,
+    "launch_date": "2023-01-01T00:00:00",
+    "year": 2023
+  },
+  {
+    "name": "新加坡",
+    "city": "新加坡",
+    "country": "新加坡",
+    "lat": 1.3521,
+    "lng": 103.8198,
+    "availability_zones": 3,
+    "launch_date": "2015-01-01T00:00:00",
+    "year": 2015
+  },
+  {
+    "name": "马来西亚（吉隆坡）",
+    "city": "吉隆坡",
+    "country": "马来西亚",
+    "lat": 3.139,
+    "lng": 101.6869,
+    "availability_zones": 3,
+    "launch_date": "2017-01-01T00:00:00",
+    "year": 2017
+  },
+  {
+    "name": "印度尼西亚（雅加达）",
+    "city": "雅加达",
+    "country": "印度尼西亚",
+    "lat": -6.2088,
+    "lng": 106.8456,
+    "availability_zones": 3,
+    "launch_date": "2018-01-01T00:00:00",
+    "year": 2018
+  },
+  {
+    "name": "菲律宾（马尼拉）",
+    "city": "马尼拉",
+    "country": "菲律宾",
+    "lat": 14.5995,
+    "lng": 120.9842,
+    "availability_zones": 1,
+    "launch_date": "2021-01-01T00:00:00",
+    "year": 2021
+  },
+  {
+    "name": "泰国（曼谷）",
+    "city": "曼谷",
+    "country": "泰国",
+    "lat": 13.7563,
+    "lng": 100.5018,
+    "availability_zones": 2,
+    "launch_date": "2022-01-01T00:00:00",
+    "year": 2022
+  },
+  {
+    "name": "日本（东京）",
+    "city": "东京",
+    "country": "日本",
+    "lat": 35.6762,
+    "lng": 139.6503,
+    "availability_zones": 3,
+    "launch_date": "2016-01-01T00:00:00",
+    "year": 2016
+  },
+  {
+    "name": "韩国（首尔）",
+    "city": "首尔",
+    "country": "韩国",
+    "lat": 37.5665,
+    "lng": 126.978,
+    "availability_zones": 2,
+    "launch_date": "2022-01-01T00:00:00",
+    "year": 2022
+  },
+  {
+    "name": "美国（硅谷）",
+    "city": "硅谷",
+    "country": "美国",
+    "lat": 37.7749,
+    "lng": -122.4194,
+    "availability_zones": 2,
+    "launch_date": "2014-01-01T00:00:00",
+    "year": 2014
+  },
+  {
+    "name": "美国（弗吉尼亚）",
+    "city": "弗吉尼亚",
+    "country": "美国",
+    "lat": 37.4316,
+    "lng": -78.6569,
+    "availability_zones": 2,
+    "launch_date": "2015-01-01T00:00:00",
+    "year": 2015
+  },
+  {
+    "name": "墨西哥（克雷塔罗）",
+    "city": "克雷塔罗",
+    "country": "墨西哥",
+    "lat": 20.5888,
+    "lng": -100.3899,
+    "availability_zones": 1,
+    "launch_date": "2025-01-01T00:00:00",
+    "year": 2025
+  },
+  {
+    "name": "德国（法兰克福）",
+    "city": "法兰克福",
+    "country": "德国",
+    "lat": 50.1109,
+    "lng": 8.6821,
+    "availability_zones": 3,
+    "launch_date": "2016-01-01T00:00:00",
+    "year": 2016
+  },
+  {
+    "name": "英国（伦敦）",
+    "city": "伦敦",
+    "country": "英国",
+    "lat": 51.5074,
+    "lng": -0.1278,
+    "availability_zones": 2,
+    "launch_date": "2018-01-01T00:00:00",
+    "year": 2018
+  },
+  {
+    "name": "阿联酋（迪拜）",
+    "city": "迪拜",
+    "country": "阿联酋",
+    "lat": 25.2048,
+    "lng": 55.2708,
+    "availability_zones": 1,
+    "launch_date": "2016-01-01T00:00:00",
+    "year": 2016
+  },
+  {
+    "name": "沙特（利雅得-合作伙伴运营）",
+    "city": "利雅得",
+    "country": "沙特阿拉伯",
+    "lat": 24.7136,
+    "lng": 46.6753,
+    "availability_zones": 2,
+    "launch_date": "2022-01-01T00:00:00",
+    "year": 2022
+  },
+  {
+    "name": "中国香港",
+    "city": "香港",
+    "country": "中国",
+    "lat": 22.3193,
+    "lng": 114.1694,
+    "availability_zones": 3,
+    "launch_date": "2014-01-01T00:00:00",
+    "year": 2014
+  }
+]

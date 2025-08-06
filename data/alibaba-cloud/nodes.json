@@ -1,7 +1,7 @@
 {
   "provider": "alibaba_cloud",
   "version": "1.0.0",
-  "last_updated": "2024-01-15T00:00:00",
+  "last_updated": "2024-12-19T00:00:00",
   "nodes": [
     {
       "node_id": "cn-hangzhou",
@@ -14,8 +14,7 @@
         "longitude": 120.1551
       },
       "data_center": "阿里云杭州数据中心",
-      "availability_zone": "cn-hangzhou-a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 8,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -23,7 +22,7 @@
         "uptime": 99.95
       },
       "description": "阿里云华东1区域主数据中心",
-      "launch_date": "2009-09-10T00:00:00"
+      "launch_date": "2011-01-01T00:00:00"
     },
     {
       "node_id": "cn-shanghai",
@@ -36,8 +35,7 @@
         "longitude": 121.4737
       },
       "data_center": "阿里云上海数据中心",
-      "availability_zone": "cn-shanghai-a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 11,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -45,11 +43,11 @@
         "uptime": 99.95
       },
       "description": "阿里云华东2区域数据中心",
-      "launch_date": "2012-03-01T00:00:00"
+      "launch_date": "2015-01-01T00:00:00"
     },
     {
       "node_id": "cn-beijing",
-      "name": "华北1（北京）",
+      "name": "华北2（北京）",
       "location": {
         "country": "中国",
         "region": "华北",
@@ -58,16 +56,99 @@
         "longitude": 116.4074
       },
       "data_center": "阿里云北京数据中心",
-      "availability_zone": "cn-beijing-a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 12,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
         "latency": 6.1,
         "uptime": 99.95
       },
+      "description": "阿里云华北2区域数据中心",
+      "launch_date": "2013-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-qingdao",
+      "name": "华北1（青岛）",
+      "location": {
+        "country": "中国",
+        "region": "华北",
+        "city": "青岛",
+        "latitude": 36.0671,
+        "longitude": 120.3826
+      },
+      "data_center": "阿里云青岛数据中心",
+      "availability_zones": 2,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 6.5,
+        "uptime": 99.95
+      },
       "description": "阿里云华北1区域数据中心",
-      "launch_date": "2010-05-01T00:00:00"
+      "launch_date": "2012-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-zhangjiakou",
+      "name": "华北3（张家口）",
+      "location": {
+        "country": "中国",
+        "region": "华北",
+        "city": "张家口",
+        "latitude": 40.7686,
+        "longitude": 114.8867
+      },
+      "data_center": "阿里云张家口数据中心",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 7.2,
+        "uptime": 99.95
+      },
+      "description": "阿里云华北3区域数据中心",
+      "launch_date": "2014-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-huhehaote",
+      "name": "华北5（呼和浩特）",
+      "location": {
+        "country": "中国",
+        "region": "华北",
+        "city": "呼和浩特",
+        "latitude": 40.8429,
+        "longitude": 111.7492
+      },
+      "data_center": "阿里云呼和浩特数据中心",
+      "availability_zones": 2,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 8.1,
+        "uptime": 99.95
+      },
+      "description": "阿里云华北5区域数据中心",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-wulanchabu",
+      "name": "华北6（乌兰察布）",
+      "location": {
+        "country": "中国",
+        "region": "华北",
+        "city": "乌兰察布",
+        "latitude": 41.0173,
+        "longitude": 113.1145
+      },
+      "data_center": "阿里云乌兰察布数据中心",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 8.5,
+        "uptime": 99.95
+      },
+      "description": "阿里云华北6区域数据中心",
+      "launch_date": "2020-01-01T00:00:00"
     },
     {
       "node_id": "cn-shenzhen",
@@ -80,8 +161,7 @@
         "longitude": 114.1694
       },
       "data_center": "阿里云深圳数据中心",
-      "availability_zone": "cn-shenzhen-a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 6,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -89,7 +169,133 @@
         "uptime": 99.95
       },
       "description": "阿里云华南1区域数据中心",
-      "launch_date": "2011-08-01T00:00:00"
+      "launch_date": "2014-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-heyuan",
+      "name": "华南2（河源）",
+      "location": {
+        "country": "中国",
+        "region": "华南",
+        "city": "河源",
+        "latitude": 23.7435,
+        "longitude": 114.6978
+      },
+      "data_center": "阿里云河源数据中心",
+      "availability_zones": 2,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 6.2,
+        "uptime": 99.95
+      },
+      "description": "阿里云华南2区域数据中心",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-guangzhou",
+      "name": "华南3（广州）",
+      "location": {
+        "country": "中国",
+        "region": "华南",
+        "city": "广州",
+        "latitude": 23.1291,
+        "longitude": 113.2644
+      },
+      "data_center": "阿里云广州数据中心",
+      "availability_zones": 2,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.8,
+        "uptime": 99.95
+      },
+      "description": "阿里云华南3区域数据中心",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-chengdu",
+      "name": "西南1（成都）",
+      "location": {
+        "country": "中国",
+        "region": "西南",
+        "city": "成都",
+        "latitude": 30.5728,
+        "longitude": 104.0668
+      },
+      "data_center": "阿里云成都数据中心",
+      "availability_zones": 2,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 7.5,
+        "uptime": 99.95
+      },
+      "description": "阿里云西南1区域数据中心",
+      "launch_date": "2020-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-nanjing",
+      "name": "华东5（南京-本地地域）",
+      "location": {
+        "country": "中国",
+        "region": "华东",
+        "city": "南京",
+        "latitude": 32.0603,
+        "longitude": 118.7969
+      },
+      "data_center": "阿里云南京数据中心",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 6.8,
+        "uptime": 99.95
+      },
+      "description": "阿里云华东5本地地域数据中心",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-fuzhou",
+      "name": "华东6（福州-本地地域）",
+      "location": {
+        "country": "中国",
+        "region": "华东",
+        "city": "福州",
+        "latitude": 26.0745,
+        "longitude": 119.2965
+      },
+      "data_center": "阿里云福州数据中心",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 7.1,
+        "uptime": 99.95
+      },
+      "description": "阿里云华东6本地地域数据中心",
+      "launch_date": "2022-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-wuhan",
+      "name": "华中1（武汉-本地地域）",
+      "location": {
+        "country": "中国",
+        "region": "华中",
+        "city": "武汉",
+        "latitude": 30.5928,
+        "longitude": 114.3055
+      },
+      "data_center": "阿里云武汉数据中心",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 6.9,
+        "uptime": 99.95
+      },
+      "description": "阿里云华中1本地地域数据中心",
+      "launch_date": "2023-01-01T00:00:00"
     },
     {
       "node_id": "ap-southeast-1",
@@ -102,8 +308,7 @@
         "longitude": 103.8198
       },
       "data_center": "阿里云新加坡数据中心",
-      "availability_zone": "ap-southeast-1a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 3,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -111,33 +316,137 @@
         "uptime": 99.95
       },
       "description": "阿里云东南亚区域数据中心",
-      "launch_date": "2015-09-01T00:00:00"
+      "launch_date": "2015-01-01T00:00:00"
     },
     {
-      "node_id": "ap-southeast-2",
-      "name": "澳大利亚（悉尼）",
+      "node_id": "ap-southeast-3",
+      "name": "马来西亚（吉隆坡）",
       "location": {
-        "country": "澳大利亚",
-        "region": "大洋洲",
-        "city": "悉尼",
-        "latitude": -33.8688,
-        "longitude": 151.2093
+        "country": "马来西亚",
+        "region": "东南亚",
+        "city": "吉隆坡",
+        "latitude": 3.1390,
+        "longitude": 101.6869
       },
-      "data_center": "阿里云悉尼数据中心",
-      "availability_zone": "ap-southeast-2a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "data_center": "阿里云吉隆坡数据中心",
+      "availability_zones": 3,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
-        "latency": 120.5,
+        "latency": 55.8,
         "uptime": 99.95
       },
-      "description": "阿里云澳大利亚区域数据中心",
-      "launch_date": "2016-11-01T00:00:00"
+      "description": "阿里云马来西亚区域数据中心",
+      "launch_date": "2017-01-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-4",
+      "name": "印度尼西亚（雅加达）",
+      "location": {
+        "country": "印度尼西亚",
+        "region": "东南亚",
+        "city": "雅加达",
+        "latitude": -6.2088,
+        "longitude": 106.8456
+      },
+      "data_center": "阿里云雅加达数据中心",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 65.3,
+        "uptime": 99.95
+      },
+      "description": "阿里云印度尼西亚区域数据中心",
+      "launch_date": "2018-01-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-5",
+      "name": "菲律宾（马尼拉）",
+      "location": {
+        "country": "菲律宾",
+        "region": "东南亚",
+        "city": "马尼拉",
+        "latitude": 14.5995,
+        "longitude": 120.9842
+      },
+      "data_center": "阿里云马尼拉数据中心",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 75.2,
+        "uptime": 99.95
+      },
+      "description": "阿里云菲律宾区域数据中心",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "ap-southeast-6",
+      "name": "泰国（曼谷）",
+      "location": {
+        "country": "泰国",
+        "region": "东南亚",
+        "city": "曼谷",
+        "latitude": 13.7563,
+        "longitude": 100.5018
+      },
+      "data_center": "阿里云曼谷数据中心",
+      "availability_zones": 2,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 68.5,
+        "uptime": 99.95
+      },
+      "description": "阿里云泰国区域数据中心",
+      "launch_date": "2022-01-01T00:00:00"
+    },
+    {
+      "node_id": "ap-northeast-1",
+      "name": "日本（东京）",
+      "location": {
+        "country": "日本",
+        "region": "东亚",
+        "city": "东京",
+        "latitude": 35.6762,
+        "longitude": 139.6503
+      },
+      "data_center": "阿里云东京数据中心",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 85.6,
+        "uptime": 99.95
+      },
+      "description": "阿里云日本区域数据中心",
+      "launch_date": "2016-01-01T00:00:00"
+    },
+    {
+      "node_id": "ap-northeast-2",
+      "name": "韩国（首尔）",
+      "location": {
+        "country": "韩国",
+        "region": "东亚",
+        "city": "首尔",
+        "latitude": 37.5665,
+        "longitude": 126.9780
+      },
+      "data_center": "阿里云首尔数据中心",
+      "availability_zones": 2,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 78.9,
+        "uptime": 99.95
+      },
+      "description": "阿里云韩国区域数据中心",
+      "launch_date": "2022-01-01T00:00:00"
     },
     {
       "node_id": "us-west-1",
-      "name": "美国西部1（硅谷）",
+      "name": "美国（硅谷）",
       "location": {
         "country": "美国",
         "region": "西部",
@@ -146,8 +455,7 @@
         "longitude": -122.4194
       },
       "data_center": "阿里云硅谷数据中心",
-      "availability_zone": "us-west-1a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 2,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -155,11 +463,11 @@
         "uptime": 99.95
       },
       "description": "阿里云美国西部区域数据中心",
-      "launch_date": "2015-03-01T00:00:00"
+      "launch_date": "2014-01-01T00:00:00"
     },
     {
       "node_id": "us-east-1",
-      "name": "美国东部1（弗吉尼亚）",
+      "name": "美国（弗吉尼亚）",
       "location": {
         "country": "美国",
         "region": "东部",
@@ -168,8 +476,7 @@
         "longitude": -78.6569
       },
       "data_center": "阿里云弗吉尼亚数据中心",
-      "availability_zone": "us-east-1a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 2,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -177,7 +484,28 @@
         "uptime": 99.95
       },
       "description": "阿里云美国东部区域数据中心",
-      "launch_date": "2016-05-01T00:00:00"
+      "launch_date": "2015-01-01T00:00:00"
+    },
+    {
+      "node_id": "us-mexico-1",
+      "name": "墨西哥（克雷塔罗）",
+      "location": {
+        "country": "墨西哥",
+        "region": "美洲",
+        "city": "克雷塔罗",
+        "latitude": 20.5888,
+        "longitude": -100.3899
+      },
+      "data_center": "阿里云克雷塔罗数据中心",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 250.5,
+        "uptime": 99.95
+      },
+      "description": "阿里云墨西哥区域数据中心",
+      "launch_date": "2025-01-01T00:00:00"
     },
     {
       "node_id": "eu-central-1",
@@ -190,8 +518,7 @@
         "longitude": 8.6821
       },
       "data_center": "阿里云法兰克福数据中心",
-      "availability_zone": "eu-central-1a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 3,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -199,7 +526,7 @@
         "uptime": 99.95
       },
       "description": "阿里云欧洲区域数据中心",
-      "launch_date": "2016-10-01T00:00:00"
+      "launch_date": "2016-01-01T00:00:00"
     },
     {
       "node_id": "eu-west-1",
@@ -212,8 +539,7 @@
         "longitude": -0.1278
       },
       "data_center": "阿里云伦敦数据中心",
-      "availability_zone": "eu-west-1a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 2,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -221,7 +547,7 @@
         "uptime": 99.95
       },
       "description": "阿里云英国区域数据中心",
-      "launch_date": "2017-11-01T00:00:00"
+      "launch_date": "2018-01-01T00:00:00"
     },
     {
       "node_id": "me-east-1",
@@ -234,8 +560,7 @@
         "longitude": 55.2708
       },
       "data_center": "阿里云迪拜数据中心",
-      "availability_zone": "me-east-1a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "availability_zones": 1,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
@@ -243,29 +568,49 @@
         "uptime": 99.95
       },
       "description": "阿里云中东区域数据中心",
-      "launch_date": "2018-09-01T00:00:00"
+      "launch_date": "2016-01-01T00:00:00"
     },
     {
-      "node_id": "ap-south-1",
-      "name": "印度（孟买）",
+      "node_id": "me-south-1",
+      "name": "沙特（利雅得-合作伙伴运营）",
       "location": {
-        "country": "印度",
-        "region": "南亚",
-        "city": "孟买",
-        "latitude": 19.0760,
-        "longitude": 72.8777
+        "country": "沙特阿拉伯",
+        "region": "中东",
+        "city": "利雅得",
+        "latitude": 24.7136,
+        "longitude": 46.6753
       },
-      "data_center": "阿里云孟买数据中心",
-      "availability_zone": "ap-south-1a",
-      "service_types": ["compute", "storage", "network", "database", "cdn", "ai", "security"],
+      "data_center": "阿里云利雅得数据中心",
+      "availability_zones": 2,
       "status": "active",
       "network_info": {
         "bandwidth": "100Gbps",
-        "latency": 85.6,
+        "latency": 290.5,
         "uptime": 99.95
       },
-      "description": "阿里云印度区域数据中心",
-      "launch_date": "2018-01-01T00:00:00"
+      "description": "阿里云沙特区域数据中心（合作伙伴运营）",
+      "launch_date": "2022-01-01T00:00:00"
+    },
+    {
+      "node_id": "cn-hongkong",
+      "name": "中国香港",
+      "location": {
+        "country": "中国",
+        "region": "港澳台",
+        "city": "香港",
+        "latitude": 22.3193,
+        "longitude": 114.1694
+      },
+      "data_center": "阿里云香港数据中心",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 15.2,
+        "uptime": 99.95
+      },
+      "description": "阿里云香港区域数据中心",
+      "launch_date": "2014-01-01T00:00:00"
     }
   ]
 } 
