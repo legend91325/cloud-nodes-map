@@ -1,0 +1,218 @@
+{
+  "provider": "digitalocean",
+  "version": "1.0.0",
+  "last_updated": "2025-01-01T00:00:00",
+  "nodes": [
+    {
+      "node_id": "nyc1",
+      "name": "New York 1",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "纽约",
+        "latitude": 40.7128,
+        "longitude": -74.0060
+      },
+      "data_center": "DigitalOcean NYC1 Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 3.2,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean纽约第一数据中心",
+      "launch_date": "2011-01-01T00:00:00"
+    },
+    {
+      "node_id": "nyc3",
+      "name": "New York 3",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "纽约",
+        "latitude": 40.7589,
+        "longitude": -73.9851
+      },
+      "data_center": "DigitalOcean NYC3 Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 3.0,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean纽约第三数据中心",
+      "launch_date": "2016-03-01T00:00:00"
+    },
+    {
+      "node_id": "sfo3",
+      "name": "San Francisco 3",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "旧金山",
+        "latitude": 37.7749,
+        "longitude": -122.4194
+      },
+      "data_center": "DigitalOcean SFO3 Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 3.5,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean旧金山数据中心",
+      "launch_date": "2018-03-01T00:00:00"
+    },
+    {
+      "node_id": "tor1",
+      "name": "Toronto 1",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "多伦多",
+        "latitude": 43.6532,
+        "longitude": -79.3832
+      },
+      "data_center": "DigitalOcean Toronto Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 4.0,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean多伦多数据中心",
+      "launch_date": "2017-07-01T00:00:00"
+    },
+    {
+      "node_id": "lon1",
+      "name": "London 1",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "伦敦",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "data_center": "DigitalOcean London Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 3.6,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean伦敦数据中心",
+      "launch_date": "2013-11-01T00:00:00"
+    },
+    {
+      "node_id": "fra1",
+      "name": "Frankfurt 1",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "法兰克福",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      "data_center": "DigitalOcean Frankfurt Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 3.8,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean法兰克福数据中心",
+      "launch_date": "2014-10-01T00:00:00"
+    },
+    {
+      "node_id": "ams3",
+      "name": "Amsterdam 3",
+      "location": {
+        "country": "荷兰",
+        "region": "欧洲",
+        "city": "阿姆斯特丹",
+        "latitude": 52.3676,
+        "longitude": 4.9041
+      },
+      "data_center": "DigitalOcean Amsterdam Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 3.9,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean阿姆斯特丹数据中心",
+      "launch_date": "2015-04-01T00:00:00"
+    },
+    {
+      "node_id": "sgp1",
+      "name": "Singapore 1",
+      "location": {
+        "country": "新加坡",
+        "region": "亚洲",
+        "city": "新加坡",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      },
+      "data_center": "DigitalOcean Singapore Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 3.4,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean新加坡数据中心",
+      "launch_date": "2013-05-01T00:00:00"
+    },
+    {
+      "node_id": "blr1",
+      "name": "Bangalore 1",
+      "location": {
+        "country": "印度",
+        "region": "亚洲",
+        "city": "班加罗尔",
+        "latitude": 12.9716,
+        "longitude": 77.5946
+      },
+      "data_center": "DigitalOcean Bangalore Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 4.5,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean班加罗尔数据中心",
+      "launch_date": "2016-05-01T00:00:00"
+    },
+    {
+      "node_id": "syd1",
+      "name": "Sydney 1",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "data_center": "DigitalOcean Sydney Data Center",
+      "availability_zones": 1,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "40Gbps",
+        "latency": 4.2,
+        "uptime": 99.99
+      },
+      "description": "DigitalOcean悉尼数据中心",
+      "launch_date": "2018-03-01T00:00:00"
+    }
+  ]
+}
+

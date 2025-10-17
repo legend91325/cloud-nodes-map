@@ -1,0 +1,449 @@
+{
+  "provider": "oracle_cloud",
+  "version": "1.0.0",
+  "last_updated": "2025-01-01T00:00:00",
+  "nodes": [
+    {
+      "node_id": "us-ashburn-1",
+      "name": "US East (Ashburn)",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "阿什本",
+        "latitude": 39.0438,
+        "longitude": -77.4874
+      },
+      "data_center": "Oracle Ashburn Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.5,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud美国东部主数据中心",
+      "launch_date": "2016-01-01T00:00:00"
+    },
+    {
+      "node_id": "us-phoenix-1",
+      "name": "US West (Phoenix)",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "凤凰城",
+        "latitude": 33.4484,
+        "longitude": -112.0740
+      },
+      "data_center": "Oracle Phoenix Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.2,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud美国西部数据中心",
+      "launch_date": "2016-06-01T00:00:00"
+    },
+    {
+      "node_id": "us-sanjose-1",
+      "name": "US West (San Jose)",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "圣何塞",
+        "latitude": 37.3382,
+        "longitude": -121.8863
+      },
+      "data_center": "Oracle San Jose Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.8,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud硅谷数据中心",
+      "launch_date": "2019-01-01T00:00:00"
+    },
+    {
+      "node_id": "ca-toronto-1",
+      "name": "Canada Southeast (Toronto)",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "多伦多",
+        "latitude": 43.6532,
+        "longitude": -79.3832
+      },
+      "data_center": "Oracle Toronto Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.5,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud加拿大数据中心",
+      "launch_date": "2017-11-01T00:00:00"
+    },
+    {
+      "node_id": "ca-montreal-1",
+      "name": "Canada Southeast (Montreal)",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "蒙特利尔",
+        "latitude": 45.5017,
+        "longitude": -73.5673
+      },
+      "data_center": "Oracle Montreal Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.3,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud蒙特利尔数据中心",
+      "launch_date": "2019-06-01T00:00:00"
+    },
+    {
+      "node_id": "sa-saopaulo-1",
+      "name": "Brazil East (Sao Paulo)",
+      "location": {
+        "country": "巴西",
+        "region": "南美",
+        "city": "圣保罗",
+        "latitude": -23.5505,
+        "longitude": -46.6333
+      },
+      "data_center": "Oracle Sao Paulo Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.5,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud南美数据中心",
+      "launch_date": "2018-05-01T00:00:00"
+    },
+    {
+      "node_id": "sa-santiago-1",
+      "name": "Chile (Santiago)",
+      "location": {
+        "country": "智利",
+        "region": "南美",
+        "city": "圣地亚哥",
+        "latitude": -33.4489,
+        "longitude": -70.6693
+      },
+      "data_center": "Oracle Santiago Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 6.2,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud智利数据中心",
+      "launch_date": "2020-02-01T00:00:00"
+    },
+    {
+      "node_id": "eu-frankfurt-1",
+      "name": "Germany Central (Frankfurt)",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "法兰克福",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      "data_center": "Oracle Frankfurt Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.0,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud欧洲主数据中心",
+      "launch_date": "2017-03-01T00:00:00"
+    },
+    {
+      "node_id": "eu-zurich-1",
+      "name": "Switzerland North (Zurich)",
+      "location": {
+        "country": "瑞士",
+        "region": "欧洲",
+        "city": "苏黎世",
+        "latitude": 47.3769,
+        "longitude": 8.5417
+      },
+      "data_center": "Oracle Zurich Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.8,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud瑞士数据中心",
+      "launch_date": "2019-05-01T00:00:00"
+    },
+    {
+      "node_id": "eu-amsterdam-1",
+      "name": "Netherlands Northwest (Amsterdam)",
+      "location": {
+        "country": "荷兰",
+        "region": "欧洲",
+        "city": "阿姆斯特丹",
+        "latitude": 52.3676,
+        "longitude": 4.9041
+      },
+      "data_center": "Oracle Amsterdam Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.1,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud阿姆斯特丹数据中心",
+      "launch_date": "2019-02-01T00:00:00"
+    },
+    {
+      "node_id": "uk-london-1",
+      "name": "UK South (London)",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "伦敦",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "data_center": "Oracle London Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.9,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud英国数据中心",
+      "launch_date": "2017-08-01T00:00:00"
+    },
+    {
+      "node_id": "ap-tokyo-1",
+      "name": "Japan East (Tokyo)",
+      "location": {
+        "country": "日本",
+        "region": "亚洲",
+        "city": "东京",
+        "latitude": 35.6762,
+        "longitude": 139.6503
+      },
+      "data_center": "Oracle Tokyo Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.5,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud日本数据中心",
+      "launch_date": "2018-09-01T00:00:00"
+    },
+    {
+      "node_id": "ap-osaka-1",
+      "name": "Japan Central (Osaka)",
+      "location": {
+        "country": "日本",
+        "region": "亚洲",
+        "city": "大阪",
+        "latitude": 34.6937,
+        "longitude": 135.5023
+      },
+      "data_center": "Oracle Osaka Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.7,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud大阪数据中心",
+      "launch_date": "2019-10-01T00:00:00"
+    },
+    {
+      "node_id": "ap-seoul-1",
+      "name": "South Korea Central (Seoul)",
+      "location": {
+        "country": "韩国",
+        "region": "亚洲",
+        "city": "首尔",
+        "latitude": 37.5665,
+        "longitude": 126.9780
+      },
+      "data_center": "Oracle Seoul Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.6,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud韩国数据中心",
+      "launch_date": "2019-03-01T00:00:00"
+    },
+    {
+      "node_id": "ap-mumbai-1",
+      "name": "India West (Mumbai)",
+      "location": {
+        "country": "印度",
+        "region": "亚洲",
+        "city": "孟买",
+        "latitude": 19.0760,
+        "longitude": 72.8777
+      },
+      "data_center": "Oracle Mumbai Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.8,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud印度数据中心",
+      "launch_date": "2018-10-01T00:00:00"
+    },
+    {
+      "node_id": "ap-hyderabad-1",
+      "name": "India South (Hyderabad)",
+      "location": {
+        "country": "印度",
+        "region": "亚洲",
+        "city": "海得拉巴",
+        "latitude": 17.3850,
+        "longitude": 78.4867
+      },
+      "data_center": "Oracle Hyderabad Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.0,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud海得拉巴数据中心",
+      "launch_date": "2020-08-01T00:00:00"
+    },
+    {
+      "node_id": "ap-sydney-1",
+      "name": "Australia East (Sydney)",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "data_center": "Oracle Sydney Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.5,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud澳大利亚数据中心",
+      "launch_date": "2018-06-01T00:00:00"
+    },
+    {
+      "node_id": "ap-melbourne-1",
+      "name": "Australia Southeast (Melbourne)",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "墨尔本",
+        "latitude": -37.8136,
+        "longitude": 144.9631
+      },
+      "data_center": "Oracle Melbourne Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.6,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud墨尔本数据中心",
+      "launch_date": "2020-09-01T00:00:00"
+    },
+    {
+      "node_id": "ap-singapore-1",
+      "name": "Singapore (Singapore)",
+      "location": {
+        "country": "新加坡",
+        "region": "亚洲",
+        "city": "新加坡",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      },
+      "data_center": "Oracle Singapore Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.8,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud新加坡数据中心",
+      "launch_date": "2020-07-01T00:00:00"
+    },
+    {
+      "node_id": "me-jeddah-1",
+      "name": "Saudi Arabia West (Jeddah)",
+      "location": {
+        "country": "沙特阿拉伯",
+        "region": "中东",
+        "city": "吉达",
+        "latitude": 21.5433,
+        "longitude": 39.1728
+      },
+      "data_center": "Oracle Jeddah Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.2,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud沙特数据中心",
+      "launch_date": "2020-05-01T00:00:00"
+    },
+    {
+      "node_id": "me-dubai-1",
+      "name": "UAE East (Dubai)",
+      "location": {
+        "country": "阿联酋",
+        "region": "中东",
+        "city": "迪拜",
+        "latitude": 25.2048,
+        "longitude": 55.2708
+      },
+      "data_center": "Oracle Dubai Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.0,
+        "uptime": 99.95
+      },
+      "description": "Oracle Cloud阿联酋数据中心",
+      "launch_date": "2020-12-01T00:00:00"
+    }
+  ]
+}
+

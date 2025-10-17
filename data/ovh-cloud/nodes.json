@@ -1,0 +1,197 @@
+{
+  "provider": "ovh_cloud",
+  "version": "1.0.0",
+  "last_updated": "2025-01-01T00:00:00",
+  "nodes": [
+    {
+      "node_id": "gra",
+      "name": "Gravelines",
+      "location": {
+        "country": "法国",
+        "region": "欧洲",
+        "city": "格拉夫林",
+        "latitude": 50.9877,
+        "longitude": 2.1268
+      },
+      "data_center": "OVH Gravelines Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.2,
+        "uptime": 99.95
+      },
+      "description": "OVH法国主数据中心",
+      "launch_date": "2011-01-01T00:00:00"
+    },
+    {
+      "node_id": "sbg",
+      "name": "Strasbourg",
+      "location": {
+        "country": "法国",
+        "region": "欧洲",
+        "city": "斯特拉斯堡",
+        "latitude": 48.5734,
+        "longitude": 7.7521
+      },
+      "data_center": "OVH Strasbourg Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.0,
+        "uptime": 99.95
+      },
+      "description": "OVH斯特拉斯堡数据中心",
+      "launch_date": "2012-06-01T00:00:00"
+    },
+    {
+      "node_id": "rbx",
+      "name": "Roubaix",
+      "location": {
+        "country": "法国",
+        "region": "欧洲",
+        "city": "鲁贝",
+        "latitude": 50.6927,
+        "longitude": 3.1746
+      },
+      "data_center": "OVH Roubaix Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.1,
+        "uptime": 99.95
+      },
+      "description": "OVH鲁贝数据中心",
+      "launch_date": "1999-01-01T00:00:00"
+    },
+    {
+      "node_id": "bhs",
+      "name": "Beauharnois",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "博阿尔努瓦",
+        "latitude": 45.3169,
+        "longitude": -73.8745
+      },
+      "data_center": "OVH Beauharnois Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.5,
+        "uptime": 99.95
+      },
+      "description": "OVH加拿大数据中心",
+      "launch_date": "2012-01-01T00:00:00"
+    },
+    {
+      "node_id": "de",
+      "name": "Frankfurt",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "法兰克福",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      "data_center": "OVH Frankfurt Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.9,
+        "uptime": 99.95
+      },
+      "description": "OVH德国数据中心",
+      "launch_date": "2019-10-01T00:00:00"
+    },
+    {
+      "node_id": "uk",
+      "name": "London",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "伦敦",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "data_center": "OVH London Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.8,
+        "uptime": 99.95
+      },
+      "description": "OVH英国数据中心",
+      "launch_date": "2015-11-01T00:00:00"
+    },
+    {
+      "node_id": "waw",
+      "name": "Warsaw",
+      "location": {
+        "country": "波兰",
+        "region": "欧洲",
+        "city": "华沙",
+        "latitude": 52.2297,
+        "longitude": 21.0122
+      },
+      "data_center": "OVH Warsaw Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.3,
+        "uptime": 99.95
+      },
+      "description": "OVH波兰数据中心",
+      "launch_date": "2016-04-01T00:00:00"
+    },
+    {
+      "node_id": "sgp",
+      "name": "Singapore",
+      "location": {
+        "country": "新加坡",
+        "region": "亚洲",
+        "city": "新加坡",
+        "latitude": 1.3521,
+        "longitude": 103.8198
+      },
+      "data_center": "OVH Singapore Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.7,
+        "uptime": 99.95
+      },
+      "description": "OVH新加坡数据中心",
+      "launch_date": "2016-09-01T00:00:00"
+    },
+    {
+      "node_id": "syd",
+      "name": "Sydney",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "data_center": "OVH Sydney Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.5,
+        "uptime": 99.95
+      },
+      "description": "OVH澳大利亚数据中心",
+      "launch_date": "2017-03-01T00:00:00"
+    }
+  ]
+}
+

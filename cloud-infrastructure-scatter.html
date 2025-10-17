@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球云基础设施节点分布图</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .card-content {
+            height: calc(100% - 100px);
+            position: relative;
+        }
+
+        #map-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .legend-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        .legend-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #666;
+            font-size: 16px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tooltip-custom {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .tooltip-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .tooltip-content {
+            line-height: 1.4;
+        }
+
+        .tooltip-label {
+            color: #ccc;
+        }
+
+        .tooltip-value {
+            color: #fff;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card-header">
+            <div>
+                <div class="card-title">
+                    🌐 全球云基础设施节点分布
+                </div>
+                <div class="card-subtitle">实时展示各大云服务商全球数据中心分布情况</div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="total-nodes">0</div>
+                    <div class="stat-label">总节点数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="total-providers">0</div>
+                    <div class="stat-label">云服务商</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="total-countries">0</div>
+                    <div class="stat-label">覆盖国家</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card-content">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <div>正在加载全球基础设施数据...</div>
+            </div>
+            
+            <div class="legend-container">
+                <div class="legend-title">云服务商</div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff6b6b;"></div>
+                    <span>阿里云</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4ecdc4;"></div>
+                    <span>AWS</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #45b7d1;"></div>
+                    <span>Azure</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #96ceb4;"></div>
+                    <span>Google Cloud</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #feca57;"></div>
+                    <span>华为云</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff9ff3;"></div>
+                    <span>腾讯云</span>
+                </div>
+            </div>
+            
+            <div id="map-container"></div>
+        </div>
+    </div>
+
+    <script>
+        // 云服务商配置
+        const providers = {
+            'alibaba_cloud': { name: '阿里云', color: '#ff6b6b' },
+            'aws': { name: 'AWS', color: '#4ecdc4' },
+            'azure': { name: 'Azure', color: '#45b7d1' },
+            'google_cloud': { name: 'Google Cloud', color: '#96ceb4' },
+            'huawei_cloud': { name: '华为云', color: '#feca57' },
+            'tencent_cloud': { name: '腾讯云', color: '#ff9ff3' }
+        };
+
+        // 初始化图表
+        const chart = echarts.init(document.getElementById('map-container'));
+
+        // 加载数据
+        async function loadData() {
+            try {
+                const [alibabaData, awsData, azureData] = await Promise.all([
+                    fetch('./data/alibaba-cloud/nodes.json').then(r => r.json()),
+                    fetch('./data/aws/nodes.json').then(r => r.json()),
+                    fetch('./data/azure/nodes.json').then(r => r.json())
+                ]);
+
+                const allNodes = [
+                    ...alibabaData.nodes.map(node => ({ ...node, provider: 'alibaba_cloud' })),
+                    ...awsData.nodes.map(node => ({ ...node, provider: 'aws' })),
+                    ...azureData.nodes.map(node => ({ ...node, provider: 'azure' }))
+                ];
+
+                return allNodes;
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                return [];
+            }
+        }
+
+        // 处理数据为ECharts格式
+        function processData(nodes) {
+            const series = [];
+            const countries = new Set();
+            let totalNodes = 0;
+
+            // 按云服务商分组
+            Object.keys(providers).forEach(provider => {
+                const providerNodes = nodes.filter(node => node.provider === provider);
+                if (providerNodes.length === 0) return;
+
+                const data = providerNodes.map(node => {
+                    countries.add(node.location.country);
+                    totalNodes++;
+                    
+                    return {
+                        name: node.name,
+                        value: [
+                            node.location.longitude,
+                            node.location.latitude,
+                            node.availability_zones || 1,
+                            node.network_info.latency,
+                            node.network_info.uptime,
+                            node.location.country,
+                            node.location.city,
+                            node.data_center,
+                            node.launch_date
+                        ],
+                        provider: provider,
+                        nodeId: node.node_id,
+                        status: node.status
+                    };
+                });
+
+                series.push({
+                    name: providers[provider].name,
+                    type: 'scatter',
+                    data: data,
+                    symbolSize: function (val) {
+                        return Math.max(8, Math.min(20, val[2] * 2));
+                    },
+                    itemStyle: {
+                        color: providers[provider].color,
+                        shadowBlur: 10,
+                        shadowColor: providers[provider].color
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            borderColor: '#fff',
+                            borderWidth: 2,
+                            shadowBlur: 20,
+                            shadowColor: providers[provider].color
+                        }
+                    }
+                });
+            });
+
+            return { series, totalNodes, totalCountries: countries.size };
+        }
+
+        // 创建图表配置
+        function createChartOption(series, totalNodes, totalCountries) {
+            return {
+                backgroundColor: 'transparent',
+                xAxis: {
+                    type: 'value',
+                    show: false,
+                    min: -180,
+                    max: 180
+                },
+                yAxis: {
+                    type: 'value',
+                    show: false,
+                    min: -90,
+                    max: 90
+                },
+                grid: {
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    containLabel: true
+                },
+                series: series,
+                tooltip: {
+                    trigger: 'item',
+                    formatter: function (params) {
+                        if (params.seriesType === 'scatter') {
+                            const data = params.data.value;
+                            const provider = providers[params.data.provider];
+                            return `
+                                <div class="tooltip-custom">
+                                    <div class="tooltip-title">${params.data.name}</div>
+                                    <div class="tooltip-content">
+                                        <div><span class="tooltip-label">云服务商:</span> <span class="tooltip-value">${provider.name}</span></div>
+                                        <div><span class="tooltip-label">位置:</span> <span class="tooltip-value">${data[5]}, ${data[6]}</span></div>
+                                        <div><span class="tooltip-label">可用区:</span> <span class="tooltip-value">${data[2]}个</span></div>
+                                        <div><span class="tooltip-label">延迟:</span> <span class="tooltip-value">${data[3]}ms</span></div>
+                                        <div><span class="tooltip-label">可用性:</span> <span class="tooltip-value">${data[4]}%</span></div>
+                                        <div><span class="tooltip-label">状态:</span> <span class="tooltip-value">${params.data.status}</span></div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        return params.name;
+                    },
+                    backgroundColor: 'transparent',
+                    borderWidth: 0,
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                legend: {
+                    show: false
+                },
+                animation: true,
+                animationDuration: 2000,
+                animationEasing: 'cubicOut'
+            };
+        }
+
+        // 更新统计信息
+        function updateStats(totalNodes, totalProviders, totalCountries) {
+            document.getElementById('total-nodes').textContent = totalNodes;
+            document.getElementById('total-providers').textContent = totalProviders;
+            document.getElementById('total-countries').textContent = totalCountries;
+        }
+
+        // 主函数
+        async function init() {
+            try {
+                const nodes = await loadData();
+                if (nodes.length === 0) {
+                    throw new Error('没有加载到数据');
+                }
+
+                const { series, totalNodes, totalCountries } = processData(nodes);
+                const totalProviders = series.length;
+
+                // 隐藏加载动画
+                document.getElementById('loading').style.display = 'none';
+
+                // 更新统计信息
+                updateStats(totalNodes, totalProviders, totalCountries);
+
+                // 设置图表配置
+                const option = createChartOption(series, totalNodes, totalCountries);
+                chart.setOption(option);
+
+                // 响应式处理
+                window.addEventListener('resize', () => {
+                    chart.resize();
+                });
+
+            } catch (error) {
+                console.error('初始化失败:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div style="color: #ff6b6b; text-align: center;">
+                        <div style="font-size: 24px; margin-bottom: 10px;">⚠️</div>
+                        <div>加载失败，请检查数据文件</div>
+                    </div>
+                `;
+            }
+        }
+
+        // 启动应用
+        init();
+    </script>
+</body>
+</html>

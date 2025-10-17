@@ -1,0 +1,239 @@
+{
+  "provider": "ibm_cloud",
+  "version": "1.0.0",
+  "last_updated": "2025-01-01T00:00:00",
+  "nodes": [
+    {
+      "node_id": "us-south",
+      "name": "Dallas",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "达拉斯",
+        "latitude": 32.7767,
+        "longitude": -96.7970
+      },
+      "data_center": "IBM Dallas Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.8,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud美国南部主数据中心",
+      "launch_date": "2013-06-01T00:00:00"
+    },
+    {
+      "node_id": "us-east",
+      "name": "Washington DC",
+      "location": {
+        "country": "美国",
+        "region": "北美",
+        "city": "华盛顿",
+        "latitude": 38.9072,
+        "longitude": -77.0369
+      },
+      "data_center": "IBM Washington DC Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.5,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud美国东部数据中心",
+      "launch_date": "2018-06-01T00:00:00"
+    },
+    {
+      "node_id": "ca-tor",
+      "name": "Toronto",
+      "location": {
+        "country": "加拿大",
+        "region": "北美",
+        "city": "多伦多",
+        "latitude": 43.6532,
+        "longitude": -79.3832
+      },
+      "data_center": "IBM Toronto Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.2,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud加拿大数据中心",
+      "launch_date": "2018-09-01T00:00:00"
+    },
+    {
+      "node_id": "br-sao",
+      "name": "Sao Paulo",
+      "location": {
+        "country": "巴西",
+        "region": "南美",
+        "city": "圣保罗",
+        "latitude": -23.5505,
+        "longitude": -46.6333
+      },
+      "data_center": "IBM Sao Paulo Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 5.5,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud巴西数据中心",
+      "launch_date": "2017-07-01T00:00:00"
+    },
+    {
+      "node_id": "eu-gb",
+      "name": "London",
+      "location": {
+        "country": "英国",
+        "region": "欧洲",
+        "city": "伦敦",
+        "latitude": 51.5074,
+        "longitude": -0.1278
+      },
+      "data_center": "IBM London Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.9,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud英国数据中心",
+      "launch_date": "2015-09-01T00:00:00"
+    },
+    {
+      "node_id": "eu-de",
+      "name": "Frankfurt",
+      "location": {
+        "country": "德国",
+        "region": "欧洲",
+        "city": "法兰克福",
+        "latitude": 50.1109,
+        "longitude": 8.6821
+      },
+      "data_center": "IBM Frankfurt Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.0,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud德国数据中心",
+      "launch_date": "2016-10-01T00:00:00"
+    },
+    {
+      "node_id": "ap-north",
+      "name": "Tokyo",
+      "location": {
+        "country": "日本",
+        "region": "亚洲",
+        "city": "东京",
+        "latitude": 35.6762,
+        "longitude": 139.6503
+      },
+      "data_center": "IBM Tokyo Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.5,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud日本数据中心",
+      "launch_date": "2016-06-01T00:00:00"
+    },
+    {
+      "node_id": "ap-south",
+      "name": "Sydney",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8688,
+        "longitude": 151.2093
+      },
+      "data_center": "IBM Sydney Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.5,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud澳大利亚数据中心",
+      "launch_date": "2018-03-01T00:00:00"
+    },
+    {
+      "node_id": "jp-osa",
+      "name": "Osaka",
+      "location": {
+        "country": "日本",
+        "region": "亚洲",
+        "city": "大阪",
+        "latitude": 34.6937,
+        "longitude": 135.5023
+      },
+      "data_center": "IBM Osaka Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.7,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud大阪数据中心",
+      "launch_date": "2021-01-01T00:00:00"
+    },
+    {
+      "node_id": "jp-tok",
+      "name": "Tokyo 02",
+      "location": {
+        "country": "日本",
+        "region": "亚洲",
+        "city": "东京",
+        "latitude": 35.6895,
+        "longitude": 139.6917
+      },
+      "data_center": "IBM Tokyo 02 Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 3.6,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud东京第二数据中心",
+      "launch_date": "2019-05-01T00:00:00"
+    },
+    {
+      "node_id": "au-syd",
+      "name": "Sydney 02",
+      "location": {
+        "country": "澳大利亚",
+        "region": "大洋洲",
+        "city": "悉尼",
+        "latitude": -33.8651,
+        "longitude": 151.2099
+      },
+      "data_center": "IBM Sydney 02 Data Center",
+      "availability_zones": 3,
+      "status": "active",
+      "network_info": {
+        "bandwidth": "100Gbps",
+        "latency": 4.4,
+        "uptime": 99.95
+      },
+      "description": "IBM Cloud悉尼第二数据中心",
+      "launch_date": "2020-04-01T00:00:00"
+    }
+  ]
+}
+

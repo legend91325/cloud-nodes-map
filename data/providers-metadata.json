@@ -1,0 +1,160 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-01-01T00:00:00",
+  "providers": {
+    "alibaba_cloud": {
+      "id": "alibaba_cloud",
+      "name": "阿里云",
+      "name_en": "Alibaba Cloud",
+      "color": "#FF6A00",
+      "founded": "2009",
+      "headquarters": "中国杭州",
+      "data_path": "data/alibaba-cloud/nodes.json",
+      "website": "https://www.aliyun.com",
+      "description": "中国领先的云计算服务提供商",
+      "market_position": "亚太市场领导者"
+    },
+    "aws": {
+      "id": "aws",
+      "name": "AWS",
+      "name_en": "Amazon Web Services",
+      "color": "#FF9900",
+      "founded": "2006",
+      "headquarters": "美国西雅图",
+      "data_path": "data/aws/nodes.json",
+      "website": "https://aws.amazon.com",
+      "description": "全球最大的云计算服务提供商",
+      "market_position": "全球市场领导者"
+    },
+    "azure": {
+      "id": "azure",
+      "name": "Azure",
+      "name_en": "Microsoft Azure",
+      "color": "#0078D4",
+      "founded": "2010",
+      "headquarters": "美国雷德蒙德",
+      "data_path": "data/azure/nodes.json",
+      "website": "https://azure.microsoft.com",
+      "description": "微软提供的企业级云计算平台",
+      "market_position": "全球第二大云服务商"
+    },
+    "google_cloud": {
+      "id": "google_cloud",
+      "name": "谷歌云",
+      "name_en": "Google Cloud",
+      "color": "#4285F4",
+      "founded": "2008",
+      "headquarters": "美国山景城",
+      "data_path": "data/google-cloud/nodes.json",
+      "website": "https://cloud.google.com",
+      "description": "谷歌提供的云计算和数据分析平台",
+      "market_position": "全球第三大云服务商"
+    },
+    "huawei_cloud": {
+      "id": "huawei_cloud",
+      "name": "华为云",
+      "name_en": "Huawei Cloud",
+      "color": "#D0021B",
+      "founded": "2017",
+      "headquarters": "中国深圳",
+      "data_path": "data/huawei-cloud/nodes.json",
+      "website": "https://www.huaweicloud.com",
+      "description": "华为提供的全栈云服务",
+      "market_position": "中国第二大云服务商"
+    },
+    "tencent_cloud": {
+      "id": "tencent_cloud",
+      "name": "腾讯云",
+      "name_en": "Tencent Cloud",
+      "color": "#006EFF",
+      "founded": "2013",
+      "headquarters": "中国深圳",
+      "data_path": "data/tencent-cloud/nodes.json",
+      "website": "https://cloud.tencent.com",
+      "description": "腾讯提供的云计算服务",
+      "market_position": "中国第三大云服务商"
+    },
+    "oracle_cloud": {
+      "id": "oracle_cloud",
+      "name": "甲骨文云",
+      "name_en": "Oracle Cloud",
+      "color": "#F80000",
+      "founded": "2016",
+      "headquarters": "美国奥斯汀",
+      "data_path": "data/oracle-cloud/nodes.json",
+      "website": "https://www.oracle.com/cloud",
+      "description": "甲骨文提供的企业级云服务",
+      "market_position": "企业数据库云领导者"
+    },
+    "ibm_cloud": {
+      "id": "ibm_cloud",
+      "name": "IBM 云",
+      "name_en": "IBM Cloud",
+      "color": "#0F62FE",
+      "founded": "2013",
+      "headquarters": "美国纽约",
+      "data_path": "data/ibm-cloud/nodes.json",
+      "website": "https://www.ibm.com/cloud",
+      "description": "IBM提供的混合云解决方案",
+      "market_position": "混合云和企业云专家"
+    },
+    "ovh_cloud": {
+      "id": "ovh_cloud",
+      "name": "OVH 云",
+      "name_en": "OVHcloud",
+      "color": "#123F6D",
+      "founded": "1999",
+      "headquarters": "法国鲁贝",
+      "data_path": "data/ovh-cloud/nodes.json",
+      "website": "https://www.ovhcloud.com",
+      "description": "欧洲领先的云服务提供商",
+      "market_position": "欧洲最大的云服务商"
+    },
+    "digitalocean": {
+      "id": "digitalocean",
+      "name": "DigitalOcean",
+      "name_en": "DigitalOcean",
+      "color": "#0080FF",
+      "founded": "2011",
+      "headquarters": "美国纽约",
+      "data_path": "data/digitalocean/nodes.json",
+      "website": "https://www.digitalocean.com",
+      "description": "专注于开发者的简单云平台",
+      "market_position": "开发者友好云平台"
+    }
+  },
+  "display_order": [
+    "aws",
+    "azure",
+    "google_cloud",
+    "alibaba_cloud",
+    "tencent_cloud",
+    "huawei_cloud",
+    "oracle_cloud",
+    "ibm_cloud",
+    "ovh_cloud",
+    "digitalocean"
+  ],
+  "color_scheme": {
+    "description": "为10个云服务商精心设计的配色方案，确保视觉区分度",
+    "palette": [
+      {"provider": "aws", "color": "#FF9900", "rgb": [255, 153, 0]},
+      {"provider": "azure", "color": "#0078D4", "rgb": [0, 120, 212]},
+      {"provider": "google_cloud", "color": "#4285F4", "rgb": [66, 133, 244]},
+      {"provider": "alibaba_cloud", "color": "#FF6A00", "rgb": [255, 106, 0]},
+      {"provider": "tencent_cloud", "color": "#006EFF", "rgb": [0, 110, 255]},
+      {"provider": "huawei_cloud", "color": "#D0021B", "rgb": [208, 2, 27]},
+      {"provider": "oracle_cloud", "color": "#F80000", "rgb": [248, 0, 0]},
+      {"provider": "ibm_cloud", "color": "#0F62FE", "rgb": [15, 98, 254]},
+      {"provider": "ovh_cloud", "color": "#123F6D", "rgb": [18, 63, 109]},
+      {"provider": "digitalocean", "color": "#0080FF", "rgb": [0, 128, 255]}
+    ]
+  },
+  "statistics": {
+    "total_providers": 10,
+    "total_countries_covered": "估计覆盖超过50个国家",
+    "total_regions": "估计超过200个区域",
+    "last_calculation": "2025-01-01T00:00:00"
+  }
+}
+
