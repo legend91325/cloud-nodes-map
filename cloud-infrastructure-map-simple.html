@@ -239,14 +239,15 @@
     </div>
 
     <script>
-        // 云服务商配置
+        // 云服务商配置 - 色彩多样化，确保视觉区分度
         const providers = {
-            'alibaba_cloud': { name: '阿里云', color: '#ff6b6b' },
-            'aws': { name: 'AWS', color: '#4ecdc4' },
-            'azure': { name: 'Azure', color: '#45b7d1' },
-            'google_cloud': { name: 'Google Cloud', color: '#96ceb4' },
-            'huawei_cloud': { name: '华为云', color: '#feca57' },
-            'tencent_cloud': { name: '腾讯云', color: '#ff9ff3' }
+            'alibaba_cloud': { name: '阿里云', color: '#FF6A00' },
+            'aws': { name: 'AWS', color: '#FF9900' },
+            'azure': { name: 'Azure', color: '#0078D4' },
+            'google_cloud': { name: 'Google Cloud', color: '#34A853' },
+            'huawei_cloud': { name: '华为云', color: '#D0021B' },
+            'tencent_cloud': { name: '腾讯云', color: '#9C27B0' },
+            'volcano_engine': { name: '火山引擎', color: '#00BCD4' }
         };
 
         // 初始化图表
@@ -255,16 +256,18 @@
         // 加载数据
         async function loadData() {
             try {
-                const [alibabaData, awsData, azureData] = await Promise.all([
+                const [alibabaData, awsData, azureData, volcanoData] = await Promise.all([
                     fetch('./data/alibaba-cloud/nodes.json').then(r => r.json()),
                     fetch('./data/aws/nodes.json').then(r => r.json()),
-                    fetch('./data/azure/nodes.json').then(r => r.json())
+                    fetch('./data/azure/nodes.json').then(r => r.json()),
+                    fetch('./data/volcano-engine/nodes.json').then(r => r.json())
                 ]);
 
                 const allNodes = [
                     ...alibabaData.nodes.map(node => ({ ...node, provider: 'alibaba_cloud' })),
                     ...awsData.nodes.map(node => ({ ...node, provider: 'aws' })),
-                    ...azureData.nodes.map(node => ({ ...node, provider: 'azure' }))
+                    ...azureData.nodes.map(node => ({ ...node, provider: 'azure' })),
+                    ...volcanoData.nodes.map(node => ({ ...node, provider: 'volcano_engine' }))
                 ];
 
                 return allNodes;

@@ -735,6 +735,15 @@
                         <!-- 动态生成 -->
                     </tbody>
                 </table>
+
+                <div class="pagination">
+                    <button class="pagination-btn" id="country-prev-page">上一页</button>
+                    <div class="pagination-info">
+                        第 <strong id="country-current-page">1</strong> 页 / 共 <strong id="country-total-pages">1</strong> 页
+                        （共 <strong id="country-total-count">0</strong> 条记录）
+                    </div>
+                    <button class="pagination-btn" id="country-next-page">下一页</button>
+                </div>
             </div>
         </div>
         
@@ -772,7 +781,7 @@
                         <span>Azure</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #4285F4;"></div>
+                        <div class="legend-color" style="background: #34A853;"></div>
                         <span>Google Cloud</span>
                     </div>
                     <div class="legend-item">
@@ -780,23 +789,27 @@
                         <span>华为云</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #006EFF;"></div>
+                        <div class="legend-color" style="background: #9C27B0;"></div>
                         <span>腾讯云</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #F80000;"></div>
+                        <div class="legend-color" style="background: #00BCD4;"></div>
+                        <span>火山引擎</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #C74634;"></div>
                         <span>甲骨文云</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #0F62FE;"></div>
+                        <div class="legend-color" style="background: #FFC107;"></div>
                         <span>IBM 云</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #123F6D;"></div>
+                        <div class="legend-color" style="background: #607D8B;"></div>
                         <span>OVH 云</span>
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #0080FF;"></div>
+                        <div class="legend-color" style="background: #E91E63;"></div>
                         <span>DigitalOcean</span>
                     </div>
                 </div>
@@ -859,18 +872,19 @@
     </div>
 
     <script>
-        // 云服务商配置 - 优化配色方案
+        // 云服务商配置 - 优化配色方案（色彩多样化，确保视觉区分度）
         const providers = {
-            'alibaba_cloud': { name: '阿里云', color: '#FF6A00' },       // 阿里橙
-            'aws': { name: 'AWS', color: '#FF9900' },                    // AWS橙
+            'alibaba_cloud': { name: '阿里云', color: '#FF6A00' },       // 深橙色
+            'aws': { name: 'AWS', color: '#FF9900' },                    // 亮橙色
             'azure': { name: 'Azure', color: '#0078D4' },                // 微软蓝
-            'google_cloud': { name: 'Google Cloud', color: '#4285F4' },  // 谷歌蓝
-            'huawei_cloud': { name: '华为云', color: '#D0021B' },        // 华为红
-            'tencent_cloud': { name: '腾讯云', color: '#006EFF' },       // 腾讯蓝
-            'oracle_cloud': { name: '甲骨文云', color: '#F80000' },      // Oracle红
-            'ibm_cloud': { name: 'IBM 云', color: '#0F62FE' },           // IBM蓝
-            'ovh_cloud': { name: 'OVH 云', color: '#123F6D' },           // OVH深蓝
-            'digitalocean': { name: 'DigitalOcean', color: '#0080FF' }   // DO天蓝
+            'google_cloud': { name: 'Google Cloud', color: '#34A853' },  // 谷歌绿
+            'huawei_cloud': { name: '华为云', color: '#D0021B' },        // 正红色
+            'tencent_cloud': { name: '腾讯云', color: '#9C27B0' },       // 紫色
+            'volcano_engine': { name: '火山引擎', color: '#00BCD4' },     // 青色
+            'oracle_cloud': { name: '甲骨文云', color: '#C74634' },      // 砖红色
+            'ibm_cloud': { name: 'IBM 云', color: '#FFC107' },           // 金黄色
+            'ovh_cloud': { name: 'OVH 云', color: '#607D8B' },           // 蓝灰色
+            'digitalocean': { name: 'DigitalOcean', color: '#E91E63' }   // 粉红色
         };
 
         // 初始化图表
@@ -886,6 +900,7 @@
                     googleData, 
                     huaweiData, 
                     tencentData,
+                    volcanoData,
                     oracleData,
                     ibmData,
                     ovhData,
@@ -897,6 +912,7 @@
                     fetch('./data/google-cloud/nodes.json').then(r => r.json()),
                     fetch('./data/huawei-cloud/nodes.json').then(r => r.json()),
                     fetch('./data/tencent-cloud/nodes.json').then(r => r.json()),
+                    fetch('./data/volcano-engine/nodes.json').then(r => r.json()),
                     fetch('./data/oracle-cloud/nodes.json').then(r => r.json()),
                     fetch('./data/ibm-cloud/nodes.json').then(r => r.json()),
                     fetch('./data/ovh-cloud/nodes.json').then(r => r.json()),
@@ -910,6 +926,7 @@
                     ...googleData.nodes.map(node => ({ ...node, provider: 'google_cloud' })),
                     ...huaweiData.nodes.map(node => ({ ...node, provider: 'huawei_cloud' })),
                     ...tencentData.nodes.map(node => ({ ...node, provider: 'tencent_cloud' })),
+                    ...volcanoData.nodes.map(node => ({ ...node, provider: 'volcano_engine' })),
                     ...oracleData.nodes.map(node => ({ ...node, provider: 'oracle_cloud' })),
                     ...ibmData.nodes.map(node => ({ ...node, provider: 'ibm_cloud' })),
                     ...ovhData.nodes.map(node => ({ ...node, provider: 'ovh_cloud' })),
@@ -1172,13 +1189,19 @@
                 createGrowthTrendChart(filteredNodes),
                 createCountryCoverageChart(filteredNodes)
             ];
+
+            // 更新国家统计表
+            generateCountryStatsTable(filteredNodes);
         }
+
+        // 国家统计表数据管理
+        let allCountryStatsData = [];
+        let countryStatsCurrentPage = 1;
+        const countryStatsItemsPerPage = 20;
+        let countryStatsInitialized = false;
 
         // 生成按国家统计的表格
         function generateCountryStatsTable(nodes) {
-            const tbody = document.getElementById('country-stats-tbody');
-            tbody.innerHTML = '';
-            
             // 按供应商和国家统计
             const stats = {};
             
@@ -1208,16 +1231,38 @@
             });
             
             // 转换为数组并排序（先按供应商，再按节点数）
-            const sortedStats = Object.values(stats).sort((a, b) => {
+            allCountryStatsData = Object.values(stats).sort((a, b) => {
                 // 先按供应商名称排序
                 const providerCompare = providers[a.provider].name.localeCompare(providers[b.provider].name, 'zh-CN');
                 if (providerCompare !== 0) return providerCompare;
                 // 再按节点数降序
                 return b.nodeCount - a.nodeCount;
             });
+
+            // 初始化分页事件（只绑定一次）
+            if (!countryStatsInitialized) {
+                document.getElementById('country-prev-page').addEventListener('click', () => changeCountryStatsPage(-1));
+                document.getElementById('country-next-page').addEventListener('click', () => changeCountryStatsPage(1));
+                countryStatsInitialized = true;
+            }
+            
+            // 渲染第一页
+            countryStatsCurrentPage = 1;
+            renderCountryStatsTable();
+        }
+
+        // 渲染国家统计表格
+        function renderCountryStatsTable() {
+            const tbody = document.getElementById('country-stats-tbody');
+            tbody.innerHTML = '';
+            
+            const totalPages = Math.ceil(allCountryStatsData.length / countryStatsItemsPerPage) || 1;
+            const startIndex = (countryStatsCurrentPage - 1) * countryStatsItemsPerPage;
+            const endIndex = Math.min(startIndex + countryStatsItemsPerPage, allCountryStatsData.length);
+            const pageData = allCountryStatsData.slice(startIndex, endIndex);
             
             // 生成表格行
-            sortedStats.forEach(stat => {
+            pageData.forEach(stat => {
                 const tr = document.createElement('tr');
                 
                 // 供应商列
@@ -1255,6 +1300,28 @@
                 
                 tbody.appendChild(tr);
             });
+
+            // 更新分页信息
+            document.getElementById('country-current-page').textContent = countryStatsCurrentPage;
+            document.getElementById('country-total-pages').textContent = totalPages;
+            document.getElementById('country-total-count').textContent = allCountryStatsData.length;
+            
+            // 更新按钮状态
+            document.getElementById('country-prev-page').disabled = countryStatsCurrentPage === 1;
+            document.getElementById('country-next-page').disabled = countryStatsCurrentPage === totalPages;
+        }
+
+        // 切换国家统计表页面
+        function changeCountryStatsPage(delta) {
+            const totalPages = Math.ceil(allCountryStatsData.length / countryStatsItemsPerPage) || 1;
+            const newPage = countryStatsCurrentPage + delta;
+            
+            if (newPage >= 1 && newPage <= totalPages) {
+                countryStatsCurrentPage = newPage;
+                renderCountryStatsTable();
+                // 滚动到表格顶部
+                document.querySelector('.country-stats-table-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
         // 节点明细数据管理

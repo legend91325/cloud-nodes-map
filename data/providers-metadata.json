@@ -74,6 +74,18 @@
       "description": "腾讯提供的云计算服务",
       "market_position": "中国第三大云服务商"
     },
+    "volcano_engine": {
+      "id": "volcano_engine",
+      "name": "火山引擎",
+      "name_en": "Volcano Engine",
+      "color": "#00B42A",
+      "founded": "2020",
+      "headquarters": "中国北京",
+      "data_path": "data/volcano-engine/nodes.json",
+      "website": "https://www.volcengine.com",
+      "description": "字节跳动旗下的云服务平台",
+      "market_position": "新兴云服务提供商"
+    },
     "oracle_cloud": {
       "id": "oracle_cloud",
       "name": "甲骨文云",
@@ -130,31 +142,33 @@
     "alibaba_cloud",
     "tencent_cloud",
     "huawei_cloud",
+    "volcano_engine",
     "oracle_cloud",
     "ibm_cloud",
     "ovh_cloud",
     "digitalocean"
   ],
   "color_scheme": {
-    "description": "为10个云服务商精心设计的配色方案，确保视觉区分度",
+    "description": "为11个云服务商精心设计的配色方案，确保视觉区分度（橙、蓝、绿、红、紫、金、青、粉、灰、棕系列）",
     "palette": [
       {"provider": "aws", "color": "#FF9900", "rgb": [255, 153, 0]},
       {"provider": "azure", "color": "#0078D4", "rgb": [0, 120, 212]},
-      {"provider": "google_cloud", "color": "#4285F4", "rgb": [66, 133, 244]},
+      {"provider": "google_cloud", "color": "#34A853", "rgb": [52, 168, 83]},
       {"provider": "alibaba_cloud", "color": "#FF6A00", "rgb": [255, 106, 0]},
-      {"provider": "tencent_cloud", "color": "#006EFF", "rgb": [0, 110, 255]},
+      {"provider": "tencent_cloud", "color": "#9C27B0", "rgb": [156, 39, 176]},
       {"provider": "huawei_cloud", "color": "#D0021B", "rgb": [208, 2, 27]},
-      {"provider": "oracle_cloud", "color": "#F80000", "rgb": [248, 0, 0]},
-      {"provider": "ibm_cloud", "color": "#0F62FE", "rgb": [15, 98, 254]},
-      {"provider": "ovh_cloud", "color": "#123F6D", "rgb": [18, 63, 109]},
-      {"provider": "digitalocean", "color": "#0080FF", "rgb": [0, 128, 255]}
+      {"provider": "volcano_engine", "color": "#00BCD4", "rgb": [0, 188, 212]},
+      {"provider": "oracle_cloud", "color": "#C74634", "rgb": [199, 70, 52]},
+      {"provider": "ibm_cloud", "color": "#FFC107", "rgb": [255, 193, 7]},
+      {"provider": "ovh_cloud", "color": "#607D8B", "rgb": [96, 125, 139]},
+      {"provider": "digitalocean", "color": "#E91E63", "rgb": [233, 30, 99]}
     ]
   },
   "statistics": {
-    "total_providers": 10,
+    "total_providers": 11,
     "total_countries_covered": "估计覆盖超过50个国家",
-    "total_regions": "估计超过200个区域",
-    "last_calculation": "2025-01-01T00:00:00"
+    "total_regions": "估计超过220个区域",
+    "last_calculation": "2025-10-23T00:00:00"
   }
 }
 
