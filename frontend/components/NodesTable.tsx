@@ -77,6 +77,7 @@ export default function NodesTable({ nodes, providers }: NodesTableProps) {
         <div className="ml-auto text-sm text-neutral-500">
           共 {filteredNodes.length} 个节点
         </div>
+        
       </div>
 
       <div className="overflow-x-auto">
