@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
+import { providerColors, providerNameMap, providerOrder, chartTheme } from '@/lib/chartColors';
 
 interface ProviderComparisonChartProps {
   className?: string;
@@ -20,13 +21,30 @@ export default function ProviderComparisonChart({ className }: ProviderCompariso
 
     const chart = chartInstance.current;
 
+    // 节点数量数据（按 providerOrder 顺序）
+    const nodeCounts: Record<string, number> = {
+      'google_cloud': 36,
+      'azure': 34,
+      'alibaba_cloud': 29,
+      'aws': 28,
+      'oracle_cloud': 21,
+      'tencent_cloud': 18,
+      'huawei_cloud': 16,
+      'volcano_engine': 14,
+      'ibm_cloud': 11,
+      'digitalocean': 10,
+      'ovh_cloud': 9,
+    };
+
     const option: echarts.EChartsOption = {
+      backgroundColor: chartTheme.backgroundColor,
       title: {
         text: '各云服务商节点数量对比',
         left: 'center',
         textStyle: {
           fontSize: 20,
           fontWeight: 'bold',
+          color: chartTheme.titleTextColor,
         },
       },
       tooltip: {
@@ -34,59 +52,68 @@ export default function ProviderComparisonChart({ className }: ProviderCompariso
         axisPointer: {
           type: 'shadow',
         },
+        backgroundColor: chartTheme.tooltip.backgroundColor,
+        borderColor: chartTheme.tooltip.borderColor,
+        textStyle: {
+          color: chartTheme.tooltip.textColor,
+        },
       },
       grid: {
         left: '3%',
         right: '4%',
         bottom: '15%',
         containLabel: true,
+        borderColor: chartTheme.gridLineColor,
       },
       xAxis: {
         type: 'category',
-        data: [
-          'Google Cloud',
-          'Azure',
-          '阿里云',
-          'AWS',
-          '甲骨文云',
-          '腾讯云',
-          '华为云',
-          '火山引擎',
-          'IBM 云',
-          'DigitalOcean',
-          'OVH 云',
-        ],
+        data: providerOrder.map(id => providerNameMap[id]),
         axisLabel: {
           rotate: 45,
           interval: 0,
+          color: chartTheme.axisTextColor,
+        },
+        axisLine: {
+          lineStyle: {
+            color: chartTheme.gridLineColor,
+          },
         },
       },
       yAxis: {
         type: 'value',
         name: '节点数',
         max: 40,
+        nameTextStyle: {
+          color: chartTheme.axisTextColor,
+        },
+        axisLine: {
+          lineStyle: {
+            color: chartTheme.gridLineColor,
+          },
+        },
+        axisLabel: {
+          color: chartTheme.axisTextColor,
+        },
+        splitLine: {
+          lineStyle: {
+            color: chartTheme.gridLineColor,
+            type: 'dashed',
+          },
+        },
       },
       series: [
         {
           name: '节点数',
           type: 'bar',
-          data: [
-            { value: 36, itemStyle: { color: '#34A853' } },
-            { value: 34, itemStyle: { color: '#0078D4' } },
-            { value: 29, itemStyle: { color: '#FF6A00' } },
-            { value: 28, itemStyle: { color: '#FF9900' } },
-            { value: 21, itemStyle: { color: '#C74634' } },
-            { value: 18, itemStyle: { color: '#9C27B0' } },
-            { value: 16, itemStyle: { color: '#D0021B' } },
-            { value: 14, itemStyle: { color: '#00BCD4' } },
-            { value: 11, itemStyle: { color: '#FFC107' } },
-            { value: 10, itemStyle: { color: '#E91E63' } },
-            { value: 9, itemStyle: { color: '#607D8B' } },
-          ],
+          data: providerOrder.map(id => ({
+            value: nodeCounts[id] || 0,
+            itemStyle: { color: providerColors[id] },
+          })),
           label: {
             show: true,
             position: 'top',
             formatter: '{c}',
+            color: chartTheme.axisTextColor,
           },
         },
       ],

@@ -1,0 +1,158 @@
+/**
+ * 云服务商测评网站色系系统
+ * 基于专业、清晰、可信赖的设计理念
+ */
+
+:root {
+  /* ========== 主色 (Primary) ========== */
+  --color-primary-50: #EEF2FF;
+  --color-primary-500: #6366F1;
+  --color-primary-600: #4F46E5;
+  --color-primary-700: #4338CA;
+
+  /* ========== 辅助色 (Secondary) ========== */
+  /* 成功色 */
+  --color-success-50: #ECFDF5;
+  --color-success-600: #10B981;
+
+  /* 警告色 */
+  --color-warning-50: #FFFBEB;
+  --color-warning-500: #F59E0B;
+
+  /* 错误色 */
+  --color-error-50: #FEF2F2;
+  --color-error-600: #DC2626;
+
+  /* 信息色 */
+  --color-info-50: #EFF6FF;
+  --color-info-500: #3B82F6;
+
+  /* ========== 中性色 (Neutral) ========== */
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-100: #F3F4F6;
+  --color-neutral-300: #D1D5DB;
+  --color-neutral-500: #6B7280;
+  --color-neutral-700: #374151;
+  --color-neutral-900: #111827;
+  --color-white: #FFFFFF;
+
+  /* ========== 云服务商配色 (Data Visualization) ========== */
+  --color-provider-aws: #FF9900;
+  --color-provider-azure: #0078D4;
+  --color-provider-google-cloud: #4285F4;
+  --color-provider-alibaba-cloud: #FF6A00;
+  --color-provider-tencent-cloud: #9C27B0;
+  --color-provider-huawei-cloud: #D0021B;
+  --color-provider-volcano-engine: #00BCD4;
+  --color-provider-oracle-cloud: #C74634;
+  --color-provider-ibm-cloud: #FFC107;
+  --color-provider-ovh-cloud: #607D8B;
+  --color-provider-digitalocean: #E91E63;
+}
+
+/* ========== 工具类 (Utility Classes) ========== */
+
+/* 主色背景 */
+.bg-primary {
+  background-color: var(--color-primary-600);
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-50);
+}
+
+/* 主色文字 */
+.text-primary {
+  color: var(--color-primary-600);
+}
+
+/* 中性色文字 */
+.text-neutral-900 {
+  color: var(--color-neutral-900);
+}
+
+.text-neutral-700 {
+  color: var(--color-neutral-700);
+}
+
+.text-neutral-500 {
+  color: var(--color-neutral-500);
+}
+
+/* 按钮样式 */
+.btn-primary {
+  background-color: var(--color-primary-600);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-700);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-primary-600);
+  border: 1px solid var(--color-primary-600);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-50);
+}
+
+/* 卡片样式 */
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(17, 24, 39, 0.1);
+  padding: 1.5rem;
+}
+
+/* 标签样式 */
+.tag-success {
+  background-color: var(--color-success-50);
+  color: var(--color-success-600);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tag-warning {
+  background-color: var(--color-warning-50);
+  color: var(--color-warning-500);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tag-error {
+  background-color: var(--color-error-50);
+  color: var(--color-error-600);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tag-info {
+  background-color: var(--color-info-50);
+  color: var(--color-info-500);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+

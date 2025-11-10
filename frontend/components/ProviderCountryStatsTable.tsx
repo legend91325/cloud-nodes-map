@@ -65,23 +65,23 @@ export default function ProviderCountryStatsTable({ nodes, providers }: Provider
   const pageData = filteredStats.slice(startIndex, endIndex);
 
   return (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden">
-      <div className="px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-        <h2 className="text-xl font-bold">云服务商国家覆盖明细</h2>
-        <p className="text-sm text-purple-100 mt-1">各云服务商在各国家的节点和可用区分布情况</p>
+    <div className="bg-white rounded-lg shadow-md border border-neutral-200 overflow-hidden">
+      <div className="px-6 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+        <h2 className="text-lg font-semibold">云服务商国家覆盖明细</h2>
+        <p className="text-sm text-primary-50 mt-1 opacity-90">各云服务商在各国家的节点和可用区分布情况</p>
       </div>
 
       {/* 筛选器 */}
-      <div className="px-6 py-4 bg-gray-50 border-b border-gray-200 flex flex-wrap gap-4">
+      <div className="px-6 py-4 bg-white border-b border-neutral-200 flex flex-wrap gap-4">
         <div className="flex items-center gap-2">
-          <label className="text-sm font-medium text-gray-700">云服务商:</label>
+          <label className="text-sm font-medium text-neutral-700">云服务商:</label>
           <select
             value={providerFilter}
             onChange={(e) => {
               setProviderFilter(e.target.value);
               setCurrentPage(1);
             }}
-            className="px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="px-3 py-2 text-sm border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           >
             <option value="all">全部</option>
             {Object.entries(providers).map(([id, provider]) => (
@@ -89,48 +89,48 @@ export default function ProviderCountryStatsTable({ nodes, providers }: Provider
             ))}
           </select>
         </div>
-        <div className="ml-auto text-sm text-gray-600">
+        <div className="ml-auto text-sm text-neutral-500">
           共 {filteredStats.length} 条记录
         </div>
       </div>
 
       <div className="overflow-x-auto">
         <table className="w-full">
-          <thead className="bg-gray-50">
+          <thead className="bg-primary-50 border-b border-neutral-200">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">
                 云服务商
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">
                 国家
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">
                 节点数
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider">
                 可用区数
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white divide-y divide-neutral-200">
             {pageData.map((stat, index) => (
-              <tr key={`${stat.provider}-${stat.country}-${index}`} className="hover:bg-gray-50 transition-colors">
-                <td className="px-6 py-4 whitespace-nowrap">
+              <tr key={`${stat.provider}-${stat.country}-${index}`} className="hover:bg-primary-50 transition-colors">
+                <td className="px-4 py-3 whitespace-nowrap">
                   <div className="flex items-center gap-3">
                     <div
                       className="w-4 h-4 rounded-full"
                       style={{ backgroundColor: providers[stat.provider]?.color || '#999' }}
                     />
-                    <span className="font-medium text-gray-900">{stat.providerName}</span>
+                    <span className="font-medium text-neutral-900">{stat.providerName}</span>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-neutral-900">
                   {stat.country}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-700">
+                <td className="px-4 py-3 whitespace-nowrap text-sm text-neutral-900">
                   {stat.nodeCount} 个
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-gray-700 font-semibold">
+                <td className="px-4 py-3 whitespace-nowrap text-sm text-neutral-900 font-medium">
                   {stat.azCount} 个
                 </td>
               </tr>
@@ -140,25 +140,25 @@ export default function ProviderCountryStatsTable({ nodes, providers }: Provider
       </div>
 
       {totalPages > 1 && (
-        <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex items-center justify-between">
-          <div className="text-sm text-gray-700">
+        <div className="px-6 py-4 bg-white border-t border-neutral-200 flex items-center justify-between">
+          <div className="text-sm text-neutral-500">
             显示 {startIndex + 1} - {Math.min(endIndex, filteredStats.length)} 条，共 {filteredStats.length} 条
           </div>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
               disabled={currentPage === 1}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 text-sm font-medium text-neutral-700 bg-white border border-neutral-300 rounded-md hover:bg-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             >
               上一页
             </button>
-            <span className="px-4 py-2 text-sm font-medium text-gray-700">
+            <span className="px-4 py-2 text-sm font-medium text-neutral-500">
               {currentPage} / {totalPages}
             </span>
             <button
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-4 py-2 text-sm font-medium text-neutral-700 bg-white border border-neutral-300 rounded-md hover:bg-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
             >
               下一页
             </button>

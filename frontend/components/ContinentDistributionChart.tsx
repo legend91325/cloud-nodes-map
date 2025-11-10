@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import * as echarts from 'echarts';
+import { providerColors, providerNameMap, providerOrder, chartTheme } from '@/lib/chartColors';
 
 interface ContinentDistributionChartProps {
   className?: string;
@@ -20,13 +21,30 @@ export default function ContinentDistributionChart({ className }: ContinentDistr
 
     const chart = chartInstance.current;
 
+    // 大洲分布数据（按 providerOrder 顺序）
+    const continentData: Record<string, number[]> = {
+      'alibaba_cloud': [24, 0, 0, 0, 0, 0, 0],
+      'aws': [10, 5, 3, 1, 1, 1, 0],
+      'azure': [11, 11, 9, 1, 1, 1, 0],
+      'google_cloud': [10, 12, 7, 1, 1, 1, 0],
+      'huawei_cloud': [12, 4, 9, 1, 1, 1, 1],
+      'tencent_cloud': [14, 6, 5, 1, 1, 1, 0],
+      'volcano_engine': [12, 3, 3, 1, 1, 1, 0],
+      'oracle_cloud': [8, 0, 4, 1, 1, 1, 0],
+      'ibm_cloud': [0, 0, 0, 0, 0, 0, 0],
+      'ovh_cloud': [0, 0, 0, 0, 0, 0, 0],
+      'digitalocean': [3, 0, 4, 1, 1, 1, 0],
+    };
+
     const option: echarts.EChartsOption = {
+      backgroundColor: chartTheme.backgroundColor,
       title: {
         text: '各大洲节点分布',
         left: 'center',
         textStyle: {
           fontSize: 20,
           fontWeight: 'bold',
+          color: chartTheme.titleTextColor,
         },
       },
       tooltip: {
@@ -34,162 +52,74 @@ export default function ContinentDistributionChart({ className }: ContinentDistr
         axisPointer: {
           type: 'shadow',
         },
+        backgroundColor: chartTheme.tooltip.backgroundColor,
+        borderColor: chartTheme.tooltip.borderColor,
+        textStyle: {
+          color: chartTheme.tooltip.textColor,
+        },
       },
       legend: {
-        data: [
-          '阿里云',
-          'AWS',
-          'Azure',
-          'Google Cloud',
-          '华为云',
-          '腾讯云',
-          '火山引擎',
-          '甲骨文云',
-          'IBM 云',
-          'OVH 云',
-          'DigitalOcean',
-        ],
+        data: providerOrder.map(id => providerNameMap[id]),
         bottom: 10,
         type: 'scroll',
+        textStyle: {
+          color: chartTheme.axisTextColor,
+        },
       },
       grid: {
         left: '3%',
         right: '4%',
         bottom: '15%',
         containLabel: true,
+        borderColor: chartTheme.gridLineColor,
       },
       xAxis: {
         type: 'category',
         data: ['亚洲', '欧洲', '北美洲', '南美洲', '非洲', '大洋洲', '其他'],
+        axisLine: {
+          lineStyle: {
+            color: chartTheme.gridLineColor,
+          },
+        },
+        axisLabel: {
+          color: chartTheme.axisTextColor,
+        },
       },
       yAxis: {
         type: 'value',
         name: '节点数',
         max: 120,
+        nameTextStyle: {
+          color: chartTheme.axisTextColor,
+        },
+        axisLine: {
+          lineStyle: {
+            color: chartTheme.gridLineColor,
+          },
+        },
+        axisLabel: {
+          color: chartTheme.axisTextColor,
+        },
+        splitLine: {
+          lineStyle: {
+            color: chartTheme.gridLineColor,
+            type: 'dashed',
+          },
+        },
       },
-      series: [
-        {
-          name: '阿里云',
-          type: 'bar',
-          stack: 'total',
-          data: [24, 0, 0, 0, 0, 0, 0],
-          itemStyle: { color: '#FF6A00' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
+      series: providerOrder.map(id => ({
+        name: providerNameMap[id],
+        type: 'bar' as const,
+        stack: 'total',
+        data: continentData[id] || [0, 0, 0, 0, 0, 0, 0],
+        itemStyle: { color: providerColors[id] },
+        label: {
+          show: true,
+          position: 'inside' as const,
+          color: '#FFFFFF',
+          fontSize: 10,
         },
-        {
-          name: 'AWS',
-          type: 'bar',
-          stack: 'total',
-          data: [10, 5, 3, 1, 1, 1, 0],
-          itemStyle: { color: '#FF9900' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: 'Azure',
-          type: 'bar',
-          stack: 'total',
-          data: [11, 11, 9, 1, 1, 1, 0],
-          itemStyle: { color: '#0078D4' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: 'Google Cloud',
-          type: 'bar',
-          stack: 'total',
-          data: [10, 12, 7, 1, 1, 1, 0],
-          itemStyle: { color: '#34A853' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: '华为云',
-          type: 'bar',
-          stack: 'total',
-          data: [12, 4, 9, 1, 1, 1, 1],
-          itemStyle: { color: '#D0021B' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: '腾讯云',
-          type: 'bar',
-          stack: 'total',
-          data: [14, 6, 5, 1, 1, 1, 0],
-          itemStyle: { color: '#9C27B0' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: '火山引擎',
-          type: 'bar',
-          stack: 'total',
-          data: [12, 3, 3, 1, 1, 1, 0],
-          itemStyle: { color: '#00BCD4' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: '甲骨文云',
-          type: 'bar',
-          stack: 'total',
-          data: [8, 0, 4, 1, 1, 1, 0],
-          itemStyle: { color: '#C74634' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: 'IBM 云',
-          type: 'bar',
-          stack: 'total',
-          data: [0, 0, 0, 0, 0, 0, 0],
-          itemStyle: { color: '#FFC107' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: 'OVH 云',
-          type: 'bar',
-          stack: 'total',
-          data: [0, 0, 0, 0, 0, 0, 0],
-          itemStyle: { color: '#607D8B' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-        {
-          name: 'DigitalOcean',
-          type: 'bar',
-          stack: 'total',
-          data: [3, 0, 4, 1, 1, 1, 0],
-          itemStyle: { color: '#E91E63' },
-          label: {
-            show: true,
-            position: 'inside',
-          },
-        },
-      ],
+      })),
     };
 
     chart.setOption(option);

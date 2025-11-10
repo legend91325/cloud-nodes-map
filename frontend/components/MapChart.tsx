@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import * as echarts from 'echarts';
 import { CloudNode, ProviderMetadata } from '@/types';
 import { getAvailabilityZoneCount } from '@/lib/data';
+import { chartTheme } from '@/lib/chartColors';
 
 interface MapChartProps {
   nodes: CloudNode[];
@@ -107,11 +108,8 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
             node.location.longitude,
             node.location.latitude,
             azCount,
-            node.network_info.latency,
-            node.network_info.uptime,
             node.location.country,
             node.location.city,
-            node.data_center,
             node.launch_date,
           ],
           provider: providerId,
@@ -143,20 +141,20 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
     }).filter(Boolean);
 
     const option: echarts.EChartsOption = {
-      backgroundColor: 'transparent',
+      backgroundColor: chartTheme.backgroundColor,
       geo: {
         map: 'world',
         roam: true,
         zoom: 1.2,
         center: [0, 20],
         itemStyle: {
-          areaColor: '#f0f2f5',
-          borderColor: '#d0d7de',
+          areaColor: chartTheme.neutral[100], // #F1F3F4 (Google Material Gray)
+          borderColor: chartTheme.neutral[300], // #DADCE0 (Google Material Gray)
           borderWidth: 0.5,
         },
         emphasis: {
           itemStyle: {
-            areaColor: '#e0e4e8',
+            areaColor: chartTheme.neutral[200], // #E8EAED (Google Material Gray)
           },
         },
         silent: false,
@@ -164,10 +162,10 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
       series: series as any,
       tooltip: {
         trigger: 'item',
-        backgroundColor: 'rgba(0, 0, 0, 0.8)',
-        borderColor: 'transparent',
+        backgroundColor: chartTheme.tooltip.backgroundColor,
+        borderColor: chartTheme.tooltip.borderColor,
         textStyle: {
-          color: '#fff',
+          color: chartTheme.tooltip.textColor,
         },
         formatter: (params: any) => {
           if (params.seriesType === 'scatter') {
@@ -180,11 +178,10 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
                 </div>
                 <div style="font-size: 12px; line-height: 1.6;">
                   <div>提供商: ${provider?.name}</div>
-                  <div>国家: ${data[5]}</div>
-                  <div>城市: ${data[6]}</div>
+                  <div>国家: ${data[3]}</div>
+                  <div>城市: ${data[4]}</div>
                   <div>可用区: ${data[2]} 个</div>
-                  <div>延迟: ${data[3]}ms</div>
-                  <div>可用性: ${data[4]}%</div>
+                  ${data[5] ? `<div>上线时间: ${new Date(data[5]).toLocaleDateString('zh-CN')}</div>` : ''}
                 </div>
               </div>
             `;
@@ -199,7 +196,7 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
         bottom: 10,
         data: series.map((s: any) => s?.name).filter(Boolean),
         textStyle: {
-          color: '#666',
+          color: chartTheme.axisTextColor,
         },
       },
       animation: true,
@@ -224,15 +221,15 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
     return (
       <div className="w-full h-[600px] rounded-xl overflow-hidden shadow-lg bg-white flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600 mb-2"></div>
-          <p className="text-gray-600 text-sm">加载地图中...</p>
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mb-2"></div>
+          <p className="text-neutral-500 text-sm">加载地图中...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full h-[600px] rounded-xl overflow-hidden shadow-lg bg-white">
+    <div className="w-full h-[600px] rounded-lg overflow-hidden shadow-sm border border-neutral-200 bg-white">
       <div ref={chartRef} className="w-full h-full" />
     </div>
   );

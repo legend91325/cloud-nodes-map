@@ -13,11 +13,6 @@ export interface CloudNode {
   availability_zone?: string;
   status: 'active' | 'inactive';
   launch_date?: string;
-  data_center?: string;
-  network_info: {
-    latency: number;
-    uptime: number;
-  };
 }
 
 export interface Provider {
