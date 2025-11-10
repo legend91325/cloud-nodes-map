@@ -29,23 +29,56 @@
 
 ## 🚀 快速开始
 
-### 1. 启动本地服务器
+### 本地开发
+
+#### 1. 启动前端开发服务器
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+访问：**http://localhost:3000**
+
+#### 2. 启动静态 HTML 服务器（旧版）
 
 ```bash
 cd cloud-nodes-map
 python3 serve.py
 ```
 
-### 2. 访问应用
+访问：**http://localhost:8000/cloud-infrastructure-map.html**
 
-打开浏览器访问：**http://localhost:8000/cloud-infrastructure-map.html**
+### 部署到生产环境
 
-### 3. 探索功能
+项目已优化支持 **Vercel** 部署，推荐使用：
 
-- 📈 查看统计分析面板
-- 🗺️ 在交互式地图上浏览全球节点
-- 🔍 搜索和筛选特定云服务商的节点
-- 📋 查看详细的节点列表
+📖 **详细部署指南**: [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
+
+**快速部署（5分钟）**:
+```bash
+# 1. 运行部署前准备脚本（自动同步数据、检查构建）
+bash scripts/pre-deploy.sh
+
+# 2. 提交代码到 GitHub
+git add .
+git commit -m "准备部署到 Vercel"
+git push origin main
+
+# 3. 在 Vercel 中部署
+# - 访问 https://vercel.com 并登录
+# - 导入项目，设置 Root Directory 为 `frontend`
+# - 点击部署，完成！
+```
+
+**重要提示**:
+- ⚠️ 在 Vercel 中必须设置 **Root Directory** 为 `frontend`
+- ✅ 数据文件会自动从 `data/` 同步到 `frontend/public/data/`
+- ✅ 每次部署前运行 `bash scripts/pre-deploy.sh` 确保数据最新
+- 🌐 自定义域名 `northcloud.cloud` 配置指南: [DOMAIN_SETUP.md](DOMAIN_SETUP.md)
+
+其他推荐平台：Netlify、Cloudflare Pages（详见部署指南）
 
 ## ✨ 核心功能
 
@@ -145,11 +178,116 @@ cloud-nodes-map/
 - 🖱️ 流畅的交互体验
 - 📱 跨设备支持
 
+## 📊 数据管理
+
+### 数据快速参考
+
+| 云服务商 | 节点数 | 国家数 | 最后更新 | 数据文件 | 优先级 |
+|---------|-------|-------|---------|---------|-------|
+| **Google Cloud** | 36 | 24 | 2024-01-15 | `data/google-cloud/nodes.json` | ⭐⭐⭐ |
+| **Azure** | 34 | 19 | 2024-01-15 | `data/azure/nodes.json` | ⭐⭐⭐ |
+| **阿里云** | 29 | 14 | 2024-12-19 | `data/alibaba-cloud/nodes.json` | ⭐⭐ |
+| **AWS** | 24 | 18 | 2024-01-15 | `data/aws/nodes.json` | ⭐⭐⭐ |
+| **Oracle Cloud** | 21 | 15 | 2025-01-01 | `data/oracle-cloud/nodes.json` | ⭐ |
+| **腾讯云** | 18 | 9 | 2024-01-15 | `data/tencent-cloud/nodes.json` | ⭐⭐ |
+| **华为云** | 16 | 10 | 2024-01-15 | `data/huawei-cloud/nodes.json` | ⭐⭐ |
+| **火山引擎** | 14 | 8 | 2025-10-23 | `data/volcano-engine/nodes.json` | ✅ |
+| **IBM Cloud** | 11 | 7 | 2025-01-01 | `data/ibm-cloud/nodes.json` | ⭐ |
+| **DigitalOcean** | 10 | 8 | 2025-01-01 | `data/digitalocean/nodes.json` | ⭐ |
+| **OVH Cloud** | 9 | 7 | 2025-01-01 | `data/ovh-cloud/nodes.json` | ⭐ |
+
+**优先级说明**:
+- ⭐⭐⭐ **高**: 主流云服务商，更新频繁，需要定期校准
+- ⭐⭐ **中**: 区域性云服务商，按需更新
+- ⭐ **低**: 覆盖较少，数据变化不大
+- ✅ **最新**: 最近刚更新，暂时无需校准
+
+### 数据源参考
+
+#### 全球三大云（优先校准）
+
+**AWS (Amazon Web Services)**
+- 🔗 区域和可用区: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+- 🔗 全球基础设施: https://infrastructure.aws/
+- 🔧 CLI查询: `aws ec2 describe-regions`
+- 📝 建议更新频率: 每季度
+
+**Microsoft Azure**
+- 🔗 Azure区域: https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/
+- 🔗 互动地图: https://datacenters.microsoft.com/globe/
+- 🔧 CLI查询: `az account list-locations`
+- 📝 建议更新频率: 每季度
+
+**Google Cloud Platform**
+- 🔗 区域和可用区: https://cloud.google.com/about/locations
+- 🔗 全球位置: https://cloud.google.com/infrastructure/locations
+- 🔧 CLI查询: `gcloud compute regions list`
+- 📝 建议更新频率: 每季度
+
+#### 中国云服务商
+
+**阿里云 (Alibaba Cloud)**
+- 🔗 中文文档: https://help.aliyun.com/document_detail/40654.html
+- 🔗 国际站: https://www.alibabacloud.com/global-locations
+- 🔧 CLI查询: `aliyun ecs DescribeRegions`
+- 📝 建议更新频率: 每半年
+
+**腾讯云 (Tencent Cloud)**
+- 🔗 地域文档: https://cloud.tencent.com/document/product/213/6091
+- 🔗 国际版: https://www.tencentcloud.com/document/product/213/6091
+- 📝 建议更新频率: 每半年
+
+**华为云 (Huawei Cloud)**
+- 🔗 区域文档: https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0184026189.html
+- 🔗 全球站点: https://www.huaweicloud.com/intl/en-us/global/
+- 📝 建议更新频率: 每半年
+
+**火山引擎 (Volcano Engine)**
+- 🔗 地域文档: https://www.volcengine.com/docs/6396/69693
+- 🔗 全球基础设施: https://www.volcengine.com/product
+- 📝 最后更新: 2025-10-23（最新）
+
+#### 其他云服务商
+
+**Oracle Cloud Infrastructure**
+- 🔗 区域文档: https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm
+- 🔗 全球区域: https://www.oracle.com/cloud/data-regions/
+- 📝 建议更新频率: 每年
+
+**IBM Cloud**
+- 🔗 位置文档: https://cloud.ibm.com/docs/overview?topic=overview-locations
+- 🔗 数据中心: https://www.ibm.com/cloud/data-centers
+- 📝 建议更新频率: 每年
+
+**OVHcloud**
+- 🔗 全球基础设施: https://www.ovhcloud.com/en/about-us/global-infrastructure/
+- 🔗 区域可用性: https://www.ovhcloud.com/en/public-cloud/regions-availability/
+- 📝 建议更新频率: 每年
+
+**DigitalOcean**
+- 🔗 数据中心: https://docs.digitalocean.com/products/platform/availability-matrix/
+- 🔗 产品文档: https://www.digitalocean.com/products/data-centers
+- 📝 建议更新频率: 每年
+
+### 数据验证工具
+
+项目提供了数据验证脚本，用于检查数据文件的完整性和正确性：
+
+```bash
+# 验证所有云服务商数据
+python3 validate_data.py
+```
+
+验证脚本会检查：
+- JSON 格式正确性
+- 必需字段完整性
+- 经纬度范围有效性
+- 节点状态有效性
+
 ## 📚 相关文档
 
-- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) - 详细的项目结构说明
-- [CLOUD_MAP_README.md](CLOUD_MAP_README.md) - 地图功能说明
-- [docs/PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md) - 项目总结
+- [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) - 详细部署指南（推荐阅读）
+- [docs/README.md](docs/README.md) - 阿里云节点分析项目文档
 
 ## 🔄 更新日志
 
