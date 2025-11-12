@@ -38,6 +38,16 @@ export default function Home() {
   // 确保只在客户端执行
   useEffect(() => {
     setMounted(true);
+    
+    // 开发模式下，加载 Analytics 调试工具
+    if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
+      import('@/lib/analytics-debug').then(({ showAnalyticsDebugPanel }) => {
+        // 延迟显示，确保页面加载完成
+        setTimeout(() => {
+          showAnalyticsDebugPanel();
+        }, 2000);
+      });
+    }
   }, []);
 
   useEffect(() => {

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
+import VercelAnalytics from "@/components/VercelAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +24,10 @@ export default function RootLayout({
     <html lang="zh-CN" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`} suppressHydrationWarning>
         {children}
+        {/* Google Analytics 4 */}
+        <Analytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        {/* Vercel Analytics & Speed Insights */}
+        <VercelAnalytics />
       </body>
     </html>
   );

@@ -66,12 +66,12 @@
    - 等待 2-3 分钟
    - 获得一个 `your-project.vercel.app` 的域名
 
-7. **配置自定义域名 `northcloud.cloud`**
+7. **配置自定义域名 `cloudnorth.cloud`**
    
    **步骤 A: 在 Vercel 中添加域名**
    - 部署完成后，进入项目 Dashboard
    - 点击 "Settings" → "Domains"
-   - 在 "Add Domain" 输入框中输入：`northcloud.cloud`
+   - 在 "Add Domain" 输入框中输入：`cloudnorth.cloud`
    - 点击 "Add"
    - Vercel 会显示需要配置的 DNS 记录
 
@@ -105,7 +105,7 @@
    **步骤 D: 验证 HTTPS**
    - Vercel 会自动为你的域名配置 SSL 证书
    - 通常需要几分钟时间
-   - 完成后，你的网站就可以通过 `https://northcloud.cloud` 访问了
+   - 完成后，你的网站就可以通过 `https://cloudnorth.cloud` 访问了
 
    **常见问题**:
    - 如果 DNS 验证失败，检查 DNS 记录是否正确配置
@@ -310,12 +310,12 @@ export default nextConfig;
 
 ### 1. 自定义域名配置
 
-**域名**: `northcloud.cloud`
+**域名**: `cloudnorth.cloud`
 
 📖 **详细配置指南**: [DOMAIN_SETUP.md](DOMAIN_SETUP.md)
 
 **快速步骤**:
-1. 在 Vercel Dashboard → Settings → Domains 中添加 `northcloud.cloud`
+1. 在 Vercel Dashboard → Settings → Domains 中添加 `cloudnorth.cloud`
 2. 根据 Vercel 显示的 DNS 记录，在域名注册商配置 DNS
 3. 等待 DNS 生效（5-60 分钟）
 4. Vercel 自动配置 SSL 证书

@@ -76,7 +76,9 @@ git push origin main
 - ⚠️ 在 Vercel 中必须设置 **Root Directory** 为 `frontend`
 - ✅ 数据文件会自动从 `data/` 同步到 `frontend/public/data/`
 - ✅ 每次部署前运行 `bash scripts/pre-deploy.sh` 确保数据最新
-- 🌐 自定义域名 `northcloud.cloud` 配置指南: [DOMAIN_SETUP.md](DOMAIN_SETUP.md)
+- 🌐 自定义域名 `cloudnorth.cloud` 配置指南: [DOMAIN_SETUP.md](DOMAIN_SETUP.md)
+- 📊 监控和统计配置指南: [MONITORING_GUIDE.md](MONITORING_GUIDE.md)
+- 🔍 本地调试 Analytics 指南: [LOCAL_DEBUG_GUIDE.md](LOCAL_DEBUG_GUIDE.md)
 
 其他推荐平台：Netlify、Cloudflare Pages（详见部署指南）
 
