@@ -62,6 +62,10 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
   const chartInstance = useRef<echarts.ECharts | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [loading, setLoading] = useState(true);
+  
+  // 初始地图状态
+  const initialZoom = 1.2;
+  const initialCenter: [number, number] = [0, 20];
 
   useEffect(() => {
     // 加载世界地图
@@ -145,8 +149,10 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
       geo: {
         map: 'world',
         roam: true,
-        zoom: 1.2,
-        center: [0, 20],
+        zoom: initialZoom,
+        center: initialCenter,
+        zoomMin: initialZoom, // 设置最小缩放级别，防止缩放到更小
+        zoomMax: 5, // 设置最大缩放级别
         itemStyle: {
           areaColor: chartTheme.neutral[100], // #F1F3F4 (Google Material Gray)
           borderColor: chartTheme.neutral[300], // #DADCE0 (Google Material Gray)
@@ -228,9 +234,44 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
     );
   }
 
+  // 重置地图视图
+  const handleReset = () => {
+    if (chartInstance.current) {
+      // 使用 setOption 重置 geo 配置
+      chartInstance.current.setOption({
+        geo: {
+          zoom: initialZoom,
+          center: initialCenter,
+        },
+      }, false); // false 表示不合并，直接替换
+    }
+  };
+
   return (
-    <div className="w-full h-[600px] rounded-lg overflow-hidden shadow-sm border border-neutral-200 bg-white">
+    <div className="w-full h-[600px] rounded-lg overflow-hidden shadow-sm border border-neutral-200 bg-white relative">
       <div ref={chartRef} className="w-full h-full" />
+      {/* 重置按钮 */}
+      <button
+        onClick={handleReset}
+        className="absolute top-4 right-4 z-10 px-4 py-2 bg-white border border-neutral-300 rounded-md shadow-sm hover:bg-neutral-50 hover:border-primary-500 transition-colors text-sm font-medium text-neutral-700 hover:text-primary-600 flex items-center gap-2"
+        aria-label="重置地图视图"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+          />
+        </svg>
+        <span>重置视图</span>
+      </button>
     </div>
   );
 }
