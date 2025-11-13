@@ -151,8 +151,10 @@ export default function MapChart({ nodes, providers, selectedProviders }: MapCha
         roam: true,
         zoom: initialZoom,
         center: initialCenter,
-        zoomMin: initialZoom, // 设置最小缩放级别，防止缩放到更小
-        zoomMax: 5, // 设置最大缩放级别
+        scaleLimit: {
+          min: initialZoom, // 设置最小缩放级别，防止缩放到更小
+          max: 5, // 设置最大缩放级别
+        },
         itemStyle: {
           areaColor: chartTheme.neutral[100], // #F1F3F4 (Google Material Gray)
           borderColor: chartTheme.neutral[300], // #DADCE0 (Google Material Gray)
