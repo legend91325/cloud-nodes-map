@@ -1,48 +1,13 @@
 'use client';
 
-import { useEffect, useState, useMemo } from 'react';
-import dynamic from 'next/dynamic';
-import Header from '@/components/Header';
-import StatsCard from '@/components/StatsCard';
-import ProviderStatsTable from '@/components/ProviderStatsTable';
-import ProviderCountryStatsTable from '@/components/ProviderCountryStatsTable';
-import NodesTable from '@/components/NodesTable';
-import { CloudNode, ProviderMetadata, ProviderStat } from '@/types';
-import { loadAllNodes, loadProviderMetadata, getAvailabilityZoneCount } from '@/lib/data';
-
-// 动态导入 MapChart，禁用 SSR 以避免 hydration 错误
-const MapChart = dynamic(() => import('@/components/MapChart'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-[600px] rounded-xl overflow-hidden shadow-lg bg-white flex items-center justify-center">
-      <div className="text-center">
-        <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-primary-500 border-t-transparent mb-2"></div>
-        <p className="text-sm text-neutral-500">加载地图中...</p>
-      </div>
-    </div>
-  ),
-});
-
-// 动态导入图表组件，禁用 SSR
-const GrowthTrendChart = dynamic(() => import('@/components/GrowthTrendChart'), { ssr: false });
-const ContinentDistributionChart = dynamic(() => import('@/components/ContinentDistributionChart'), { ssr: false });
-const ProviderComparisonChart = dynamic(() => import('@/components/ProviderComparisonChart'), { ssr: false });
+import Link from 'next/link';
+import { useEffect } from 'react';
 
 export default function Home() {
-  const [nodes, setNodes] = useState<CloudNode[]>([]);
-  const [metadata, setMetadata] = useState<ProviderMetadata | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
-  const [mounted, setMounted] = useState(false);
-
-  // 确保只在客户端执行
   useEffect(() => {
-    setMounted(true);
-    
     // 开发模式下，加载 Analytics 调试工具
     if (process.env.NODE_ENV === 'development' && typeof window !== 'undefined') {
       import('@/lib/analytics-debug').then(({ showAnalyticsDebugPanel }) => {
-        // 延迟显示，确保页面加载完成
         setTimeout(() => {
           showAnalyticsDebugPanel();
         }, 2000);
@@ -50,219 +15,147 @@ export default function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-    
-    async function fetchData() {
-      setLoading(true);
-      try {
-        const [nodesData, metadataData] = await Promise.all([
-          loadAllNodes(),
-          loadProviderMetadata(),
-        ]);
-        setNodes(nodesData);
-        setMetadata(metadataData);
-      } catch (error) {
-        console.error('Failed to load data:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, [mounted]);
-
-  // 计算统计数据
-  const stats = useMemo(() => {
-    if (!metadata || nodes.length === 0) {
-      return {
-        totalNodes: 0,
-        totalCountries: 0,
-        totalAZs: 0,
-        totalProviders: 0,
-      };
-    }
-
-    const countries = new Set(nodes.map(n => n.location.country));
-    const totalAZs = nodes.reduce((sum, node) => sum + getAvailabilityZoneCount(node), 0);
-
-    return {
-      totalNodes: nodes.length,
-      totalCountries: countries.size,
-      totalAZs,
-      totalProviders: Object.keys(metadata.providers).length,
-    };
-  }, [nodes, metadata]);
-
-  // 计算云服务商统计
-  const providerStats = useMemo(() => {
-    if (!metadata) return [];
-
-    const statsMap: Record<string, ProviderStat> = {};
-
-    nodes.forEach(node => {
-      if (!statsMap[node.provider]) {
-        const provider = metadata.providers[node.provider];
-        if (!provider) return;
-        statsMap[node.provider] = {
-          provider: node.provider,
-          name: provider.name,
-          color: provider.color,
-          nodeCount: 0,
-          countryCount: 0,
-          azCount: 0,
-        };
-      }
-      statsMap[node.provider].nodeCount++;
-      statsMap[node.provider].azCount += getAvailabilityZoneCount(node);
-    });
-
-    // 计算每个提供商的国家数
-    Object.keys(statsMap).forEach(providerId => {
-      const countries = new Set(
-        nodes.filter(n => n.provider === providerId).map(n => n.location.country)
-      );
-      statsMap[providerId].countryCount = countries.size;
-    });
-
-    return Object.values(statsMap).sort((a, b) => b.nodeCount - a.nodeCount);
-  }, [nodes, metadata]);
-
-
-  // 提供商映射（用于表格显示）
-  const providersMap = useMemo(() => {
-    if (!metadata) return {};
-    return Object.entries(metadata.providers).reduce((acc, [id, provider]) => {
-      acc[id] = {
-        name: provider.name,
-        color: provider.color,
-      };
-      return acc;
-    }, {} as Record<string, { name: string; color: string }>);
-  }, [metadata]);
-
-  // 在客户端挂载前，显示加载状态
-  if (!mounted || loading) {
-    return (
-      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-primary-500 border-t-transparent mb-3"></div>
-          <p className="text-sm text-neutral-500">加载数据中...</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-neutral-50">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-8 max-w-7xl">
-        {/* 统计卡片 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <StatsCard
-            number={stats.totalProviders}
-            label="云服务商"
-            icon="☁️"
-          />
-          <StatsCard
-            number={stats.totalNodes}
-            label="节点总数"
-            icon="🌐"
-          />
-          <StatsCard
-            number={stats.totalCountries}
-            label="覆盖国家"
-            icon="🌍"
-          />
-          <StatsCard
-            number={stats.totalAZs}
-            label="可用区总数"
-            icon="⚡"
-          />
-        </div>
-
-        {/* 地图 */}
-        <div className="mb-8">
-          <div className="bg-white rounded-lg shadow-md border border-neutral-200 p-6">
-                  <div className="mb-4">
-                    <h2 className="text-xl font-semibold text-primary-600 mb-1">全球节点分布地图</h2>
-                    <p className="text-sm text-neutral-500">点击图例可筛选云服务商，拖拽可缩放地图</p>
-                  </div>
-            <MapChart
-              nodes={nodes}
-              providers={metadata?.providers || {}}
-              selectedProviders={selectedProviders}
-            />
+    <div className="min-h-screen bg-neutral-50 pt-16">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-primary-50 via-white to-primary-50 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 mb-6">
+              云计算指北
+            </h1>
+            <p className="text-xl text-neutral-600 mb-8">
+              专业的云计算资讯与服务平台
+            </p>
+            <p className="text-lg text-neutral-500 mb-12 max-w-2xl mx-auto">
+              为您提供最新的云计算资讯、全球基础设施节点分布、云服务商对比分析等专业内容
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                href="/services/infrastructure"
+                className="px-6 py-3 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors font-medium shadow-sm"
+              >
+                查看全球基础设施
+              </Link>
+              <Link
+                href="/news"
+                className="px-6 py-3 bg-white text-primary-600 border border-primary-600 rounded-md hover:bg-primary-50 transition-colors font-medium shadow-sm"
+              >
+                阅读最新资讯
+              </Link>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* 图表分析区域 */}
-        {/* 节点数量对比 */}
-        <div className="mb-8">
-          <div className="bg-white rounded-lg shadow-md border border-neutral-200 p-6">
-                  <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-primary-600 mb-1">各云服务商节点数量对比</h2>
-                    <p className="text-sm text-neutral-500">
-                      对比各大云服务商的全球数据中心节点总数。Google Cloud 以36个节点领先,Azure 紧随其后34个,阿里云以29个节点位列第三。节点数量直接影响服务可用性和用户访问速度,是评估云服务商基础设施实力的重要指标。
-                    </p>
-                  </div>
-            <ProviderComparisonChart />
+      {/* Features Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-neutral-900 text-center mb-12">
+            核心功能
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">🌍</span>
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                全球基础设施
+              </h3>
+              <p className="text-neutral-600 mb-4">
+                可视化展示全球主要云服务商的数据中心分布情况，包括 AWS、Azure、Google Cloud 等
+              </p>
+              <Link
+                href="/services/infrastructure"
+                className="text-primary-600 hover:text-primary-700 font-medium text-sm"
+              >
+                查看详情 →
+              </Link>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                数据分析
+              </h3>
+              <p className="text-neutral-600 mb-4">
+                提供详细的云服务商对比分析、节点分布统计、增长趋势等数据可视化
+              </p>
+              <Link
+                href="/services/infrastructure"
+                className="text-primary-600 hover:text-primary-700 font-medium text-sm"
+              >
+                查看详情 →
+              </Link>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6 hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-2xl">📰</span>
+              </div>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                最新资讯
+              </h3>
+              <p className="text-neutral-600 mb-4">
+                及时更新云计算行业的最新动态、技术趋势、产品发布等专业资讯
+              </p>
+              <Link
+                href="/news"
+                className="text-primary-600 hover:text-primary-700 font-medium text-sm"
+              >
+                查看详情 →
+              </Link>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* 大洲分布 */}
-        <div className="mb-8">
-          <div className="bg-white rounded-lg shadow-md border border-neutral-200 p-6">
-                  <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-primary-600 mb-1">各大洲节点分布</h2>
-                    <p className="text-sm text-neutral-500">
-                      展示各云服务商在全球各大洲的节点分布情况。亚洲作为主要市场拥有最多节点(80+),其中中国云服务商优势明显。北美和欧洲市场由国际巨头主导。通过颜色区分可清晰看出各服务商的区域布局策略,帮助企业选择最适合业务地域的云服务商。
-                    </p>
-                  </div>
-            <ContinentDistributionChart />
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">11+</div>
+              <div className="text-neutral-600">云服务商</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">208+</div>
+              <div className="text-neutral-600">全球节点</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">36+</div>
+              <div className="text-neutral-600">覆盖国家</div>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl font-bold text-primary-600 mb-2">268+</div>
+              <div className="text-neutral-600">可用区</div>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* 增长趋势图 */}
-        <div className="mb-8">
-          <div className="bg-white rounded-lg shadow-md border border-neutral-200 p-6">
-                  <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-primary-600 mb-1">云服务商 节点逐年增长趋势</h2>
-                    <p className="text-sm text-neutral-500">
-                      展示 2006-2025年各云服务商节点的累积增长轨迹。AWS作为先行者从2006年开始布局,Azure 和 Google Cloud 在2010年后快速追赶。中国云服务商(阿里云、华为云、腾讯云)从2010年代中期开始发力,增长势头强劲。曲线末端数值代表当前总节点数,反映各服务商的发展速度和市场策略。
-                    </p>
-                  </div>
-            <GrowthTrendChart />
-          </div>
-        </div>
-
-        {/* 云服务商统计表格 */}
-        <div className="mb-8">
-          <ProviderStatsTable stats={providerStats} />
-        </div>
-
-        {/* 云服务商国家覆盖明细表格 */}
-        <div className="mb-8">
-          <ProviderCountryStatsTable nodes={nodes} providers={providersMap} />
-        </div>
-
-        {/* 节点明细表格 */}
-        <div className="mb-8">
-          <NodesTable nodes={nodes} providers={providersMap} />
-        </div>
-      </main>
-
-      {/* 页脚 */}
-      <footer className="bg-white border-t border-neutral-200 py-6 mt-12">
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-neutral-500">
-            © 2025 全球云基础设施节点分布图 | Cloud Infrastructure Node Distribution Map
+          <h2 className="text-3xl font-semibold mb-4">
+            开始探索全球云基础设施
+          </h2>
+          <p className="text-primary-50 mb-8 max-w-2xl mx-auto">
+            深入了解全球主要云服务商的数据中心分布，做出更明智的技术决策
           </p>
-          <p className="text-xs text-neutral-400 mt-1">
-            数据来源于各云服务商官方公开信息
-          </p>
+          <Link
+            href="/services/infrastructure"
+            className="inline-block px-8 py-3 bg-white text-primary-600 rounded-md hover:bg-neutral-50 transition-colors font-medium shadow-lg"
+          >
+            立即查看
+          </Link>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }
